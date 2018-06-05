@@ -1,0 +1,38 @@
+result = (
+    // preparing
+    Coffee_Making{Coffee -> 1}
+    + Milk_Heating{Milk -> 1, Cappuccino -o 1}
+    + Milk_Cappuccino{Cappuccino -> 1}
+    + No_Prepare{Coffee -o 1, Milk -o 1, Cappuccino -o 1}
+    // ingredients
+    + Espresso{Espresso -> 1}
+    + Coffee{Coffee -> 1}
+    + Milk{Milk -> 1}
+    + Main
+    + Statemachine
+    + InInh[1]
+    + InInh[2]
+    + InInh[3]
+    + InInh[4]
+    + In[1]
+    + InOut[1]
+    + Inh[1]
+) (
+    Main.Preparing / Coffee_Making.coffee_making_in / Milk_Heating.milk_heating_in / Milk_Cappuccino.milk_capp_in / No_Prepare.in -> Preparing,
+    Main.Preparing_out / Coffee_Making.coffee_making_out / Milk_Heating.milk_heating_out / Milk_Cappuccino.milk_capp_out / No_Prepare.out -> Preparing_out,
+    Main.Ingredients / Espresso.espresso_in / Coffee.coffee_in / Milk.milk_in -> Ingredients,
+    Main.Ingredients_out / Espresso.espresso_out / Coffee.coffee_out / Milk.milk_out -> Ingredients_out,
+    InInh[1].p / Statemachine.event_coffee -> event_coffee,
+    InInh[2].p / Statemachine.event_espresso -> event_espresso,
+    InInh[3].p / Statemachine.event_milk -> event_milk,
+    InInh[4].p / Statemachine.event_cappuccino -> event_cappuccino,
+    InInh[1].t / Statemachine."req.coffee" -> "req.coffee",
+    InInh[2].t / Statemachine."req.espresso" -> "req.espresso",
+    InInh[3].t / Statemachine."req.milk" -> "req.milk",
+    InInh[4].t / Statemachine."req.cappuccino" -> "req.cappuccino",
+    In[1].t / Main.end_running -> end_running,
+    In[1].p / Statemachine.event_reset -> event_reset,
+    Inh[1].p / InOut[1].p / Statemachine.state_None -> state_None,
+    InOut[1].t / Main.t24 -> t24,
+    Inh[1].t / Main.start_transition -> start_transition,
+)

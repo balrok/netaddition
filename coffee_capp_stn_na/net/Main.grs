@@ -1,0 +1,86 @@
+new pn1:PetriNet(id = "Main")
+new p1:Page(id = "Main")
+#new pl1:Place(id = "state_None")
+#new pl2:Place(id = "event_reset")
+new pl3:Place(id = "Ingredients")
+new pl4:Place(id = "Running")
+new pl5:Place(id = "Preparing")
+new pl6:Place(id = "Stopping")
+new pl7:Place(id = "Stopped")
+new t1:Token
+new pl8:Place(id = "Ingredients_out")
+new pl9:Place(id = "Preparing_out")
+new tr1:Transition(id = "start_transition")
+new tr2:Transition(id = "t14")
+new tr3:Transition(id = "end_running")
+new tr4:Transition(id = "t24")
+new tr5:Transition(id = "req.*")
+
+new pn1 -:pages-> p1
+#new p1 -:places-> pl1
+#new p1 -:places-> pl2
+new p1 -:places-> pl3
+new p1 -:places-> pl4
+new p1 -:places-> pl5
+new p1 -:places-> pl6
+new p1 -:places-> pl7
+new pl7 -:tokens-> t1
+new p1 -:places-> pl8
+new p1 -:places-> pl9
+new p1 -:transitions-> tr1
+new p1 -:transitions-> tr2
+new p1 -:transitions-> tr3
+new p1 -:transitions-> tr4
+new p1 -:transitions-> tr5
+new pl7 -:outArc-> tr1
+new pl8 -:outArc-> tr2
+new pl9 -:outArc-> tr3
+new pl4 -:outArc-> tr3
+new pl6 -:outArc-> tr4
+#new pl1 -:outArc-> tr4
+new pl7 -:outArc-> tr5
+new tr1 -:inArc-> pl3
+new tr1 -:inArc-> pl4
+new tr2 -:inArc-> pl5
+new tr3 -:inArc-> pl6
+#new tr3 -:inArc-> pl2
+new tr4 -:inArc-> pl7
+#new tr4 -:inArc-> pl1
+new tr5 -:inArc-> pl7
+
+
+
+#new pl1 -:inhibitorArc-> tr1
+new events:Place(id="event_*")
+new p1 -:places-> events
+new events -:inhibitorArc-> tr1
+
+#new ec:Place(id="event_coffee")
+#new p1-:places-> ec
+#new ee:Place(id="event_espresso")
+#new p1-:places-> ee
+#new em:Place(id="event_milk")
+#new p1-:places-> em
+#new ecap:Place(id="event_cappuccino")
+#new p1-:places-> ecap
+#
+#new tec:Transition(id="req.coffee")
+#new p1-:transitions-> tec
+#new tee:Transition(id="req.espresso")
+#new p1-:transitions-> tee
+#new tem:Transition(id="req.milk")
+#new p1-:transitions-> tem
+#new tecap:Transition(id="req.cappuccino")
+#new p1-:transitions-> tecap
+#
+#new tec -:inArc-> ec
+#new ec -:inhibitorArc-> tec
+#
+#new tee -:inArc-> ee
+#new ee -:inhibitorArc-> tee
+#
+#new tem -:inArc-> em
+#new em -:inhibitorArc-> tem
+#
+#new tecap -:inArc-> ecap
+#new ecap -:inhibitorArc-> tecap

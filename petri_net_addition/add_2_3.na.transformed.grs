@@ -1,0 +1,49 @@
+# begin of graph "DefaultGraph" saved by GrsExport
+
+new graph "Rules" "DefaultGraph"
+new :PetriNet($ = "$63", id = "result")
+new :Page($ = "$64", id = "result")
+new :Place($ = "$E8", id = "y")
+new :Place($ = "$DC", id = "x")
+new :Place($ = "$75", id = "f")
+new :Place($ = "$6D", id = "s")
+new :Place($ = "$69", id = "z")
+new :Transition($ = "$6E", id = "t2")
+new :Transition($ = "$6C", id = "t3")
+new :Transition($ = "$68", id = "t1")
+new :Token($ = "$A6")
+new :Token($ = "$A4")
+new :Token($ = "$A2")
+new :Token($ = "$9E")
+new :Token($ = "$9C")
+# total number of nodes: 15
+
+new @("$63") - :pages($ = "$65") -> @("$64")
+new @("$64") - :places($ = "$8F") -> @("$69")
+new @("$64") - :places($ = "$90") -> @("$75")
+new @("$64") - :transitions($ = "$91") -> @("$68")
+new @("$64") - :transitions($ = "$92") -> @("$6E")
+new @("$64") - :transitions($ = "$93") -> @("$6C")
+new @("$64") - :places($ = "$DD") -> @("$DC")
+new @("$64") - :places($ = "$E9") -> @("$E8")
+new @("$64") - :places($ = "$8E") -> @("$6D")
+new @("$E8") - :tokens($ = "$ED") -> @("$A4")
+new @("$E8") - :tokens($ = "$EE") -> @("$A6")
+new @("$E8") - :outArc($ = "$F1", id = "", weight = 1) -> @("$6E")
+new @("$E8") - :inhibitorArc($ = "$F2", id = "", weight = 1) -> @("$6C")
+new @("$E8") - :tokens($ = "$EC") -> @("$A2")
+new @("$DC") - :tokens($ = "$E1") -> @("$9E")
+new @("$DC") - :outArc($ = "$E4", id = "", weight = 1) -> @("$68")
+new @("$DC") - :inhibitorArc($ = "$E5", id = "", weight = 1) -> @("$6C")
+new @("$DC") - :tokens($ = "$E0") -> @("$9C")
+new @("$75") - :outArc($ = "$82", id = "", weight = 1) -> @("$6C")
+new @("$6D") - :inhibitorArc($ = "$7B", id = "", weight = 1) -> @("$6E")
+new @("$6D") - :inhibitorArc($ = "$7C", id = "", weight = 1) -> @("$6C")
+new @("$6D") - :inhibitorArc($ = "$7A", id = "", weight = 1) -> @("$68")
+new @("$6E") - :inArc($ = "$79", id = "", weight = 1) -> @("$69")
+new @("$6C") - :inArc($ = "$7D", id = "", weight = 1) -> @("$6D")
+new @("$68") - :inArc($ = "$78", id = "", weight = 1) -> @("$69")
+# total number of edges: 25
+
+# end of graph "DefaultGraph" saved by GrsExport
+

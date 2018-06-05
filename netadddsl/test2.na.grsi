@@ -1,0 +1,48 @@
+new graph "Rules.grg"
+include layout.grsi
+
+new sys:net_addition::System()
+new pn_PN3:net_addition::PN(net_s="PN3")
+new a_PN3:net_addition::Addition(target=pn_PN3)
+new sys-:net_addition::rules(order=1)->a_PN3
+new pn_PN1:net_addition::PN(net_s="PN1")
+new a_PN3-:net_addition::petrinets->pn_PN1
+new pn_PN2:net_addition::PN(net_s="PN2")
+new a_PN3-:net_addition::petrinets->pn_PN2
+new n_pn_PN2_p2:net_addition::PetriNode(item_s="p2")
+new pn_PN2-:net_addition::pn_nodes->n_pn_PN2_p2
+new n_pn_PN2_p2 -:net_addition::configures(activates=True, weight=3)-> pn_PN1
+new f_p3:net_addition::Fusion(rename="p3")
+new a_PN3-:net_addition::fusions->f_p3
+new n_pn_PN1_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN1-:net_addition::pn_nodes->n_pn_PN1_p1
+new f_p3-:net_addition::sources->n_pn_PN1_p1
+new n_pn_PN2_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN2-:net_addition::pn_nodes->n_pn_PN2_p1
+new f_p3-:net_addition::sources->n_pn_PN2_p1
+new f_p4:net_addition::Fusion(rename="p4")
+new a_PN3-:net_addition::fusions->f_p4
+new n_pn_PN1_p4:net_addition::PetriNode(item_s="p4")
+new pn_PN1-:net_addition::pn_nodes->n_pn_PN1_p4
+new f_p4-:net_addition::sources->n_pn_PN1_p4
+new n_pn_PN2_p4:net_addition::PetriNode(item_s="p4")
+new pn_PN2-:net_addition::pn_nodes->n_pn_PN2_p4
+new f_p4-:net_addition::sources->n_pn_PN2_p4
+new pn_PN4:net_addition::PN(net_s="PN4")
+new a_PN4:net_addition::Addition(target=pn_PN4)
+new sys-:net_addition::rules(order=2)->a_PN4
+new pn_PN1_1:net_addition::PN(net_s="PN1")
+new a_PN4-:net_addition::petrinets->pn_PN1_1
+new pn_PN2_1:net_addition::PN(net_s="PN2")
+new a_PN4-:net_addition::petrinets->pn_PN2_1
+new n_pn_PN2_1_p2:net_addition::PetriNode(item_s="p2")
+new pn_PN2_1-:net_addition::pn_nodes->n_pn_PN2_1_p2
+new n_pn_PN2_1_p2 -:net_addition::configures(activates=True, weight=3)-> pn_PN1_1
+new f_p3_1:net_addition::Fusion(rename="p3")
+new a_PN4-:net_addition::fusions->f_p3_1
+new n_pn_PN1_1_p.-'1:net_addition::PetriNode(item_s="p.-'1")
+new pn_PN1_1-:net_addition::pn_nodes->n_pn_PN1_1_p.-'1
+new f_p3_1-:net_addition::sources->n_pn_PN1_1_p.-'1
+new n_pn_PN2_1_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN2_1-:net_addition::pn_nodes->n_pn_PN2_1_p1
+new f_p3_1-:net_addition::sources->n_pn_PN2_1_p1

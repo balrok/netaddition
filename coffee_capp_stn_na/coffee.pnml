@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net type="http://www.pnml.org/version-2009/grammar/ptnet" id="n1">
+    <name>
+      <text>buffer</text>
+    </name>
+    <page id="main">
+        <name>
+          <text>main</text>
+        </name>
+      <place id="state_None">
+        <name><text>state_None</text></name>
+      </place>
+      <place id="event_reset">
+        <name><text>event_reset</text></name>
+      </place>
+
+      <place id="Ingredients">
+        <name>
+          <text>Ingredients</text>
+        </name>
+      </place>
+      <place id="Running">
+        <name>
+          <text>Running</text>
+        </name>
+      </place>
+      <place id="Preparing">
+        <name>
+          <text>Preparing</text>
+        </name>
+      </place>
+      <place id="Stopping">
+        <name>
+          <text>Stopping</text>
+        </name>
+      </place>
+      <place id="Stopped">
+        <name>
+          <text>Stopped</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="start_transition">
+        <name>
+          <text>start_transition</text>
+        </name>
+      </transition>
+
+      <transition id="t14">
+        <name>
+          <text>t14</text>
+        </name>
+      </transition>
+      <transition id="end_running">
+        <name>
+          <text>end_running</text>
+        </name>
+      </transition>
+
+      <transition id="t24">
+        <name>
+          <text>t24</text>
+        </name>
+      </transition>
+      <transition id="req.star">
+        <name>
+          <text>req.*</text>
+        </name>
+      </transition>
+      <page id="milk">
+        <name>
+          <text>Milk</text>
+        </name>
+        <place id="Ingredients_Milk">
+          <name>
+            <text>Ingredients_Milk</text>
+          </name>
+        </place>
+        <transition id="t19">
+          <name>
+            <text>t19</text>
+          </name>
+        </transition>
+        <transition id="t20">
+          <name>
+            <text>t20</text>
+          </name>
+        </transition>
+
+        <arc id="e-15FD0-99E2D-89" source="t20" target="milk_out"/>
+        <arc id="e-15FD0-99E32-90" source="Ingredients_Milk" target="t20"/>
+        <arc id="e-15FD0-99E33-91" source="t19" target="Ingredients_Milk"/>
+        <arc id="e-15FD0-99E35-92" source="milk_in" target="t19"/>
+        <referencePlace id="milk_in" ref="Ingredients">
+          <name>
+            <text>milk_in</text>
+          </name>
+		</referencePlace>
+		<referencePlace id="milk_out" ref="Ingredients_out">
+          <name>
+            <text>milk_out</text>
+          </name>
+		</referencePlace>
+      </page>
+      <page id="coffee">
+        <name>
+          <text>Coffee</text>
+        </name>
+        <place id="Ingredients_Coffee">
+          <name>
+            <text>Ingredients_Coffee</text>
+          </name>
+        </place>
+        <transition id="t21">
+          <name>
+            <text>t21</text>
+          </name>
+        </transition>
+        <transition id="t22">
+          <name>
+            <text>t22</text>
+          </name>
+        </transition>
+        <arc id="e-15FD0-99E27-85" source="t22" target="coffee_out"/>
+        <arc id="e-15FD0-99E28-86" source="Ingredients_Coffee" target="t22"/>
+        <arc id="e-15FD0-99E2A-87" source="t21" target="Ingredients_Coffee"/>
+        <arc id="e-15FD0-99E2B-88" source="coffee_in" target="t21"/>
+        <referencePlace id="coffee_in" ref="Ingredients">
+          <name>
+            <text>coffee_in</text>
+          </name>
+		</referencePlace>
+        <referencePlace id="coffee_out" ref="Ingredients_out">
+          <name>
+            <text>coffee_out</text>
+          </name>
+		</referencePlace>
+      </page>
+      <page id="i_e">
+          <name>
+            <text>Espresso</text>
+          </name>
+        <transition id="t_e2">
+          <name>
+            <text>t_espresso</text>
+          </name>
+        </transition>
+        <arc id="me1" source="t_e2" target="e_out"/>
+        <arc id="me2" source="e_in" target="t_e2"/>
+        <referencePlace id="e_in" ref="Ingredients">
+          <name>
+            <text>espresso_in</text>
+          </name>
+        </referencePlace>
+        <referencePlace id="e_out" ref="Ingredients_out">
+          <name>
+            <text>espresso_out</text>
+          </name>
+        </referencePlace>
+      </page>
+      <page id="milk_capp">
+          <name>
+            <text>Milk_Cappuccino</text>
+          </name>
+        <transition id="t_capp2">
+          <name>
+            <text>t_capp2</text>
+          </name>
+        </transition>
+        <arc id="mc1" source="t_capp2" target="milk_capp_out"/>
+        <arc id="mc2" source="milk_capp_in" target="t_capp2"/>
+        <referencePlace id="milk_capp_in" ref="Preparing">
+          <name>
+            <text>milk_capp_in</text>
+          </name>
+        </referencePlace>
+        <referencePlace id="milk_capp_out" ref="Preparing_out">
+          <name>
+            <text>milk_capp_out</text>
+          </name>
+        </referencePlace>
+      </page>
+      <page id="milk_heating">
+          <name>
+            <text>Milk_Heating</text>
+          </name>
+        <place id="Milk_Heating">
+          <name>
+            <text>Milk_Heating</text>
+          </name>
+        </place>
+        <transition id="t2">
+          <name>
+            <text>t2</text>
+          </name>
+        </transition>
+        <transition id="t4">
+          <name>
+            <text>t4</text>
+          </name>
+        </transition>
+        <arc id="e-15FD0-99E5E-105" source="t2" target="Milk_Heating"/>
+        <arc id="e-15FD0-99E6A-113" source="t4" target="milk_heating_out"/>
+        <arc id="e-15FD0-99E6F-114" source="Milk_Heating" target="t4"/>
+        <arc id="e-15FD0-99E73-116" source="milk_heating_in" target="t2"/>
+        <referencePlace id="milk_heating_in" ref="Preparing">
+          <name>
+            <text>milk_heating_in</text>
+          </name>
+		</referencePlace>
+        <referencePlace id="milk_heating_out" ref="Preparing_out">
+          <name>
+            <text>milk_heating_out</text>
+          </name>
+		</referencePlace>
+      </page>
+      <page id="coffee_making">
+          <name>
+            <text>Coffee_Making</text>
+          </name>
+        <place id="Water_Heating">
+          <name>
+            <text>Water_Heating</text>
+          </name>
+        </place>
+        <place id="Pump">
+          <name>
+            <text>Pump</text>
+          </name>
+        </place>
+        <place id="Grind_Coffee">
+          <name>
+            <text>Grind_Coffee</text>
+          </name>
+        </place>
+        <transition id="t10">
+          <name>
+            <text>t10</text>
+          </name>
+        </transition>
+        <transition id="t11">
+          <name>
+            <text>t11</text>
+          </name>
+        </transition>
+        <transition id="t5">
+          <name>
+            <text>t5</text>
+          </name>
+        </transition>
+        <arc id="e-15FD0-99E5B-103" source="t10" target="Water_Heating"/>
+        <arc id="e-15FD0-99E60-106" source="t11" target="coffee_making_out"/>
+        <arc id="e-15FD0-99E61-107" source="Pump" target="t11"/>
+        <arc id="e-15FD0-99E63-108" source="t10" target="Grind_Coffee"/>
+        <arc id="e-15FD0-99E64-109" source="Grind_Coffee" target="t5"/>
+        <arc id="e-15FD0-99E66-110" source="t5" target="Pump"/>
+        <arc id="e-15FD0-99E67-111" source="Water_Heating" target="t5"/>
+        <arc id="e-15FD0-99E69-112" source="coffee_making_in" target="t10"/>
+        <referencePlace id="coffee_making_in" ref="Preparing">
+          <name>
+            <text>coffee_making_in</text>
+          </name>
+        </referencePlace>
+        <referencePlace id="coffee_making_out" ref="Preparing_out">
+          <name>
+            <text>coffee_making_out</text>
+          </name>
+        </referencePlace>
+      </page>
+      <arc id="e-15FD0-99E02-65" source="end_running" target="Stopping"> </arc>
+      <arc id="e-15FD0-99E0D-70" source="Stopped" target="start_transition"> </arc>
+      <arc id="e-15FD0-99E77-119_1" source="Stopped" target="req.star"> </arc>
+      <arc id="e-15FD0-99E77-119_2" target="Stopped" source="req.star"> </arc>
+      <arc id="e-15FD0-99E10-72" source="t24" target="Stopped"> </arc>
+      <arc id="e-15FD0-99E11-73" source="Stopping" target="t24"> </arc>
+
+      <arc id="e-15FD0-99E11-75" source="state_None" target="t24"> </arc>
+      <arc id="e-15FD0-99E11-74" source="t24" target="state_None"> </arc>
+
+      <arc id="e-15FD0-99E25-84" source="start_transition" target="Ingredients"> </arc>
+      <arc id="e-15FD0-99E4F-98" source="t14" target="Preparing"> </arc>
+      <arc id="e-15FD0-99E51-99" source="Preparing_out" target="end_running"> </arc>
+      <arc id="e-15FD0-99E52-100" source="Running" target="end_running"> </arc>
+      <arc id="e-15FD0-99E54-101" source="start_transition" target="Running"> </arc>
+      <arc id="e-15FD0-99E5A-102" source="Ingredients_out" target="t14"> </arc>
+      <arc id="custom5" source="end_running" target="event_reset"/>
+
+      <place id="Ingredients_out"> </place>
+      <place id="Preparing_out"> </place>
+    </page>
+  </net>
+</pnml>

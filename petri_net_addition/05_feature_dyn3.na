@@ -1,0 +1,5 @@
+result = (milk{conf.On -> 1} + main + conf)
+    (
+        main.ready/milk.IN -> ready,
+        main.wait/milk.OUT/conf.INOUT -> wait,
+    )

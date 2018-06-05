@@ -1,0 +1,16 @@
+result = (z_add[1] + z_add[2] + generic + generic[2])
+    (
+        // first net 2+3
+        generic.p_2_tok/z_add[1].x -> x,
+        generic.p_3_tok/z_add[1].y -> y,
+        // put token into start
+        generic.p_1_tok/z_add[1].f -> f,
+
+        // second net: 2+first_net
+        z_add[1].z/z_add[2].x -> x2,
+        generic[2].p_2_tok/z_add[2].y -> y2,
+        // rename to be clear
+        z_add[2].z -> z2,
+        // connect final-place with startplace
+        z_add[1].s/z_add[2].f -> f2,
+    )

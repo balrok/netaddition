@@ -1,0 +1,7 @@
+-e "git+https://github.com/antlr/antlr3/#egg=antlr-python3-runtime&subdirectory=runtime/Python3"
+antlr4-python3-runtime
+boolean.py
+simplejson
+snakes
+tqdm
+zenlog

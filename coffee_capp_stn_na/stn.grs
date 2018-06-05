@@ -1,0 +1,77 @@
+# new graph "../../statemachine/Rules.grg"
+
+new sm:sm::Statemachine(id="Statemachine")
+
+new s_none:sm::State(id="None")
+new sm-:sm::states->s_none
+new sm-:sm::current_state->s_none
+
+new s_c:sm::State(id="Coffee")
+new sm-:sm::states->s_c
+
+new s_cm:sm::State(id="Coffee-Milk")
+new sm-:sm::states->s_cm
+
+new s_e:sm::State(id="Espresso")
+new sm-:sm::states->s_e
+
+new s_em:sm::State(id="Espresso-Milk")
+new sm-:sm::states->s_em
+
+new s_cap:sm::State(id="Cappuccino")
+new sm-:sm::states->s_cap
+
+
+new e_c:sm::RefEvent(id="coffee")
+new sm-:sm::refevents->e_c
+new e_m:sm::RefEvent(id="milk")
+new sm-:sm::refevents->e_m
+new e_e:sm::RefEvent(id="espresso")
+new sm-:sm::refevents->e_e
+new e_cap:sm::RefEvent(id="cappuccino")
+new sm-:sm::refevents->e_cap
+new e_r:sm::RefEvent(id="reset")
+new sm-:sm::refevents->e_r
+
+
+new s_none-:sm::next_state(guard=e_c)->s_c
+new s_c-:sm::next_state(guard=e_m)->s_cm
+new s_none-:sm::next_state(guard=e_e)->s_e
+new s_e-:sm::next_state(guard=e_m)->s_em
+new s_none-:sm::next_state(guard=e_cap)->s_cap
+
+# reset button
+new s_cap-:sm::next_state(guard=e_r)->s_none
+new s_c-:sm::next_state(guard=e_r)->s_none
+new s_cm-:sm::next_state(guard=e_r)->s_none
+new s_e-:sm::next_state(guard=e_r)->s_none
+new s_em-:sm::next_state(guard=e_r)->s_none
+
+
+new i_machine:sm::Instance(id="Machine")
+new sm -:sm::instances->i_machine
+
+new r_c:sm::Role(id="Coffee")
+new sm -:sm::roles->r_c
+new r_c -:sm::instance-> i_machine
+new r_m:sm::Role(id="Milk")
+new sm -:sm::roles->r_m
+new r_m -:sm::instance-> i_machine
+new r_e:sm::Role(id="Espresso")
+new sm -:sm::roles->r_e
+new r_e -:sm::instance-> i_machine
+new r_cap:sm::Role(id="Cappuccino")
+new sm -:sm::roles->r_cap
+new r_cap -:sm::instance-> i_machine
+
+new s_c-:sm::enabled->r_c
+new s_cm-:sm::enabled->r_c
+new s_cm-:sm::enabled->r_m
+new s_e-:sm::enabled->r_e
+new s_em-:sm::enabled->r_e
+new s_em-:sm::enabled->r_m
+new s_cap-:sm::enabled->r_cap
+new s_cap-:sm::enabled->r_e
+new s_cap-:sm::enabled->r_m
+
+exec set_prefix("role", "%r")

@@ -1,0 +1,226 @@
+
+-----
+GrShell v4.5.2 (enter "help" for a list of commands)
+New graph "DefaultGraph" and actions created from spec file "../allinone/Rules.grg".
+New node "$0" of type "PetriNet" has been created.
+New node "$1" of type "Page" has been created.
+New edge "$2" of type "pages" has been created from "$0" to "$1".
+New node "$3" of type "Place" has been created.
+New edge "$4" of type "places" has been created from "$1" to "$3".
+New node "$5" of type "Place" has been created.
+New edge "$6" of type "places" has been created from "$1" to "$5".
+New node "$7" of type "Place" has been created.
+New edge "$8" of type "places" has been created from "$1" to "$7".
+New node "$9" of type "Place" has been created.
+New edge "$A" of type "places" has been created from "$1" to "$9".
+New node "$B" of type "Transition" has been created.
+New edge "$C" of type "transitions" has been created from "$1" to "$B".
+New node "$D" of type "Transition" has been created.
+New edge "$E" of type "transitions" has been created from "$1" to "$D".
+New edge "$F" of type "inArc" has been created from "$B" to "$7".
+New edge "$10" of type "inArc" has been created from "$B" to "$9".
+New edge "$11" of type "outArc" has been created from "$3" to "$B".
+New edge "$12" of type "outArc" has been created from "$5" to "$B".
+New edge "$13" of type "inArc" has been created from "$D" to "$9".
+New node "$14" of type "PetriNet" has been created.
+New node "$15" of type "Page" has been created.
+New edge "$16" of type "pages" has been created from "$14" to "$15".
+New node "$17" of type "Place" has been created.
+New edge "$18" of type "places" has been created from "$15" to "$17".
+New node "$19" of type "Place" has been created.
+New edge "$1A" of type "places" has been created from "$15" to "$19".
+New node "$1B" of type "Place" has been created.
+New edge "$1C" of type "places" has been created from "$15" to "$1B".
+New node "$1D" of type "Place" has been created.
+New edge "$1E" of type "places" has been created from "$15" to "$1D".
+New node "$1F" of type "Transition" has been created.
+New edge "$20" of type "transitions" has been created from "$15" to "$1F".
+New node "$21" of type "Transition" has been created.
+New edge "$22" of type "transitions" has been created from "$15" to "$21".
+New edge "$23" of type "inArc" has been created from "$1F" to "$1B".
+New edge "$24" of type "inArc" has been created from "$1F" to "$1D".
+New edge "$25" of type "outArc" has been created from "$17" to "$1F".
+New edge "$26" of type "outArc" has been created from "$19" to "$1F".
+New edge "$27" of type "inArc" has been created from "$21" to "$1D".
+New node "$28" of type "PetriNet" has been created.
+New node "$29" of type "Page" has been created.
+New edge "$2A" of type "pages" has been created from "$28" to "$29".
+New node "$2B" of type "Place" has been created.
+New node "$2C" of type "Place" has been created.
+New edge "$2D" of type "places" has been created from "$29" to "$2B".
+New edge "$2E" of type "places" has been created from "$29" to "$2C".
+New node "$2F" of type "Transition" has been created.
+New node "$30" of type "Transition" has been created.
+New edge "$31" of type "transitions" has been created from "$29" to "$2F".
+New edge "$32" of type "transitions" has been created from "$29" to "$30".
+New edge "$33" of type "inArc" has been created from "$30" to "$2B".
+New edge "$34" of type "outArc" has been created from "$2B" to "$2F".
+New node "$35" of type "Token" has been created.
+New edge "$36" of type "tokens" has been created from "$2B" to "$35".
+New edge "$37" of type "outArc" has been created from "$2C" to "$30".
+New edge "$38" of type "inArc" has been created from "$2F" to "$2C".
+New node "$39" of type "net_addition::System" has been created.
+New node "$3A" of type "net_addition::PN" has been created.
+New node "$3B" of type "net_addition::Addition" has been created.
+New edge "$3C" of type "net_addition::rules" has been created from "$39" to "$3B".
+New node "$3D" of type "net_addition::PN" has been created.
+New edge "$3E" of type "net_addition::petrinets" has been created from "$3B" to "$3D".
+New node "$3F" of type "net_addition::PN" has been created.
+New edge "$40" of type "net_addition::petrinets" has been created from "$3B" to "$3F".
+New node "$41" of type "net_addition::PN" has been created.
+New edge "$42" of type "net_addition::petrinets" has been created from "$3B" to "$41".
+New node "$43" of type "net_addition::PetriNode" has been created.
+New edge "$44" of type "net_addition::pn_nodes" has been created from "$3A" to "$43".
+New edge "$45" of type "net_addition::configures" has been created from "$43" to "$3F".
+New node "$46" of type "net_addition::Fusion" has been created.
+New edge "$47" of type "net_addition::fusions" has been created from "$3B" to "$46".
+New node "$48" of type "net_addition::PetriNode" has been created.
+New edge "$49" of type "net_addition::pn_nodes" has been created from "$3D" to "$48".
+New edge "$4A" of type "net_addition::sources" has been created from "$46" to "$48".
+New node "$4B" of type "net_addition::PetriNode" has been created.
+New edge "$4C" of type "net_addition::pn_nodes" has been created from "$3F" to "$4B".
+New edge "$4D" of type "net_addition::sources" has been created from "$46" to "$4B".
+New node "$4E" of type "net_addition::Fusion" has been created.
+New edge "$4F" of type "net_addition::fusions" has been created from "$3B" to "$4E".
+New node "$50" of type "net_addition::PetriNode" has been created.
+New edge "$51" of type "net_addition::pn_nodes" has been created from "$3D" to "$50".
+New edge "$52" of type "net_addition::sources" has been created from "$4E" to "$50".
+New node "$53" of type "net_addition::PetriNode" has been created.
+New edge "$54" of type "net_addition::pn_nodes" has been created from "$3F" to "$53".
+New edge "$55" of type "net_addition::sources" has been created from "$4E" to "$53".
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Transform addition with target PN3
+Had to create a PetriNet for 'PN3'
+Copy net for pn PN1
+copied $7
+copied $9
+copied $B
+copied $3
+copied $5
+copied $D
+copied $1
+PN PN1($3D) has node p1($48)
+PN PN1($3D) has node p4($50)
+Connect node $48 to p1($5A)
+Connect node $50 to p4($5E)
+Copy net for pn PN2
+copied $1B
+copied $1D
+copied $1F
+copied $17
+copied $19
+copied $21
+copied $15
+PN PN2($3F) has node p1($4B)
+PN PN2($3F) has node p4($53)
+Connect node $4B to p1($7A)
+Connect node $53 to p4($7E)
+Create ConfStructure for confplace p_conf weight:1 act:True target:$3F
+Add internal t1
+Add internal t2
+Add internal p1
+Add internal p2
+Add internal p3
+Add internal p4
+Add interface p1
+Add interface p4
+Copy net for pn PNC
+copied $30
+copied $2C
+copied $2F
+copied $35
+copied $2B
+copied $29
+Apply fusion for p1 to p3_11
+Updating fusion item of p1($48) from $5A to $BE
+Apply fusion for p1 to p3_11
+Updating fusion item of p1($4B) from $7A to $BE
+delete edge $C7 to p3_11 - remaining is $BF
+delete edge $C8 to p3_11 - remaining is $BF
+Apply fusion for p4 to p4_44
+Updating fusion item of p4($50) from $5E to $C9
+Apply fusion for p4 to p4_44
+Updating fusion item of p4($53) from $7E to $C9
+delete edge $D4 to p4_44 - remaining is $CA
+delete edge $D5 to p4_44 - remaining is $CA
+Connect2 confplace for p_conf
+Could not connect node p_conf by page PN3
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 115 matches found
+ - 115 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Delete subgraph of PNC
+Delete subgraph of PN2
+Delete subgraph of PN1
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 40 matches found
+ - 40 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 1 matches found
+ - 1 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 15 matches found
+ - 15 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 1 matches found
+ - 1 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+The graph is valid.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 65 matches found
+ - 65 rewrites performed
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+> The graph is valid.
+> Number of nodes compatible to type "Node": 18
+> Number of nodes compatible to type "PetriNet": 1
+> Number of nodes compatible to type "Page": 1
+> Number of nodes compatible to type "PetriNetNode": 14
+> Number of nodes compatible to type "PlaceNode": 8
+> Number of nodes compatible to type "Place": 8
+> Number of nodes compatible to type "TransitionNode": 6
+> Number of nodes compatible to type "Transition": 6
+> Number of nodes compatible to type "Token": 1
+> Number of nodes compatible to type "dyn2::ConfStructure": 1
+> Number of edges compatible to type "AEdge": 36
+> Number of edges compatible to type "EIdent": 14
+> Number of edges compatible to type "pages": 1
+> Number of edges compatible to type "transitions_places": 14
+> Number of edges compatible to type "places": 8
+> Number of edges compatible to type "transitions": 6
+> Number of edges compatible to type "tokens": 1
+> Number of edges compatible to type "Arc": 14
+> Number of edges compatible to type "inArc": 8
+> Number of edges compatible to type "outArc": 6
+> Number of edges compatible to type "dyn2::cs_nodes": 6
+> Number of edges compatible to type "dyn2::interface_nodes": 2
+> Number of edges compatible to type "dyn2::internal_nodes": 4
+> Bye!
+
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319

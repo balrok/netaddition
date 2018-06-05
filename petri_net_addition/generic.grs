@@ -1,0 +1,51 @@
+new pn:PetriNet(id="generic")
+new net:Page(id="generic")
+new pn -:pages-> net
+
+new p_0_tok:Place(id="p_0_tok")
+new net-:places->p_0_tok
+
+new p_1_tok:Place(id="p_1_tok")
+new net-:places->p_1_tok
+new p_1_tok_1:Token
+new p_1_tok -:tokens-> p_1_tok_1
+
+new p_2_tok:Place(id="p_2_tok")
+new net-:places->p_2_tok
+new p_2_tok_1:Token
+new p_2_tok -:tokens-> p_2_tok_1
+new p_2_tok_2:Token
+new p_2_tok -:tokens-> p_2_tok_2
+
+new p_3_tok:Place(id="p_3_tok")
+new net-:places->p_3_tok
+new p_3_tok_1:Token
+new p_3_tok -:tokens-> p_3_tok_1
+new p_3_tok_2:Token
+new p_3_tok -:tokens-> p_3_tok_2
+new p_3_tok_3:Token
+new p_3_tok -:tokens-> p_3_tok_3
+
+new p_4_tok:Place(id="p_4_tok")
+new net-:places->p_4_tok
+new p_4_tok_1:Token
+new p_4_tok -:tokens-> p_4_tok_1
+new p_4_tok_2:Token
+new p_4_tok -:tokens-> p_4_tok_2
+new p_4_tok_3:Token
+new p_4_tok -:tokens-> p_4_tok_3
+new p_4_tok_4:Token
+new p_4_tok -:tokens-> p_4_tok_4
+
+new p_5_tok:Place(id="p_5_tok")
+new net-:places->p_5_tok
+new p_5_tok_1:Token
+new p_5_tok -:tokens-> p_5_tok_1
+new p_5_tok_2:Token
+new p_5_tok -:tokens-> p_5_tok_2
+new p_5_tok_3:Token
+new p_5_tok -:tokens-> p_5_tok_3
+new p_5_tok_4:Token
+new p_5_tok -:tokens-> p_5_tok_4
+new p_5_tok_5:Token
+new p_5_tok -:tokens-> p_5_tok_5

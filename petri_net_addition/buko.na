@@ -1,0 +1,5 @@
+result = (buko_1{cfg -> 1} + buko_2{cfg -o 1} + buko_main + buko_conf)
+    (
+        buko_main.ttemp/buko_1.tin/buko_2.tin -> tin,
+        buko_main.t6/buko_1.tout/buko_2.tout -> tout,
+    )

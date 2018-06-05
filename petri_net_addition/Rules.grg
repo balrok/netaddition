@@ -1,0 +1,7 @@
+#using "../general/Id.gm"
+#using "../petri/PetriModel.gm"
+#using "../petri_net_addition/NAModel.gm"
+#using "../petri_dyn2/Dyn2Model.gm"
+#include "../general/Rules.grg"
+#include "../petri_net_addition/RulesWithoutModel.grg"
+#include "../petri/RulesWithoutModel.grg"

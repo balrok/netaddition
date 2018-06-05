@@ -1,0 +1,728 @@
+# new graph "Rules.grg"
+include layout.grsi
+
+
+new pn1:PetriNet(id = "Coffee")
+new p3:Page(id = "Coffee")
+new pl11:Place(id = "Ingredients_Coffee")
+new rp3:Place(id = "coffee_in")
+new rp4:Place(id = "coffee_out")
+new tr8:Transition(id = "t21")
+new tr9:Transition(id = "t22")
+new pn1 -:pages-> p3
+new p3 -:places-> pl11
+new p3 -:places-> rp3
+new p3 -:places-> rp4
+new p3 -:transitions-> tr8
+new p3 -:transitions-> tr9
+new rp3 -:outArc-> tr8
+new pl11 -:outArc-> tr9
+new tr8 -:inArc-> pl11
+new tr9 -:inArc-> rp4
+
+
+
+
+new pn1:PetriNet(id = "Coffee_Making")
+new p7:Page(id = "Coffee_Making")
+new pl13:Place(id = "Water_Heating")
+new pl14:Place(id = "Pump")
+new pl15:Place(id = "Grind_Coffee")
+new rp11:Place(id = "coffee_making_in")
+new rp12:Place(id = "coffee_making_out")
+new tr14:Transition(id = "t10")
+new tr15:Transition(id = "t11")
+new tr16:Transition(id = "t5")
+
+new pn1 -:pages-> p7
+new p7 -:places-> pl13
+new p7 -:places-> pl14
+new p7 -:places-> pl15
+new p7 -:places-> rp11
+new p7 -:places-> rp12
+new p7 -:transitions-> tr14
+new p7 -:transitions-> tr15
+new p7 -:transitions-> tr16
+new rp11 -:outArc-> tr14
+new pl14 -:outArc-> tr15
+new pl15 -:outArc-> tr16
+new pl13 -:outArc-> tr16
+new tr14 -:inArc-> pl13
+new tr14 -:inArc-> pl15
+new tr15 -:inArc-> rp12
+new tr16 -:inArc-> pl14
+
+
+
+
+new pn1:PetriNet(id = "Espresso")
+new p4:Page(id = "Espresso")
+new rp5:Place(id = "espresso_in")
+new rp6:Place(id = "espresso_out")
+new tr10:Transition(id = "t_espresso")
+new pn1 -:pages-> p4
+new p4 -:places-> rp5
+new p4 -:places-> rp6
+new p4 -:transitions-> tr10
+new rp5 -:outArc-> tr10
+new tr10 -:inArc-> rp6
+
+
+
+
+new pn1:PetriNet(id = "In")
+new net:Page(id = "In")
+new pn1-:pages->net
+new p:Place(id = "p")
+new net-:places->p
+new t:Transition(id = "t")
+new net-:transitions->t
+
+new t -:inArc-> p
+
+
+
+
+new pn1:PetriNet(id = "InInh")
+new net:Page(id = "InInh")
+new pn1-:pages->net
+new p:Place(id = "p")
+new net-:places->p
+new t:Transition(id = "t")
+new net-:transitions->t
+
+new t -:inArc-> p
+new p -:inhibitorArc-> t
+
+
+
+
+new pn1:PetriNet(id = "InOut")
+new net:Page(id = "InOut")
+new pn1-:pages->net
+new p:Place(id = "p")
+new net-:places->p
+new t:Transition(id = "t")
+new net-:transitions->t
+
+new t -:inArc-> p
+new p -:outArc-> t
+
+
+
+
+new pn1:PetriNet(id = "Inh")
+new net:Page(id = "Inh")
+new pn1-:pages->net
+new p:Place(id = "p")
+new net-:places->p
+new t:Transition(id = "t")
+new net-:transitions->t
+
+new p -:inhibitorArc-> t
+
+
+
+
+new pn1:PetriNet(id = "Main")
+new p1:Page(id = "Main")
+#new pl1:Place(id = "state_None")
+#new pl2:Place(id = "event_reset")
+new pl3:Place(id = "Ingredients")
+new pl4:Place(id = "Running")
+new pl5:Place(id = "Preparing")
+new pl6:Place(id = "Stopping")
+new pl7:Place(id = "Stopped")
+new t1:Token
+new pl8:Place(id = "Ingredients_out")
+new pl9:Place(id = "Preparing_out")
+new tr1:Transition(id = "start_transition")
+new tr2:Transition(id = "t14")
+new tr3:Transition(id = "end_running")
+new tr4:Transition(id = "t24")
+new tr5:Transition(id = "req.*")
+
+new pn1 -:pages-> p1
+#new p1 -:places-> pl1
+#new p1 -:places-> pl2
+new p1 -:places-> pl3
+new p1 -:places-> pl4
+new p1 -:places-> pl5
+new p1 -:places-> pl6
+new p1 -:places-> pl7
+new pl7 -:tokens-> t1
+new p1 -:places-> pl8
+new p1 -:places-> pl9
+new p1 -:transitions-> tr1
+new p1 -:transitions-> tr2
+new p1 -:transitions-> tr3
+new p1 -:transitions-> tr4
+new p1 -:transitions-> tr5
+new pl7 -:outArc-> tr1
+new pl8 -:outArc-> tr2
+new pl9 -:outArc-> tr3
+new pl4 -:outArc-> tr3
+new pl6 -:outArc-> tr4
+#new pl1 -:outArc-> tr4
+new pl7 -:outArc-> tr5
+new tr1 -:inArc-> pl3
+new tr1 -:inArc-> pl4
+new tr2 -:inArc-> pl5
+new tr3 -:inArc-> pl6
+#new tr3 -:inArc-> pl2
+new tr4 -:inArc-> pl7
+#new tr4 -:inArc-> pl1
+new tr5 -:inArc-> pl7
+
+
+
+#new pl1 -:inhibitorArc-> tr1
+new events:Place(id="event_*")
+new p1 -:places-> events
+new events -:inhibitorArc-> tr1
+
+#new ec:Place(id="event_coffee")
+#new p1-:places-> ec
+#new ee:Place(id="event_espresso")
+#new p1-:places-> ee
+#new em:Place(id="event_milk")
+#new p1-:places-> em
+#new ecap:Place(id="event_cappuccino")
+#new p1-:places-> ecap
+#
+#new tec:Transition(id="req.coffee")
+#new p1-:transitions-> tec
+#new tee:Transition(id="req.espresso")
+#new p1-:transitions-> tee
+#new tem:Transition(id="req.milk")
+#new p1-:transitions-> tem
+#new tecap:Transition(id="req.cappuccino")
+#new p1-:transitions-> tecap
+#
+#new tec -:inArc-> ec
+#new ec -:inhibitorArc-> tec
+#
+#new tee -:inArc-> ee
+#new ee -:inhibitorArc-> tee
+#
+#new tem -:inArc-> em
+#new em -:inhibitorArc-> tem
+#
+#new tecap -:inArc-> ecap
+#new ecap -:inhibitorArc-> tecap
+
+
+
+
+new pn1:PetriNet(id = "Milk")
+new p2:Page(id = "Milk")
+new pl10:Place(id = "Ingredients_Milk")
+new rp1:Place(id = "milk_in")
+new rp2:Place(id = "milk_out")
+new tr6:Transition(id = "t19")
+new tr7:Transition(id = "t20")
+new pn1 -:pages-> p2
+new p2 -:places-> pl10
+new p2 -:places-> rp1
+new p2 -:places-> rp2
+new p2 -:transitions-> tr6
+new p2 -:transitions-> tr7
+new rp1 -:outArc-> tr6
+new pl10 -:outArc-> tr7
+new tr6 -:inArc-> pl10
+new tr7 -:inArc-> rp2
+
+
+
+
+new pn1:PetriNet(id = "Milk_Cappuccino")
+new p5:Page(id = "Milk_Cappuccino")
+new rp7:Place(id = "milk_capp_in")
+new rp8:Place(id = "milk_capp_out")
+new tr11:Transition(id = "t_capp2")
+new pn1 -:pages-> p5
+new p5 -:places-> rp7
+new p5 -:places-> rp8
+new p5 -:transitions-> tr11
+new rp7 -:outArc-> tr11
+new tr11 -:inArc-> rp8
+
+
+
+
+new pn1:PetriNet(id = "Milk_Heating")
+new p6:Page(id = "Milk_Heating")
+new pl12:Place(id = "Milk_Heating")
+new rp9:Place(id = "milk_heating_in")
+new rp10:Place(id = "milk_heating_out")
+new tr12:Transition(id = "t2")
+new tr13:Transition(id = "t4")
+new pn1 -:pages-> p6
+new p6 -:places-> pl12
+new p6 -:places-> rp9
+new p6 -:places-> rp10
+new p6 -:transitions-> tr12
+new p6 -:transitions-> tr13
+new rp9 -:outArc-> tr12
+new pl12 -:outArc-> tr13
+new tr12 -:inArc-> pl12
+new tr13 -:inArc-> rp10
+
+
+
+
+new pn1:PetriNet(id = "No_Prepare")
+new p6:Page(id = "No_Prepare")
+new rp9:Place(id = "in")
+new rp10:Place(id = "out")
+new tr12:Transition(id = "no_prepare")
+new pn1 -:pages-> p6
+new p6 -:places-> rp9
+new p6 -:places-> rp10
+new p6 -:transitions-> tr12
+new rp9 -:outArc-> tr12
+new tr12 -:inArc-> rp10
+
+
+
+
+# begin of graph "DefaultGraph" saved by GrsExport
+
+# new graph "Rules" "DefaultGraph"
+new :PetriNet($ = "$2_1_3A", id = "Statemachine")
+new :Page($ = "$2_1_3B", id = "Statemachine")
+new :Place($ = "$2_1_7B", id = "Coffee")
+new :Place($ = "$2_1_78", id = "Milk")
+new :Place($ = "$2_1_75", id = "Espresso")
+new :Place($ = "$2_1_72", id = "Cappuccino")
+new :Place($ = "$2_1_6F", id = "event_coffee")
+new :Place($ = "$2_1_6C", id = "event_milk")
+new :Place($ = "$2_1_69", id = "event_espresso")
+new :Place($ = "$2_1_66", id = "event_cappuccino")
+new :Place($ = "$2_1_63", id = "event_reset")
+new :Place($ = "$2_1_60", id = "state_None")
+new :Place($ = "$2_1_5D", id = "state_Coffee")
+new :Place($ = "$2_1_5A", id = "state_Coffee-Milk")
+new :Place($ = "$2_1_57", id = "state_Espresso")
+new :Place($ = "$2_1_54", id = "state_Espresso-Milk")
+new :Place($ = "$2_1_51", id = "state_Cappuccino")
+new :Transition($ = "$2_1_166", id = "None_Coffee_coffee")
+new :Transition($ = "$2_1_15E", id = "Coffee_Coffee-Milk_milk")
+new :Transition($ = "$2_1_158", id = "None_Espresso_espresso")
+new :Transition($ = "$2_1_150", id = "Espresso_Espresso-Milk_milk")
+new :Transition($ = "$2_1_148", id = "None_Cappuccino_cappuccino")
+new :Transition($ = "$2_1_140", id = "Cappuccino_None_reset")
+new :Transition($ = "$2_1_13A", id = "Coffee_None_reset")
+new :Transition($ = "$2_1_133", id = "Coffee-Milk_None_reset")
+new :Transition($ = "$2_1_12D", id = "Espresso_None_reset")
+new :Transition($ = "$2_1_126", id = "Espresso-Milk_None_reset")
+new :Transition($ = "$2_1_11B", id = "Cappuccino_Cappuccino_cappuccino")
+new :Transition($ = "$2_1_110", id = "Cappuccino_Cappuccino_espresso")
+new :Transition($ = "$2_1_105", id = "Cappuccino_Cappuccino_milk")
+new :Transition($ = "$2_1_FA", id = "Cappuccino_Cappuccino_coffee")
+new :Transition($ = "$2_1_F1", id = "Espresso-Milk_Espresso-Milk_cappuccino")
+new :Transition($ = "$2_1_E8", id = "Espresso-Milk_Espresso-Milk_espresso")
+new :Transition($ = "$2_1_DF", id = "Espresso-Milk_Espresso-Milk_milk")
+new :Transition($ = "$2_1_D6", id = "Espresso-Milk_Espresso-Milk_coffee")
+new :Transition($ = "$2_1_CF", id = "Espresso_Espresso_cappuccino")
+new :Transition($ = "$2_1_C8", id = "Espresso_Espresso_espresso")
+new :Transition($ = "$2_1_C1", id = "Espresso_Espresso_coffee")
+new :Transition($ = "$2_1_B8", id = "Coffee-Milk_Coffee-Milk_cappuccino")
+new :Transition($ = "$2_1_AF", id = "Coffee-Milk_Coffee-Milk_espresso")
+new :Transition($ = "$2_1_A6", id = "Coffee-Milk_Coffee-Milk_milk")
+new :Transition($ = "$2_1_9D", id = "Coffee-Milk_Coffee-Milk_coffee")
+new :Transition($ = "$2_1_96", id = "Coffee_Coffee_cappuccino")
+new :Transition($ = "$2_1_8F", id = "Coffee_Coffee_espresso")
+new :Transition($ = "$2_1_88", id = "Coffee_Coffee_coffee")
+new :Transition($ = "$2_1_83", id = "None_None_reset")
+new :Transition($ = "$2_1_7E", id = "None_None_milk")
+new :Token($ = "$2_1_16C")
+# total number of nodes: 48
+
+new @("$2_1_3A") - :pages($ = "$2_1_3C") -> @("$2_1_3B")
+new @("$2_1_3B") - :places($ = "$2_1_55") -> @("$2_1_54")
+new @("$2_1_3B") - :places($ = "$2_1_58") -> @("$2_1_57")
+new @("$2_1_3B") - :places($ = "$2_1_5B") -> @("$2_1_5A")
+new @("$2_1_3B") - :places($ = "$2_1_5E") -> @("$2_1_5D")
+new @("$2_1_3B") - :places($ = "$2_1_61") -> @("$2_1_60")
+new @("$2_1_3B") - :places($ = "$2_1_64") -> @("$2_1_63")
+new @("$2_1_3B") - :places($ = "$2_1_67") -> @("$2_1_66")
+new @("$2_1_3B") - :places($ = "$2_1_6A") -> @("$2_1_69")
+new @("$2_1_3B") - :places($ = "$2_1_6D") -> @("$2_1_6C")
+new @("$2_1_3B") - :places($ = "$2_1_70") -> @("$2_1_6F")
+new @("$2_1_3B") - :places($ = "$2_1_73") -> @("$2_1_72")
+new @("$2_1_3B") - :places($ = "$2_1_76") -> @("$2_1_75")
+new @("$2_1_3B") - :places($ = "$2_1_79") -> @("$2_1_78")
+new @("$2_1_3B") - :places($ = "$2_1_7C") -> @("$2_1_7B")
+new @("$2_1_3B") - :transitions($ = "$2_1_82") -> @("$2_1_7E")
+new @("$2_1_3B") - :transitions($ = "$2_1_87") -> @("$2_1_83")
+new @("$2_1_3B") - :transitions($ = "$2_1_8C") -> @("$2_1_88")
+new @("$2_1_3B") - :transitions($ = "$2_1_93") -> @("$2_1_8F")
+new @("$2_1_3B") - :transitions($ = "$2_1_9A") -> @("$2_1_96")
+new @("$2_1_3B") - :transitions($ = "$2_1_A1") -> @("$2_1_9D")
+new @("$2_1_3B") - :transitions($ = "$2_1_AA") -> @("$2_1_A6")
+new @("$2_1_3B") - :transitions($ = "$2_1_B3") -> @("$2_1_AF")
+new @("$2_1_3B") - :transitions($ = "$2_1_BC") -> @("$2_1_B8")
+new @("$2_1_3B") - :transitions($ = "$2_1_C5") -> @("$2_1_C1")
+new @("$2_1_3B") - :transitions($ = "$2_1_CC") -> @("$2_1_C8")
+new @("$2_1_3B") - :transitions($ = "$2_1_D3") -> @("$2_1_CF")
+new @("$2_1_3B") - :transitions($ = "$2_1_DA") -> @("$2_1_D6")
+new @("$2_1_3B") - :transitions($ = "$2_1_E3") -> @("$2_1_DF")
+new @("$2_1_3B") - :transitions($ = "$2_1_EC") -> @("$2_1_E8")
+new @("$2_1_3B") - :transitions($ = "$2_1_F5") -> @("$2_1_F1")
+new @("$2_1_3B") - :transitions($ = "$2_1_FE") -> @("$2_1_FA")
+new @("$2_1_3B") - :transitions($ = "$2_1_109") -> @("$2_1_105")
+new @("$2_1_3B") - :transitions($ = "$2_1_114") -> @("$2_1_110")
+new @("$2_1_3B") - :transitions($ = "$2_1_11F") -> @("$2_1_11B")
+new @("$2_1_3B") - :transitions($ = "$2_1_12A") -> @("$2_1_126")
+new @("$2_1_3B") - :transitions($ = "$2_1_131") -> @("$2_1_12D")
+new @("$2_1_3B") - :transitions($ = "$2_1_137") -> @("$2_1_133")
+new @("$2_1_3B") - :transitions($ = "$2_1_13E") -> @("$2_1_13A")
+new @("$2_1_3B") - :transitions($ = "$2_1_144") -> @("$2_1_140")
+new @("$2_1_3B") - :transitions($ = "$2_1_14C") -> @("$2_1_148")
+new @("$2_1_3B") - :transitions($ = "$2_1_154") -> @("$2_1_150")
+new @("$2_1_3B") - :transitions($ = "$2_1_15C") -> @("$2_1_158")
+new @("$2_1_3B") - :transitions($ = "$2_1_162") -> @("$2_1_15E")
+new @("$2_1_3B") - :transitions($ = "$2_1_16A") -> @("$2_1_166")
+new @("$2_1_3B") - :places($ = "$2_1_52") -> @("$2_1_51")
+new @("$2_1_7B") - :outArc($ = "$2_1_13F", id = "", weight = 1) -> @("$2_1_13A")
+new @("$2_1_7B") - :outArc($ = "$2_1_138", id = "", weight = 1) -> @("$2_1_133")
+new @("$2_1_78") - :outArc($ = "$2_1_139", id = "", weight = 1) -> @("$2_1_133")
+new @("$2_1_78") - :outArc($ = "$2_1_147", id = "", weight = 1) -> @("$2_1_140")
+new @("$2_1_78") - :outArc($ = "$2_1_12C", id = "", weight = 1) -> @("$2_1_126")
+new @("$2_1_75") - :outArc($ = "$2_1_132", id = "", weight = 1) -> @("$2_1_12D")
+new @("$2_1_75") - :outArc($ = "$2_1_146", id = "", weight = 1) -> @("$2_1_140")
+new @("$2_1_75") - :outArc($ = "$2_1_12B", id = "", weight = 1) -> @("$2_1_126")
+new @("$2_1_72") - :outArc($ = "$2_1_145", id = "", weight = 1) -> @("$2_1_140")
+new @("$2_1_6F") - :outArc($ = "$2_1_A0", id = "", weight = 1) -> @("$2_1_9D")
+new @("$2_1_6F") - :outArc($ = "$2_1_C4", id = "", weight = 1) -> @("$2_1_C1")
+new @("$2_1_6F") - :outArc($ = "$2_1_D9", id = "", weight = 1) -> @("$2_1_D6")
+new @("$2_1_6F") - :outArc($ = "$2_1_FD", id = "", weight = 1) -> @("$2_1_FA")
+new @("$2_1_6F") - :outArc($ = "$2_1_169", id = "", weight = 1) -> @("$2_1_166")
+new @("$2_1_6F") - :outArc($ = "$2_1_8B", id = "", weight = 1) -> @("$2_1_88")
+new @("$2_1_6C") - :outArc($ = "$2_1_A9", id = "", weight = 1) -> @("$2_1_A6")
+new @("$2_1_6C") - :outArc($ = "$2_1_E2", id = "", weight = 1) -> @("$2_1_DF")
+new @("$2_1_6C") - :outArc($ = "$2_1_108", id = "", weight = 1) -> @("$2_1_105")
+new @("$2_1_6C") - :outArc($ = "$2_1_153", id = "", weight = 1) -> @("$2_1_150")
+new @("$2_1_6C") - :outArc($ = "$2_1_161", id = "", weight = 1) -> @("$2_1_15E")
+new @("$2_1_6C") - :outArc($ = "$2_1_81", id = "", weight = 1) -> @("$2_1_7E")
+new @("$2_1_69") - :outArc($ = "$2_1_B2", id = "", weight = 1) -> @("$2_1_AF")
+new @("$2_1_69") - :outArc($ = "$2_1_CB", id = "", weight = 1) -> @("$2_1_C8")
+new @("$2_1_69") - :outArc($ = "$2_1_EB", id = "", weight = 1) -> @("$2_1_E8")
+new @("$2_1_69") - :outArc($ = "$2_1_113", id = "", weight = 1) -> @("$2_1_110")
+new @("$2_1_69") - :outArc($ = "$2_1_15B", id = "", weight = 1) -> @("$2_1_158")
+new @("$2_1_69") - :outArc($ = "$2_1_92", id = "", weight = 1) -> @("$2_1_8F")
+new @("$2_1_66") - :outArc($ = "$2_1_BB", id = "", weight = 1) -> @("$2_1_B8")
+new @("$2_1_66") - :outArc($ = "$2_1_D2", id = "", weight = 1) -> @("$2_1_CF")
+new @("$2_1_66") - :outArc($ = "$2_1_F4", id = "", weight = 1) -> @("$2_1_F1")
+new @("$2_1_66") - :outArc($ = "$2_1_11E", id = "", weight = 1) -> @("$2_1_11B")
+new @("$2_1_66") - :outArc($ = "$2_1_14B", id = "", weight = 1) -> @("$2_1_148")
+new @("$2_1_66") - :outArc($ = "$2_1_99", id = "", weight = 1) -> @("$2_1_96")
+new @("$2_1_63") - :outArc($ = "$2_1_129", id = "", weight = 1) -> @("$2_1_126")
+new @("$2_1_63") - :outArc($ = "$2_1_130", id = "", weight = 1) -> @("$2_1_12D")
+new @("$2_1_63") - :outArc($ = "$2_1_136", id = "", weight = 1) -> @("$2_1_133")
+new @("$2_1_63") - :outArc($ = "$2_1_13D", id = "", weight = 1) -> @("$2_1_13A")
+new @("$2_1_63") - :outArc($ = "$2_1_143", id = "", weight = 1) -> @("$2_1_140")
+new @("$2_1_63") - :outArc($ = "$2_1_86", id = "", weight = 1) -> @("$2_1_83")
+new @("$2_1_60") - :outArc($ = "$2_1_84", id = "", weight = 1) -> @("$2_1_83")
+new @("$2_1_60") - :outArc($ = "$2_1_149", id = "", weight = 1) -> @("$2_1_148")
+new @("$2_1_60") - :outArc($ = "$2_1_159", id = "", weight = 1) -> @("$2_1_158")
+new @("$2_1_60") - :outArc($ = "$2_1_167", id = "", weight = 1) -> @("$2_1_166")
+new @("$2_1_60") - :tokens($ = "$2_1_16D") -> @("$2_1_16C")
+new @("$2_1_60") - :outArc($ = "$2_1_7F", id = "", weight = 1) -> @("$2_1_7E")
+new @("$2_1_5D") - :outArc($ = "$2_1_90", id = "", weight = 1) -> @("$2_1_8F")
+new @("$2_1_5D") - :outArc($ = "$2_1_97", id = "", weight = 1) -> @("$2_1_96")
+new @("$2_1_5D") - :outArc($ = "$2_1_13B", id = "", weight = 1) -> @("$2_1_13A")
+new @("$2_1_5D") - :outArc($ = "$2_1_15F", id = "", weight = 1) -> @("$2_1_15E")
+new @("$2_1_5D") - :outArc($ = "$2_1_89", id = "", weight = 1) -> @("$2_1_88")
+new @("$2_1_5A") - :outArc($ = "$2_1_A7", id = "", weight = 1) -> @("$2_1_A6")
+new @("$2_1_5A") - :outArc($ = "$2_1_B0", id = "", weight = 1) -> @("$2_1_AF")
+new @("$2_1_5A") - :outArc($ = "$2_1_B9", id = "", weight = 1) -> @("$2_1_B8")
+new @("$2_1_5A") - :outArc($ = "$2_1_134", id = "", weight = 1) -> @("$2_1_133")
+new @("$2_1_5A") - :outArc($ = "$2_1_9E", id = "", weight = 1) -> @("$2_1_9D")
+new @("$2_1_57") - :outArc($ = "$2_1_C9", id = "", weight = 1) -> @("$2_1_C8")
+new @("$2_1_57") - :outArc($ = "$2_1_D0", id = "", weight = 1) -> @("$2_1_CF")
+new @("$2_1_57") - :outArc($ = "$2_1_12E", id = "", weight = 1) -> @("$2_1_12D")
+new @("$2_1_57") - :outArc($ = "$2_1_151", id = "", weight = 1) -> @("$2_1_150")
+new @("$2_1_57") - :outArc($ = "$2_1_C2", id = "", weight = 1) -> @("$2_1_C1")
+new @("$2_1_54") - :outArc($ = "$2_1_E0", id = "", weight = 1) -> @("$2_1_DF")
+new @("$2_1_54") - :outArc($ = "$2_1_E9", id = "", weight = 1) -> @("$2_1_E8")
+new @("$2_1_54") - :outArc($ = "$2_1_F2", id = "", weight = 1) -> @("$2_1_F1")
+new @("$2_1_54") - :outArc($ = "$2_1_127", id = "", weight = 1) -> @("$2_1_126")
+new @("$2_1_54") - :outArc($ = "$2_1_D7", id = "", weight = 1) -> @("$2_1_D6")
+new @("$2_1_51") - :outArc($ = "$2_1_106", id = "", weight = 1) -> @("$2_1_105")
+new @("$2_1_51") - :outArc($ = "$2_1_111", id = "", weight = 1) -> @("$2_1_110")
+new @("$2_1_51") - :outArc($ = "$2_1_11C", id = "", weight = 1) -> @("$2_1_11B")
+new @("$2_1_51") - :outArc($ = "$2_1_141", id = "", weight = 1) -> @("$2_1_140")
+new @("$2_1_51") - :outArc($ = "$2_1_FB", id = "", weight = 1) -> @("$2_1_FA")
+new @("$2_1_166") - :inArc($ = "$2_1_16B", id = "", weight = 1) -> @("$2_1_7B")
+new @("$2_1_166") - :inArc($ = "$2_1_168", id = "", weight = 1) -> @("$2_1_5D")
+new @("$2_1_15E") - :inArc($ = "$2_1_165", id = "", weight = 1) -> @("$2_1_78")
+new @("$2_1_15E") - :inArc($ = "$2_1_160", id = "", weight = 1) -> @("$2_1_5A")
+new @("$2_1_158") - :inArc($ = "$2_1_15D", id = "", weight = 1) -> @("$2_1_75")
+new @("$2_1_158") - :inArc($ = "$2_1_15A", id = "", weight = 1) -> @("$2_1_57")
+new @("$2_1_150") - :inArc($ = "$2_1_157", id = "", weight = 1) -> @("$2_1_78")
+new @("$2_1_150") - :inArc($ = "$2_1_152", id = "", weight = 1) -> @("$2_1_54")
+new @("$2_1_148") - :inArc($ = "$2_1_14D", id = "", weight = 1) -> @("$2_1_72")
+new @("$2_1_148") - :inArc($ = "$2_1_14E", id = "", weight = 1) -> @("$2_1_75")
+new @("$2_1_148") - :inArc($ = "$2_1_14F", id = "", weight = 1) -> @("$2_1_78")
+new @("$2_1_148") - :inArc($ = "$2_1_14A", id = "", weight = 1) -> @("$2_1_51")
+new @("$2_1_140") - :inArc($ = "$2_1_142", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_13A") - :inArc($ = "$2_1_13C", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_133") - :inArc($ = "$2_1_135", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_12D") - :inArc($ = "$2_1_12F", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_126") - :inArc($ = "$2_1_128", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_11B") - :inArc($ = "$2_1_11D", id = "", weight = 1) -> @("$2_1_51")
+new @("$2_1_110") - :inArc($ = "$2_1_112", id = "", weight = 1) -> @("$2_1_51")
+new @("$2_1_105") - :inArc($ = "$2_1_107", id = "", weight = 1) -> @("$2_1_51")
+new @("$2_1_FA") - :inArc($ = "$2_1_FC", id = "", weight = 1) -> @("$2_1_51")
+new @("$2_1_F1") - :inArc($ = "$2_1_F3", id = "", weight = 1) -> @("$2_1_54")
+new @("$2_1_E8") - :inArc($ = "$2_1_EA", id = "", weight = 1) -> @("$2_1_54")
+new @("$2_1_DF") - :inArc($ = "$2_1_E1", id = "", weight = 1) -> @("$2_1_54")
+new @("$2_1_D6") - :inArc($ = "$2_1_D8", id = "", weight = 1) -> @("$2_1_54")
+new @("$2_1_CF") - :inArc($ = "$2_1_D1", id = "", weight = 1) -> @("$2_1_57")
+new @("$2_1_C8") - :inArc($ = "$2_1_CA", id = "", weight = 1) -> @("$2_1_57")
+new @("$2_1_C1") - :inArc($ = "$2_1_C3", id = "", weight = 1) -> @("$2_1_57")
+new @("$2_1_B8") - :inArc($ = "$2_1_BA", id = "", weight = 1) -> @("$2_1_5A")
+new @("$2_1_AF") - :inArc($ = "$2_1_B1", id = "", weight = 1) -> @("$2_1_5A")
+new @("$2_1_A6") - :inArc($ = "$2_1_A8", id = "", weight = 1) -> @("$2_1_5A")
+new @("$2_1_9D") - :inArc($ = "$2_1_9F", id = "", weight = 1) -> @("$2_1_5A")
+new @("$2_1_96") - :inArc($ = "$2_1_98", id = "", weight = 1) -> @("$2_1_5D")
+new @("$2_1_8F") - :inArc($ = "$2_1_91", id = "", weight = 1) -> @("$2_1_5D")
+new @("$2_1_88") - :inArc($ = "$2_1_8A", id = "", weight = 1) -> @("$2_1_5D")
+new @("$2_1_83") - :inArc($ = "$2_1_85", id = "", weight = 1) -> @("$2_1_60")
+new @("$2_1_7E") - :inArc($ = "$2_1_80", id = "", weight = 1) -> @("$2_1_60")
+# total number of edges: 153
+
+# end of graph "DefaultGraph" saved by GrsExport
+
+
+
+
+new sys:net_addition::System()
+new pn_result:net_addition::PN(net_s="result")
+new a_result:net_addition::Addition(target=pn_result)
+new sys-:net_addition::rules(order=1)->a_result
+new pn_Coffee_Making:net_addition::PN(net_s="Coffee_Making")
+new a_result-:net_addition::petrinets->pn_Coffee_Making
+new pn_Milk_Heating:net_addition::PN(net_s="Milk_Heating")
+new a_result-:net_addition::petrinets->pn_Milk_Heating
+new pn_Milk_Cappuccino:net_addition::PN(net_s="Milk_Cappuccino")
+new a_result-:net_addition::petrinets->pn_Milk_Cappuccino
+new pn_No_Prepare:net_addition::PN(net_s="No_Prepare")
+new a_result-:net_addition::petrinets->pn_No_Prepare
+new pn_Espresso:net_addition::PN(net_s="Espresso")
+new a_result-:net_addition::petrinets->pn_Espresso
+new pn_Coffee:net_addition::PN(net_s="Coffee")
+new a_result-:net_addition::petrinets->pn_Coffee
+new pn_Milk:net_addition::PN(net_s="Milk")
+new a_result-:net_addition::petrinets->pn_Milk
+new pn_Main:net_addition::PN(net_s="Main")
+new a_result-:net_addition::petrinets->pn_Main
+new pn_Statemachine:net_addition::PN(net_s="Statemachine")
+new a_result-:net_addition::petrinets->pn_Statemachine
+new pn_InInh_v1:net_addition::PN(net_s="InInh")
+new a_result-:net_addition::petrinets->pn_InInh_v1
+new pn_InInh_v2:net_addition::PN(net_s="InInh")
+new a_result-:net_addition::petrinets->pn_InInh_v2
+new pn_InInh_v3:net_addition::PN(net_s="InInh")
+new a_result-:net_addition::petrinets->pn_InInh_v3
+new pn_InInh_v4:net_addition::PN(net_s="InInh")
+new a_result-:net_addition::petrinets->pn_InInh_v4
+new pn_In_v1:net_addition::PN(net_s="In")
+new a_result-:net_addition::petrinets->pn_In_v1
+new pn_InOut_v1:net_addition::PN(net_s="InOut")
+new a_result-:net_addition::petrinets->pn_InOut_v1
+new pn_Inh_v1:net_addition::PN(net_s="Inh")
+new a_result-:net_addition::petrinets->pn_Inh_v1
+new n_pn_result_Coffee:net_addition::PetriNode(item_s="Coffee")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Coffee
+new n_pn_result_Coffee -:net_addition::configures(activates=True, weight=1)-> pn_Coffee_Making
+new n_pn_result_Milk:net_addition::PetriNode(item_s="Milk")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Milk
+new n_pn_result_Milk -:net_addition::configures(activates=True, weight=1)-> pn_Milk_Heating
+new n_pn_result_Cappuccino:net_addition::PetriNode(item_s="Cappuccino")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Cappuccino
+new n_pn_result_Cappuccino -:net_addition::configures(activates=False, weight=1)-> pn_Milk_Heating
+new n_pn_result_Cappuccino -:net_addition::configures(activates=True, weight=1)-> pn_Milk_Cappuccino
+new n_pn_result_Coffee -:net_addition::configures(activates=False, weight=1)-> pn_No_Prepare
+new n_pn_result_Milk -:net_addition::configures(activates=False, weight=1)-> pn_No_Prepare
+new n_pn_result_Cappuccino -:net_addition::configures(activates=False, weight=1)-> pn_No_Prepare
+new n_pn_result_Espresso:net_addition::PetriNode(item_s="Espresso")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Espresso
+new n_pn_result_Espresso -:net_addition::configures(activates=True, weight=1)-> pn_Espresso
+new n_pn_result_Coffee -:net_addition::configures(activates=True, weight=1)-> pn_Coffee
+new n_pn_result_Milk -:net_addition::configures(activates=True, weight=1)-> pn_Milk
+new f_Preparing:net_addition::Fusion(rename="Preparing")
+new a_result-:net_addition::fusions->f_Preparing
+new n_pn_Main_Preparing:net_addition::PetriNode(item_s="Preparing")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Preparing
+new f_Preparing-:net_addition::sources->n_pn_Main_Preparing
+new n_pn_Coffee_Making_coffee_making_in:net_addition::PetriNode(item_s="coffee_making_in")
+new pn_Coffee_Making-:net_addition::pn_nodes->n_pn_Coffee_Making_coffee_making_in
+new f_Preparing-:net_addition::sources->n_pn_Coffee_Making_coffee_making_in
+new n_pn_Milk_Heating_milk_heating_in:net_addition::PetriNode(item_s="milk_heating_in")
+new pn_Milk_Heating-:net_addition::pn_nodes->n_pn_Milk_Heating_milk_heating_in
+new f_Preparing-:net_addition::sources->n_pn_Milk_Heating_milk_heating_in
+new n_pn_Milk_Cappuccino_milk_capp_in:net_addition::PetriNode(item_s="milk_capp_in")
+new pn_Milk_Cappuccino-:net_addition::pn_nodes->n_pn_Milk_Cappuccino_milk_capp_in
+new f_Preparing-:net_addition::sources->n_pn_Milk_Cappuccino_milk_capp_in
+new n_pn_No_Prepare_in:net_addition::PetriNode(item_s="in")
+new pn_No_Prepare-:net_addition::pn_nodes->n_pn_No_Prepare_in
+new f_Preparing-:net_addition::sources->n_pn_No_Prepare_in
+new f_Preparing_out:net_addition::Fusion(rename="Preparing_out")
+new a_result-:net_addition::fusions->f_Preparing_out
+new n_pn_Main_Preparing_out:net_addition::PetriNode(item_s="Preparing_out")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Preparing_out
+new f_Preparing_out-:net_addition::sources->n_pn_Main_Preparing_out
+new n_pn_Coffee_Making_coffee_making_out:net_addition::PetriNode(item_s="coffee_making_out")
+new pn_Coffee_Making-:net_addition::pn_nodes->n_pn_Coffee_Making_coffee_making_out
+new f_Preparing_out-:net_addition::sources->n_pn_Coffee_Making_coffee_making_out
+new n_pn_Milk_Heating_milk_heating_out:net_addition::PetriNode(item_s="milk_heating_out")
+new pn_Milk_Heating-:net_addition::pn_nodes->n_pn_Milk_Heating_milk_heating_out
+new f_Preparing_out-:net_addition::sources->n_pn_Milk_Heating_milk_heating_out
+new n_pn_Milk_Cappuccino_milk_capp_out:net_addition::PetriNode(item_s="milk_capp_out")
+new pn_Milk_Cappuccino-:net_addition::pn_nodes->n_pn_Milk_Cappuccino_milk_capp_out
+new f_Preparing_out-:net_addition::sources->n_pn_Milk_Cappuccino_milk_capp_out
+new n_pn_No_Prepare_out:net_addition::PetriNode(item_s="out")
+new pn_No_Prepare-:net_addition::pn_nodes->n_pn_No_Prepare_out
+new f_Preparing_out-:net_addition::sources->n_pn_No_Prepare_out
+new f_Ingredients:net_addition::Fusion(rename="Ingredients")
+new a_result-:net_addition::fusions->f_Ingredients
+new n_pn_Main_Ingredients:net_addition::PetriNode(item_s="Ingredients")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Ingredients
+new f_Ingredients-:net_addition::sources->n_pn_Main_Ingredients
+new n_pn_Espresso_espresso_in:net_addition::PetriNode(item_s="espresso_in")
+new pn_Espresso-:net_addition::pn_nodes->n_pn_Espresso_espresso_in
+new f_Ingredients-:net_addition::sources->n_pn_Espresso_espresso_in
+new n_pn_Coffee_coffee_in:net_addition::PetriNode(item_s="coffee_in")
+new pn_Coffee-:net_addition::pn_nodes->n_pn_Coffee_coffee_in
+new f_Ingredients-:net_addition::sources->n_pn_Coffee_coffee_in
+new n_pn_Milk_milk_in:net_addition::PetriNode(item_s="milk_in")
+new pn_Milk-:net_addition::pn_nodes->n_pn_Milk_milk_in
+new f_Ingredients-:net_addition::sources->n_pn_Milk_milk_in
+new f_Ingredients_out:net_addition::Fusion(rename="Ingredients_out")
+new a_result-:net_addition::fusions->f_Ingredients_out
+new n_pn_Main_Ingredients_out:net_addition::PetriNode(item_s="Ingredients_out")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Ingredients_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Main_Ingredients_out
+new n_pn_Espresso_espresso_out:net_addition::PetriNode(item_s="espresso_out")
+new pn_Espresso-:net_addition::pn_nodes->n_pn_Espresso_espresso_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Espresso_espresso_out
+new n_pn_Coffee_coffee_out:net_addition::PetriNode(item_s="coffee_out")
+new pn_Coffee-:net_addition::pn_nodes->n_pn_Coffee_coffee_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Coffee_coffee_out
+new n_pn_Milk_milk_out:net_addition::PetriNode(item_s="milk_out")
+new pn_Milk-:net_addition::pn_nodes->n_pn_Milk_milk_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Milk_milk_out
+new f_event_coffee:net_addition::Fusion(rename="event_coffee")
+new a_result-:net_addition::fusions->f_event_coffee
+new n_pn_InInh_v1_p:net_addition::PetriNode(item_s="p")
+new pn_InInh_v1-:net_addition::pn_nodes->n_pn_InInh_v1_p
+new f_event_coffee-:net_addition::sources->n_pn_InInh_v1_p
+new n_pn_Statemachine_event_coffee:net_addition::PetriNode(item_s="event_coffee")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_event_coffee
+new f_event_coffee-:net_addition::sources->n_pn_Statemachine_event_coffee
+new f_event_espresso:net_addition::Fusion(rename="event_espresso")
+new a_result-:net_addition::fusions->f_event_espresso
+new n_pn_InInh_v2_p:net_addition::PetriNode(item_s="p")
+new pn_InInh_v2-:net_addition::pn_nodes->n_pn_InInh_v2_p
+new f_event_espresso-:net_addition::sources->n_pn_InInh_v2_p
+new n_pn_Statemachine_event_espresso:net_addition::PetriNode(item_s="event_espresso")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_event_espresso
+new f_event_espresso-:net_addition::sources->n_pn_Statemachine_event_espresso
+new f_event_milk:net_addition::Fusion(rename="event_milk")
+new a_result-:net_addition::fusions->f_event_milk
+new n_pn_InInh_v3_p:net_addition::PetriNode(item_s="p")
+new pn_InInh_v3-:net_addition::pn_nodes->n_pn_InInh_v3_p
+new f_event_milk-:net_addition::sources->n_pn_InInh_v3_p
+new n_pn_Statemachine_event_milk:net_addition::PetriNode(item_s="event_milk")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_event_milk
+new f_event_milk-:net_addition::sources->n_pn_Statemachine_event_milk
+new f_event_cappuccino:net_addition::Fusion(rename="event_cappuccino")
+new a_result-:net_addition::fusions->f_event_cappuccino
+new n_pn_InInh_v4_p:net_addition::PetriNode(item_s="p")
+new pn_InInh_v4-:net_addition::pn_nodes->n_pn_InInh_v4_p
+new f_event_cappuccino-:net_addition::sources->n_pn_InInh_v4_p
+new n_pn_Statemachine_event_cappuccino:net_addition::PetriNode(item_s="event_cappuccino")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_event_cappuccino
+new f_event_cappuccino-:net_addition::sources->n_pn_Statemachine_event_cappuccino
+new f_req_coffee:net_addition::Fusion(rename="req.coffee")
+new a_result-:net_addition::fusions->f_req_coffee
+new n_pn_InInh_v1_t:net_addition::PetriNode(item_s="t")
+new pn_InInh_v1-:net_addition::pn_nodes->n_pn_InInh_v1_t
+new f_req_coffee-:net_addition::sources->n_pn_InInh_v1_t
+new n_pn_Statemachine_req_coffee:net_addition::PetriNode(item_s="req.coffee")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_req_coffee
+new f_req_coffee-:net_addition::sources->n_pn_Statemachine_req_coffee
+new f_req_espresso:net_addition::Fusion(rename="req.espresso")
+new a_result-:net_addition::fusions->f_req_espresso
+new n_pn_InInh_v2_t:net_addition::PetriNode(item_s="t")
+new pn_InInh_v2-:net_addition::pn_nodes->n_pn_InInh_v2_t
+new f_req_espresso-:net_addition::sources->n_pn_InInh_v2_t
+new n_pn_Statemachine_req_espresso:net_addition::PetriNode(item_s="req.espresso")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_req_espresso
+new f_req_espresso-:net_addition::sources->n_pn_Statemachine_req_espresso
+new f_req_milk:net_addition::Fusion(rename="req.milk")
+new a_result-:net_addition::fusions->f_req_milk
+new n_pn_InInh_v3_t:net_addition::PetriNode(item_s="t")
+new pn_InInh_v3-:net_addition::pn_nodes->n_pn_InInh_v3_t
+new f_req_milk-:net_addition::sources->n_pn_InInh_v3_t
+new n_pn_Statemachine_req_milk:net_addition::PetriNode(item_s="req.milk")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_req_milk
+new f_req_milk-:net_addition::sources->n_pn_Statemachine_req_milk
+new f_req_cappuccino:net_addition::Fusion(rename="req.cappuccino")
+new a_result-:net_addition::fusions->f_req_cappuccino
+new n_pn_InInh_v4_t:net_addition::PetriNode(item_s="t")
+new pn_InInh_v4-:net_addition::pn_nodes->n_pn_InInh_v4_t
+new f_req_cappuccino-:net_addition::sources->n_pn_InInh_v4_t
+new n_pn_Statemachine_req_cappuccino:net_addition::PetriNode(item_s="req.cappuccino")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_req_cappuccino
+new f_req_cappuccino-:net_addition::sources->n_pn_Statemachine_req_cappuccino
+new f_end_running:net_addition::Fusion(rename="end_running")
+new a_result-:net_addition::fusions->f_end_running
+new n_pn_In_v1_t:net_addition::PetriNode(item_s="t")
+new pn_In_v1-:net_addition::pn_nodes->n_pn_In_v1_t
+new f_end_running-:net_addition::sources->n_pn_In_v1_t
+new n_pn_Main_end_running:net_addition::PetriNode(item_s="end_running")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_end_running
+new f_end_running-:net_addition::sources->n_pn_Main_end_running
+new f_event_reset:net_addition::Fusion(rename="event_reset")
+new a_result-:net_addition::fusions->f_event_reset
+new n_pn_In_v1_p:net_addition::PetriNode(item_s="p")
+new pn_In_v1-:net_addition::pn_nodes->n_pn_In_v1_p
+new f_event_reset-:net_addition::sources->n_pn_In_v1_p
+new n_pn_Statemachine_event_reset:net_addition::PetriNode(item_s="event_reset")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_event_reset
+new f_event_reset-:net_addition::sources->n_pn_Statemachine_event_reset
+new f_state_None:net_addition::Fusion(rename="state_None")
+new a_result-:net_addition::fusions->f_state_None
+new n_pn_Inh_v1_p:net_addition::PetriNode(item_s="p")
+new pn_Inh_v1-:net_addition::pn_nodes->n_pn_Inh_v1_p
+new f_state_None-:net_addition::sources->n_pn_Inh_v1_p
+new n_pn_InOut_v1_p:net_addition::PetriNode(item_s="p")
+new pn_InOut_v1-:net_addition::pn_nodes->n_pn_InOut_v1_p
+new f_state_None-:net_addition::sources->n_pn_InOut_v1_p
+new n_pn_Statemachine_state_None:net_addition::PetriNode(item_s="state_None")
+new pn_Statemachine-:net_addition::pn_nodes->n_pn_Statemachine_state_None
+new f_state_None-:net_addition::sources->n_pn_Statemachine_state_None
+new f_t24:net_addition::Fusion(rename="t24")
+new a_result-:net_addition::fusions->f_t24
+new n_pn_InOut_v1_t:net_addition::PetriNode(item_s="t")
+new pn_InOut_v1-:net_addition::pn_nodes->n_pn_InOut_v1_t
+new f_t24-:net_addition::sources->n_pn_InOut_v1_t
+new n_pn_Main_t24:net_addition::PetriNode(item_s="t24")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_t24
+new f_t24-:net_addition::sources->n_pn_Main_t24
+new f_start_transition:net_addition::Fusion(rename="start_transition")
+new a_result-:net_addition::fusions->f_start_transition
+new n_pn_Inh_v1_t:net_addition::PetriNode(item_s="t")
+new pn_Inh_v1-:net_addition::pn_nodes->n_pn_Inh_v1_t
+new f_start_transition-:net_addition::sources->n_pn_Inh_v1_t
+new n_pn_Main_start_transition:net_addition::PetriNode(item_s="start_transition")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_start_transition
+new f_start_transition-:net_addition::sources->n_pn_Main_start_transition
+exec na::Transform()
+exec na::NACleanup()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/chain/coffee_capp_stn_na/net/machine.na.transformed.grs

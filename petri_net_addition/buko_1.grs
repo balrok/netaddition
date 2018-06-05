@@ -1,0 +1,24 @@
+new pn:PetriNet(id="buko_1")
+new net:Page(id="buko_1")
+new pn -:pages-> net
+
+new p8:Place(id="p8")
+new p9:Place(id="p9")
+new net-:places->p8
+new net-:places->p9
+
+
+
+new t9:Transition(id="t9")
+new net-:transitions->t9
+new p9-:outArc->t9
+new t9-:inArc->p8
+
+
+
+new tin:Transition(id="tin")
+new net-:transitions->tin
+new tout:Transition(id="tout")
+new net-:transitions->tout
+new tin-:inArc->p9
+new p8-:outArc->tout

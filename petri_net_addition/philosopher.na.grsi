@@ -1,0 +1,140 @@
+new graph "../allinone/Rules.grg"
+include layout.grsi
+include phil.grs
+include service.grs
+include talk.grs
+
+new sys:net_addition::System()
+new pn_result:net_addition::PN(net_s="result")
+new a_result:net_addition::Addition(target=pn_result)
+new sys-:net_addition::rules(order=1)->a_result
+new pn_phil_v1:net_addition::PN(net_s="phil")
+new a_result-:net_addition::petrinets->pn_phil_v1
+new pn_phil_v2:net_addition::PN(net_s="phil")
+new a_result-:net_addition::petrinets->pn_phil_v2
+new pn_phil_v3:net_addition::PN(net_s="phil")
+new a_result-:net_addition::petrinets->pn_phil_v3
+new pn_talk_v1:net_addition::PN(net_s="talk")
+new a_result-:net_addition::petrinets->pn_talk_v1
+new pn_talk_v2:net_addition::PN(net_s="talk")
+new a_result-:net_addition::petrinets->pn_talk_v2
+new pn_talk_v3:net_addition::PN(net_s="talk")
+new a_result-:net_addition::petrinets->pn_talk_v3
+new pn_service_v1:net_addition::PN(net_s="service")
+new a_result-:net_addition::petrinets->pn_service_v1
+new pn_service_v2:net_addition::PN(net_s="service")
+new a_result-:net_addition::petrinets->pn_service_v2
+new pn_service_v3:net_addition::PN(net_s="service")
+new a_result-:net_addition::petrinets->pn_service_v3
+new n_pn_phil_v1_full:net_addition::PetriNode(item_s="full")
+new pn_phil_v1-:net_addition::pn_nodes->n_pn_phil_v1_full
+new n_pn_phil_v1_full -:net_addition::configures(activates=False, weight=2)-> pn_phil_v1
+new n_pn_phil_v2_full:net_addition::PetriNode(item_s="full")
+new pn_phil_v2-:net_addition::pn_nodes->n_pn_phil_v2_full
+new n_pn_phil_v2_full -:net_addition::configures(activates=False, weight=2)-> pn_phil_v2
+new n_pn_phil_v3_full:net_addition::PetriNode(item_s="full")
+new pn_phil_v3-:net_addition::pn_nodes->n_pn_phil_v3_full
+new n_pn_phil_v3_full -:net_addition::configures(activates=False, weight=2)-> pn_phil_v3
+new n_pn_phil_v1_full -:net_addition::configures(activates=True, weight=2)-> pn_talk_v1
+new n_pn_phil_v2_full -:net_addition::configures(activates=True, weight=2)-> pn_talk_v2
+new n_pn_phil_v3_full -:net_addition::configures(activates=True, weight=2)-> pn_talk_v3
+new n_pn_result_talk:net_addition::PetriNode(item_s="talk")
+new pn_result-:net_addition::pn_nodes->n_pn_result_talk
+new n_pn_result_talk -:net_addition::configures(activates=True, weight=3)-> pn_service_v1
+new n_pn_result_talk -:net_addition::configures(activates=True, weight=3)-> pn_service_v2
+new n_pn_result_talk -:net_addition::configures(activates=True, weight=3)-> pn_service_v3
+new f_fork1:net_addition::Fusion(rename="fork1")
+new a_result-:net_addition::fusions->f_fork1
+new n_pn_service_v1_fork:net_addition::PetriNode(item_s="fork")
+new pn_service_v1-:net_addition::pn_nodes->n_pn_service_v1_fork
+new f_fork1-:net_addition::sources->n_pn_service_v1_fork
+new n_pn_phil_v1_fork2:net_addition::PetriNode(item_s="fork2")
+new pn_phil_v1-:net_addition::pn_nodes->n_pn_phil_v1_fork2
+new f_fork1-:net_addition::sources->n_pn_phil_v1_fork2
+new n_pn_phil_v2_fork1:net_addition::PetriNode(item_s="fork1")
+new pn_phil_v2-:net_addition::pn_nodes->n_pn_phil_v2_fork1
+new f_fork1-:net_addition::sources->n_pn_phil_v2_fork1
+new f_fork2:net_addition::Fusion(rename="fork2")
+new a_result-:net_addition::fusions->f_fork2
+new n_pn_service_v2_fork:net_addition::PetriNode(item_s="fork")
+new pn_service_v2-:net_addition::pn_nodes->n_pn_service_v2_fork
+new f_fork2-:net_addition::sources->n_pn_service_v2_fork
+new n_pn_phil_v2_fork2:net_addition::PetriNode(item_s="fork2")
+new pn_phil_v2-:net_addition::pn_nodes->n_pn_phil_v2_fork2
+new f_fork2-:net_addition::sources->n_pn_phil_v2_fork2
+new n_pn_phil_v3_fork1:net_addition::PetriNode(item_s="fork1")
+new pn_phil_v3-:net_addition::pn_nodes->n_pn_phil_v3_fork1
+new f_fork2-:net_addition::sources->n_pn_phil_v3_fork1
+new f_fork3:net_addition::Fusion(rename="fork3")
+new a_result-:net_addition::fusions->f_fork3
+new n_pn_service_v3_fork:net_addition::PetriNode(item_s="fork")
+new pn_service_v3-:net_addition::pn_nodes->n_pn_service_v3_fork
+new f_fork3-:net_addition::sources->n_pn_service_v3_fork
+new n_pn_phil_v3_fork2:net_addition::PetriNode(item_s="fork2")
+new pn_phil_v3-:net_addition::pn_nodes->n_pn_phil_v3_fork2
+new f_fork3-:net_addition::sources->n_pn_phil_v3_fork2
+new n_pn_phil_v1_fork1:net_addition::PetriNode(item_s="fork1")
+new pn_phil_v1-:net_addition::pn_nodes->n_pn_phil_v1_fork1
+new f_fork3-:net_addition::sources->n_pn_phil_v1_fork1
+new f_wash:net_addition::Fusion(rename="wash")
+new a_result-:net_addition::fusions->f_wash
+new n_pn_service_v1_wash:net_addition::PetriNode(item_s="wash")
+new pn_service_v1-:net_addition::pn_nodes->n_pn_service_v1_wash
+new f_wash-:net_addition::sources->n_pn_service_v1_wash
+new n_pn_service_v2_wash:net_addition::PetriNode(item_s="wash")
+new pn_service_v2-:net_addition::pn_nodes->n_pn_service_v2_wash
+new f_wash-:net_addition::sources->n_pn_service_v2_wash
+new n_pn_service_v3_wash:net_addition::PetriNode(item_s="wash")
+new pn_service_v3-:net_addition::pn_nodes->n_pn_service_v3_wash
+new f_wash-:net_addition::sources->n_pn_service_v3_wash
+new f_think1:net_addition::Fusion(rename="think1")
+new a_result-:net_addition::fusions->f_think1
+new n_pn_phil_v1_think:net_addition::PetriNode(item_s="think")
+new pn_phil_v1-:net_addition::pn_nodes->n_pn_phil_v1_think
+new f_think1-:net_addition::sources->n_pn_phil_v1_think
+new n_pn_talk_v1_think:net_addition::PetriNode(item_s="think")
+new pn_talk_v1-:net_addition::pn_nodes->n_pn_talk_v1_think
+new f_think1-:net_addition::sources->n_pn_talk_v1_think
+new f_think2:net_addition::Fusion(rename="think2")
+new a_result-:net_addition::fusions->f_think2
+new n_pn_phil_v2_think:net_addition::PetriNode(item_s="think")
+new pn_phil_v2-:net_addition::pn_nodes->n_pn_phil_v2_think
+new f_think2-:net_addition::sources->n_pn_phil_v2_think
+new n_pn_talk_v2_think:net_addition::PetriNode(item_s="think")
+new pn_talk_v2-:net_addition::pn_nodes->n_pn_talk_v2_think
+new f_think2-:net_addition::sources->n_pn_talk_v2_think
+new f_think3:net_addition::Fusion(rename="think3")
+new a_result-:net_addition::fusions->f_think3
+new n_pn_phil_v3_think:net_addition::PetriNode(item_s="think")
+new pn_phil_v3-:net_addition::pn_nodes->n_pn_phil_v3_think
+new f_think3-:net_addition::sources->n_pn_phil_v3_think
+new n_pn_talk_v3_think:net_addition::PetriNode(item_s="think")
+new pn_talk_v3-:net_addition::pn_nodes->n_pn_talk_v3_think
+new f_think3-:net_addition::sources->n_pn_talk_v3_think
+new f_talk:net_addition::Fusion(rename="talk")
+new a_result-:net_addition::fusions->f_talk
+new n_pn_talk_v1_talk:net_addition::PetriNode(item_s="talk")
+new pn_talk_v1-:net_addition::pn_nodes->n_pn_talk_v1_talk
+new f_talk-:net_addition::sources->n_pn_talk_v1_talk
+new n_pn_talk_v2_talk:net_addition::PetriNode(item_s="talk")
+new pn_talk_v2-:net_addition::pn_nodes->n_pn_talk_v2_talk
+new f_talk-:net_addition::sources->n_pn_talk_v2_talk
+new n_pn_talk_v3_talk:net_addition::PetriNode(item_s="talk")
+new pn_talk_v3-:net_addition::pn_nodes->n_pn_talk_v3_talk
+new f_talk-:net_addition::sources->n_pn_talk_v3_talk
+exec na::Transform()
+exec na::NACleanup()
+exec PetrinetCleanup()*
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/philosopher.na.transformed.grs
+exec dyn2r::flatten()
+exec PetrinetCleanup()*
+exec id_unique()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/philosopher.na.nodyn.grs
+exec TransformMultiArcsToWeight()*
+exec Init(4)
+exec ToPTNet()* | [InfoInhibitors()] | CheckError()
+validate exitonfailure strict only specified
+exec id_replace_lola()
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/philosopher.na.noinh.grs

@@ -1,0 +1,388 @@
+Tina version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+
+mode -R
+
+INPUT NET ------------------------------------------------------- 
+
+parsed net noname
+
+37 places, 62 transitions
+
+net noname
+tr Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1 event_cappuccino_1 state_Cappuccino -> event_cappuccino_0 state_Cappuccino 
+tr Cappuccino_Cappuccino_coffee_out_event_coffee_1 event_coffee_1 state_Cappuccino -> event_coffee_0 state_Cappuccino 
+tr Cappuccino_Cappuccino_espresso_out_event_espresso_1 event_espresso_1 state_Cappuccino -> event_espresso_0 state_Cappuccino 
+tr Cappuccino_Cappuccino_milk_out_event_milk_1 event_milk_1 state_Cappuccino -> event_milk_0 state_Cappuccino 
+tr Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1 Cappuccino_1 Espresso Milk_1 event_reset_1 state_Cappuccino state_None_0 -> Cappuccino_0 Milk_0 event_reset_0 state_None_1 
+tr Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1 Cappuccino_1 Espresso Milk_1 event_reset_1 state_Cappuccino state_None_1 -> Cappuccino_0 Milk_0 event_reset_0 
+tr {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1} event_cappuccino_1 {state_Coffee-Milk} -> event_cappuccino_0 {state_Coffee-Milk} 
+tr {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1} event_coffee_1 {state_Coffee-Milk} -> event_coffee_0 {state_Coffee-Milk} 
+tr {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1} event_espresso_1 {state_Coffee-Milk} -> event_espresso_0 {state_Coffee-Milk} 
+tr {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1} event_milk_1 {state_Coffee-Milk} -> event_milk_0 {state_Coffee-Milk} 
+tr {Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1} Coffee_1 Milk_1 event_reset_1 {state_Coffee-Milk} state_None_0 -> Coffee_0 Milk_0 event_reset_0 state_None_1 
+tr {Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1} Coffee_1 Milk_1 event_reset_1 {state_Coffee-Milk} state_None_1 -> Coffee_0 Milk_0 event_reset_0 
+tr {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1} Milk_0 event_milk_1 state_Coffee -> Milk_1 event_milk_0 {state_Coffee-Milk} 
+tr {Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1} Milk_1 event_milk_1 state_Coffee -> event_milk_0 {state_Coffee-Milk} 
+tr Coffee_Coffee_cappuccino_out_event_cappuccino_1 event_cappuccino_1 state_Coffee -> event_cappuccino_0 state_Coffee 
+tr Coffee_Coffee_coffee_out_event_coffee_1 event_coffee_1 state_Coffee -> event_coffee_0 state_Coffee 
+tr Coffee_Coffee_espresso_out_event_espresso_1 event_espresso_1 state_Coffee -> event_espresso_0 state_Coffee 
+tr Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1 Coffee_1 event_reset_1 state_Coffee state_None_0 -> Coffee_0 event_reset_0 state_None_1 
+tr Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1 Coffee_1 event_reset_1 state_Coffee state_None_1 -> Coffee_0 event_reset_0 
+tr {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1} event_cappuccino_1 {state_Espresso-Milk} -> event_cappuccino_0 {state_Espresso-Milk} 
+tr {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1} event_coffee_1 {state_Espresso-Milk} -> event_coffee_0 {state_Espresso-Milk} 
+tr {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1} event_espresso_1 {state_Espresso-Milk} -> event_espresso_0 {state_Espresso-Milk} 
+tr {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1} event_milk_1 {state_Espresso-Milk} -> event_milk_0 {state_Espresso-Milk} 
+tr {Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1} Espresso Milk_1 event_reset_1 {state_Espresso-Milk} state_None_0 -> Milk_0 event_reset_0 state_None_1 
+tr {Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1} Espresso Milk_1 event_reset_1 {state_Espresso-Milk} state_None_1 -> Milk_0 event_reset_0 
+tr {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1} Milk_0 event_milk_1 state_Espresso -> Milk_1 event_milk_0 {state_Espresso-Milk} 
+tr {Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1} Milk_1 event_milk_1 state_Espresso -> event_milk_0 {state_Espresso-Milk} 
+tr Espresso_Espresso_cappuccino_out_event_cappuccino_1 event_cappuccino_1 state_Espresso -> event_cappuccino_0 state_Espresso 
+tr Espresso_Espresso_coffee_out_event_coffee_1 event_coffee_1 state_Espresso -> event_coffee_0 state_Espresso 
+tr Espresso_Espresso_espresso_out_event_espresso_1 event_espresso_1 state_Espresso -> event_espresso_0 state_Espresso 
+tr Espresso_None_reset_in_state_None_0_out_event_reset_1 Espresso event_reset_1 state_Espresso state_None_0 -> event_reset_0 state_None_1 
+tr Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1 Espresso event_reset_1 state_Espresso state_None_1 -> event_reset_0 
+tr None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1 Cappuccino_0 Milk_0 event_cappuccino_1 state_None_1 -> Cappuccino_1 Espresso Milk_1 event_cappuccino_0 state_Cappuccino state_None_0 
+tr None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1 Cappuccino_1 Milk_0 event_cappuccino_1 state_None_1 -> Espresso Milk_1 event_cappuccino_0 state_Cappuccino state_None_0 
+tr None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1 Cappuccino_0 Milk_1 event_cappuccino_1 state_None_1 -> Cappuccino_1 Espresso event_cappuccino_0 state_Cappuccino state_None_0 
+tr None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1 Cappuccino_1 Milk_1 event_cappuccino_1 state_None_1 -> Espresso event_cappuccino_0 state_Cappuccino state_None_0 
+tr None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1 Coffee_0 event_coffee_1 state_None_1 -> Coffee_1 event_coffee_0 state_Coffee state_None_0 
+tr None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1 Coffee_1 event_coffee_1 state_None_1 -> event_coffee_0 state_Coffee state_None_0 
+tr None_Espresso_espresso_out_state_None_1_out_event_espresso_1 event_espresso_1 state_None_1 -> Espresso event_espresso_0 state_Espresso state_None_0 
+tr None_None_milk_inout_state_None_1_out_event_milk_1 event_milk_1 state_None_1 -> event_milk_0 state_None_1 
+tr None_None_reset_inout_state_None_1_out_event_reset_1 event_reset_1 state_None_1 -> event_reset_0 state_None_1 
+tr end_running_in_event_reset_0 Preparing_out Running event_reset_0 -> Stopping event_reset_1 
+tr end_running_in_event_reset_1_MUST_BE_DEAD Preparing_out Running event_reset_1 -> Stopping 
+tr no_prepare Cappuccino_0 Coffee_0 Milk_0 Preparing -> Cappuccino_0 Coffee_0 Milk_0 Preparing_out 
+tr {req.cappuccino} Stopped event_cappuccino_0 -> Stopped event_cappuccino_1 
+tr {req.coffee} Stopped event_coffee_0 -> Stopped event_coffee_1 
+tr {req.espresso} Stopped event_espresso_0 -> Stopped event_espresso_1 
+tr {req.milk} Stopped event_milk_0 -> Stopped event_milk_1 
+tr start_transition Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_None_0 -> Ingredients Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_None_0 
+tr t10_inout_Coffee_1 Coffee_1 Preparing -> Coffee_1 Grind_Coffee Water_Heating 
+tr t11 Pump -> Preparing_out 
+tr t14 Ingredients_out -> Preparing 
+tr t19_inout_Milk_1 Ingredients Milk_1 -> Ingredients_Milk Milk_1 
+tr t20 Ingredients_Milk -> Ingredients_out 
+tr t21_inout_Coffee_1 Coffee_1 Ingredients -> Coffee_1 Ingredients_Coffee 
+tr t22 Ingredients_Coffee -> Ingredients_out 
+tr t24_inout_state_None_1 Stopping state_None_1 -> Stopped state_None_1 
+tr t2_inout_Milk_1 Cappuccino_0 Milk_1 Preparing -> Cappuccino_0 Milk_1 Milk_Heating 
+tr t4 Milk_Heating -> Preparing_out 
+tr t5 Grind_Coffee Water_Heating -> Pump 
+tr t_capp2_inout_Cappuccino_1 Cappuccino_1 Preparing -> Cappuccino_1 Preparing_out 
+tr t_espresso Espresso Ingredients -> Espresso Ingredients_out 
+pl Cappuccino_0 (1)
+pl Coffee_0 (1)
+pl Milk_0 (1)
+pl Stopped (1)
+pl event_cappuccino_0 (1)
+pl event_coffee_0 (1)
+pl event_espresso_0 (1)
+pl event_milk_0 (1)
+pl event_reset_0 (1)
+pl state_None_1 (1)
+
+0.010s
+
+REACHABILITY ANALYSIS ------------------------------------------- 
+
+bounded
+
+133 marking(s), 430 transition(s)
+
+MARKINGS:
+
+0 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_None_1
+1 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_None_1
+2 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_None_1
+3 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_None_1
+4 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_None_1
+5 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+6 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_None_1
+7 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_None_1
+8 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_None_1
+9 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+10 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_None_1
+11 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_None_1
+12 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+13 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_None_1
+14 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+15 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+16 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+17 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+18 : Cappuccino_1 Coffee_0 Espresso Ingredients Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+19 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+20 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_None_1
+21 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_None_1
+22 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+23 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_None_1
+24 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+25 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Coffee state_None_0
+26 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Coffee state_None_0
+27 : Cappuccino_0 Coffee_1 Ingredients Milk_0 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+28 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+29 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_None_1
+30 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Espresso state_None_0
+31 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Espresso state_None_0
+32 : Cappuccino_0 Coffee_0 Espresso Ingredients Milk_0 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+33 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+34 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+35 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+36 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+37 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+38 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+39 : Cappuccino_1 Coffee_0 Espresso Ingredients_Milk Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+40 : Cappuccino_1 Coffee_0 Espresso Ingredients_out Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+41 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+42 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Coffee state_None_0
+43 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Coffee state_None_0
+44 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+45 : Cappuccino_0 Coffee_0 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_None_1
+46 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 state_Espresso state_None_0
+47 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 state_Espresso state_None_0
+48 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Coffee state_None_0
+49 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Coffee state_None_0
+50 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Coffee state_None_0
+51 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+52 : Cappuccino_0 Coffee_1 Ingredients_Coffee Milk_0 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+53 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Espresso state_None_0
+54 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Espresso state_None_0
+55 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Espresso state_None_0
+56 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+57 : Cappuccino_0 Coffee_0 Espresso Ingredients_out Milk_0 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+58 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+59 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+60 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+61 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+62 : Cappuccino_1 Coffee_0 Espresso Milk_1 Preparing Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+63 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Coffee state_None_0
+64 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Coffee state_None_0
+65 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Coffee state_None_0
+66 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+67 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 state_Espresso state_None_0
+68 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 state_Espresso state_None_0
+69 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 state_Espresso state_None_0
+70 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+71 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Coffee state_None_0
+72 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+73 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+74 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+75 : Cappuccino_0 Coffee_1 Ingredients Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+76 : Cappuccino_0 Coffee_1 Ingredients_out Milk_0 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+77 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Espresso state_None_0
+78 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+79 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+80 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+81 : Cappuccino_0 Coffee_0 Espresso Ingredients Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+82 : Cappuccino_0 Coffee_0 Espresso Milk_0 Preparing Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+83 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Cappuccino state_None_0
+84 : Cappuccino_1 Coffee_0 Espresso Milk_1 Preparing_out Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Cappuccino state_None_0
+85 : Cappuccino_0 Coffee_1 Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Coffee state_None_0
+86 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+87 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+88 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+89 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 state_Espresso state_None_0
+90 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+91 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+92 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_0 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+93 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+94 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+95 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+96 : Cappuccino_0 Coffee_1 Ingredients_Milk Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+97 : Cappuccino_0 Coffee_1 Ingredients_Coffee Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+98 : Cappuccino_0 Coffee_1 Milk_0 Preparing Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+99 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+100 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+101 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+102 : Cappuccino_0 Coffee_0 Espresso Ingredients_Milk Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+103 : Cappuccino_0 Coffee_0 Espresso Ingredients_out Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+104 : Cappuccino_0 Coffee_0 Espresso Milk_0 Preparing_out Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Espresso state_None_0
+105 : Cappuccino_1 Coffee_0 Espresso Milk_1 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_1 state_Cappuccino state_None_0
+106 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+107 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+108 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+109 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+110 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_0 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+111 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_0 event_espresso_1 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+112 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+113 : Cappuccino_0 Coffee_1 Ingredients_out Milk_1 Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+114 : Cappuccino_0 Coffee_1 Grind_Coffee Milk_0 Running Water_Heating event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+115 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_0 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+116 : Cappuccino_0 Coffee_0 Espresso Milk_1 Preparing Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+117 : Cappuccino_0 Coffee_0 Espresso Milk_0 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_1 state_Espresso state_None_0
+118 : Cappuccino_0 Coffee_0 Milk_0 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_None_1
+119 : Cappuccino_0 Coffee_1 Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 {state_Coffee-Milk} state_None_0
+120 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopped event_cappuccino_1 event_coffee_1 event_espresso_1 event_milk_1 event_reset_0 {state_Espresso-Milk} state_None_0
+121 : Cappuccino_0 Coffee_1 Milk_1 Preparing Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+122 : Cappuccino_0 Coffee_1 Milk_0 Pump Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+123 : Cappuccino_0 Coffee_0 Espresso Milk_1 Milk_Heating Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+124 : Cappuccino_0 Coffee_1 Grind_Coffee Milk_1 Running Water_Heating event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+125 : Cappuccino_0 Coffee_1 Milk_1 Milk_Heating Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+126 : Cappuccino_0 Coffee_1 Milk_0 Preparing_out Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 state_Coffee state_None_0
+127 : Cappuccino_0 Coffee_0 Espresso Milk_1 Preparing_out Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Espresso-Milk} state_None_0
+128 : Cappuccino_0 Coffee_1 Milk_1 Pump Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+129 : Cappuccino_0 Coffee_1 Milk_1 Preparing_out Running event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_0 {state_Coffee-Milk} state_None_0
+130 : Cappuccino_0 Coffee_1 Milk_0 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_1 state_Coffee state_None_0
+131 : Cappuccino_0 Coffee_0 Espresso Milk_1 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_1 {state_Espresso-Milk} state_None_0
+132 : Cappuccino_0 Coffee_1 Milk_1 Stopping event_cappuccino_0 event_coffee_0 event_espresso_0 event_milk_0 event_reset_1 {state_Coffee-Milk} state_None_0
+
+REACHABILITY GRAPH:
+
+0 -> {req.cappuccino}/1, {req.coffee}/2, {req.espresso}/3, {req.milk}/4
+1 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/5, {req.coffee}/6, {req.espresso}/7, {req.milk}/8
+2 -> None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/9, {req.cappuccino}/6, {req.espresso}/10, {req.milk}/11
+3 -> None_Espresso_espresso_out_state_None_1_out_event_espresso_1/12, {req.cappuccino}/7, {req.coffee}/10, {req.milk}/13
+4 -> None_None_milk_inout_state_None_1_out_event_milk_1/0, {req.cappuccino}/8, {req.coffee}/11, {req.espresso}/13
+5 -> {req.cappuccino}/14, {req.coffee}/15, {req.espresso}/16, {req.milk}/17, start_transition/18
+6 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/15, None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/19, {req.espresso}/20, {req.milk}/21
+7 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/16, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/22, {req.coffee}/20, {req.milk}/23
+8 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/17, None_None_milk_inout_state_None_1_out_event_milk_1/1, {req.coffee}/21, {req.espresso}/23
+9 -> {req.cappuccino}/19, {req.coffee}/24, {req.espresso}/25, {req.milk}/26, start_transition/27
+10 -> None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/25, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/28, {req.cappuccino}/20, {req.milk}/29
+11 -> None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/26, None_None_milk_inout_state_None_1_out_event_milk_1/2, {req.cappuccino}/21, {req.espresso}/29
+12 -> {req.cappuccino}/22, {req.coffee}/28, {req.espresso}/30, {req.milk}/31, start_transition/32
+13 -> None_Espresso_espresso_out_state_None_1_out_event_espresso_1/31, None_None_milk_inout_state_None_1_out_event_milk_1/3, {req.cappuccino}/23, {req.coffee}/29
+14 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/5, {req.coffee}/33, {req.espresso}/34, {req.milk}/35
+15 -> Cappuccino_Cappuccino_coffee_out_event_coffee_1/5, {req.cappuccino}/33, {req.espresso}/36, {req.milk}/37
+16 -> Cappuccino_Cappuccino_espresso_out_event_espresso_1/5, {req.cappuccino}/34, {req.coffee}/36, {req.milk}/38
+17 -> Cappuccino_Cappuccino_milk_out_event_milk_1/5, {req.cappuccino}/35, {req.coffee}/37, {req.espresso}/38
+18 -> t19_inout_Milk_1/39, t_espresso/40
+19 -> Coffee_Coffee_cappuccino_out_event_cappuccino_1/9, {req.coffee}/41, {req.espresso}/42, {req.milk}/43
+20 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/36, None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/42, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/44, {req.milk}/45
+21 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/37, None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/43, None_None_milk_inout_state_None_1_out_event_milk_1/6, {req.espresso}/45
+22 -> Espresso_Espresso_cappuccino_out_event_cappuccino_1/12, {req.coffee}/44, {req.espresso}/46, {req.milk}/47
+23 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/38, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/47, None_None_milk_inout_state_None_1_out_event_milk_1/7, {req.coffee}/45
+24 -> Coffee_Coffee_coffee_out_event_coffee_1/9, {req.cappuccino}/41, {req.espresso}/48, {req.milk}/49
+25 -> Coffee_Coffee_espresso_out_event_espresso_1/9, {req.cappuccino}/42, {req.coffee}/48, {req.milk}/50
+26 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/51, {req.cappuccino}/43, {req.coffee}/49, {req.espresso}/50
+27 -> t21_inout_Coffee_1/52
+28 -> Espresso_Espresso_coffee_out_event_coffee_1/12, {req.cappuccino}/44, {req.espresso}/53, {req.milk}/54
+29 -> None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/50, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/54, None_None_milk_inout_state_None_1_out_event_milk_1/10, {req.cappuccino}/45
+30 -> Espresso_Espresso_espresso_out_event_espresso_1/12, {req.cappuccino}/46, {req.coffee}/53, {req.milk}/55
+31 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/56, {req.cappuccino}/47, {req.coffee}/54, {req.espresso}/55
+32 -> t_espresso/57
+33 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/15, Cappuccino_Cappuccino_coffee_out_event_coffee_1/14, {req.espresso}/58, {req.milk}/59
+34 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/16, Cappuccino_Cappuccino_espresso_out_event_espresso_1/14, {req.coffee}/58, {req.milk}/60
+35 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/17, Cappuccino_Cappuccino_milk_out_event_milk_1/14, {req.coffee}/59, {req.espresso}/60
+36 -> Cappuccino_Cappuccino_coffee_out_event_coffee_1/16, Cappuccino_Cappuccino_espresso_out_event_espresso_1/15, {req.cappuccino}/58, {req.milk}/61
+37 -> Cappuccino_Cappuccino_coffee_out_event_coffee_1/17, Cappuccino_Cappuccino_milk_out_event_milk_1/15, {req.cappuccino}/59, {req.espresso}/61
+38 -> Cappuccino_Cappuccino_espresso_out_event_espresso_1/17, Cappuccino_Cappuccino_milk_out_event_milk_1/16, {req.cappuccino}/60, {req.coffee}/61
+39 -> t20/40
+40 -> t14/62
+41 -> Coffee_Coffee_cappuccino_out_event_cappuccino_1/24, Coffee_Coffee_coffee_out_event_coffee_1/19, {req.espresso}/63, {req.milk}/64
+42 -> Coffee_Coffee_cappuccino_out_event_cappuccino_1/25, Coffee_Coffee_espresso_out_event_espresso_1/19, {req.coffee}/63, {req.milk}/65
+43 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/66, Coffee_Coffee_cappuccino_out_event_cappuccino_1/26, {req.coffee}/64, {req.espresso}/65
+44 -> Espresso_Espresso_cappuccino_out_event_cappuccino_1/28, Espresso_Espresso_coffee_out_event_coffee_1/22, {req.espresso}/67, {req.milk}/68
+45 -> None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/61, None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/65, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/68, None_None_milk_inout_state_None_1_out_event_milk_1/20
+46 -> Espresso_Espresso_cappuccino_out_event_cappuccino_1/30, Espresso_Espresso_espresso_out_event_espresso_1/22, {req.coffee}/67, {req.milk}/69
+47 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/70, Espresso_Espresso_cappuccino_out_event_cappuccino_1/31, {req.coffee}/68, {req.espresso}/69
+48 -> Coffee_Coffee_coffee_out_event_coffee_1/25, Coffee_Coffee_espresso_out_event_espresso_1/24, {req.cappuccino}/63, {req.milk}/71
+49 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/72, Coffee_Coffee_coffee_out_event_coffee_1/26, {req.cappuccino}/64, {req.espresso}/71
+50 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/73, Coffee_Coffee_espresso_out_event_espresso_1/26, {req.cappuccino}/65, {req.coffee}/71
+51 -> {req.cappuccino}/66, {req.coffee}/72, {req.espresso}/73, {req.milk}/74, start_transition/75
+52 -> t22/76
+53 -> Espresso_Espresso_coffee_out_event_coffee_1/30, Espresso_Espresso_espresso_out_event_espresso_1/28, {req.cappuccino}/67, {req.milk}/77
+54 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/78, Espresso_Espresso_coffee_out_event_coffee_1/31, {req.cappuccino}/68, {req.espresso}/77
+55 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/79, Espresso_Espresso_espresso_out_event_espresso_1/31, {req.cappuccino}/69, {req.coffee}/77
+56 -> {req.cappuccino}/70, {req.coffee}/78, {req.espresso}/79, {req.milk}/80, start_transition/81
+57 -> t14/82
+58 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/36, Cappuccino_Cappuccino_coffee_out_event_coffee_1/34, Cappuccino_Cappuccino_espresso_out_event_espresso_1/33, {req.milk}/83
+59 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/37, Cappuccino_Cappuccino_coffee_out_event_coffee_1/35, Cappuccino_Cappuccino_milk_out_event_milk_1/33, {req.espresso}/83
+60 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/38, Cappuccino_Cappuccino_espresso_out_event_espresso_1/35, Cappuccino_Cappuccino_milk_out_event_milk_1/34, {req.coffee}/83
+61 -> Cappuccino_Cappuccino_coffee_out_event_coffee_1/38, Cappuccino_Cappuccino_espresso_out_event_espresso_1/37, Cappuccino_Cappuccino_milk_out_event_milk_1/36, {req.cappuccino}/83
+62 -> t_capp2_inout_Cappuccino_1/84
+63 -> Coffee_Coffee_cappuccino_out_event_cappuccino_1/48, Coffee_Coffee_coffee_out_event_coffee_1/42, Coffee_Coffee_espresso_out_event_espresso_1/41, {req.milk}/85
+64 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/86, Coffee_Coffee_cappuccino_out_event_cappuccino_1/49, Coffee_Coffee_coffee_out_event_coffee_1/43, {req.espresso}/85
+65 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/87, Coffee_Coffee_cappuccino_out_event_cappuccino_1/50, Coffee_Coffee_espresso_out_event_espresso_1/43, {req.coffee}/85
+66 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/51, {req.coffee}/86, {req.espresso}/87, {req.milk}/88
+67 -> Espresso_Espresso_cappuccino_out_event_cappuccino_1/53, Espresso_Espresso_coffee_out_event_coffee_1/46, Espresso_Espresso_espresso_out_event_espresso_1/44, {req.milk}/89
+68 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/90, Espresso_Espresso_cappuccino_out_event_cappuccino_1/54, Espresso_Espresso_coffee_out_event_coffee_1/47, {req.espresso}/89
+69 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/91, Espresso_Espresso_cappuccino_out_event_cappuccino_1/55, Espresso_Espresso_espresso_out_event_espresso_1/47, {req.coffee}/89
+70 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/56, {req.coffee}/90, {req.espresso}/91, {req.milk}/92
+71 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/93, Coffee_Coffee_coffee_out_event_coffee_1/50, Coffee_Coffee_espresso_out_event_espresso_1/49, {req.cappuccino}/85
+72 -> {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/51, {req.cappuccino}/86, {req.espresso}/93, {req.milk}/94
+73 -> {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/51, {req.cappuccino}/87, {req.coffee}/93, {req.milk}/95
+74 -> {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/51, {req.cappuccino}/88, {req.coffee}/94, {req.espresso}/95
+75 -> t19_inout_Milk_1/96, t21_inout_Coffee_1/97
+76 -> t14/98
+77 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/99, Espresso_Espresso_coffee_out_event_coffee_1/55, Espresso_Espresso_espresso_out_event_espresso_1/54, {req.cappuccino}/89
+78 -> {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/56, {req.cappuccino}/90, {req.espresso}/99, {req.milk}/100
+79 -> {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/56, {req.cappuccino}/91, {req.coffee}/99, {req.milk}/101
+80 -> {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/56, {req.cappuccino}/92, {req.coffee}/100, {req.espresso}/101
+81 -> t19_inout_Milk_1/102, t_espresso/103
+82 -> no_prepare/104
+83 -> Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/61, Cappuccino_Cappuccino_coffee_out_event_coffee_1/60, Cappuccino_Cappuccino_espresso_out_event_espresso_1/59, Cappuccino_Cappuccino_milk_out_event_milk_1/58
+84 -> end_running_in_event_reset_0/105
+85 -> {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/106, Coffee_Coffee_cappuccino_out_event_cappuccino_1/71, Coffee_Coffee_coffee_out_event_coffee_1/65, Coffee_Coffee_espresso_out_event_espresso_1/64
+86 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/72, {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/66, {req.espresso}/106, {req.milk}/107
+87 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/73, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/66, {req.coffee}/106, {req.milk}/108
+88 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/74, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/66, {req.coffee}/107, {req.espresso}/108
+89 -> {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/109, Espresso_Espresso_cappuccino_out_event_cappuccino_1/77, Espresso_Espresso_coffee_out_event_coffee_1/69, Espresso_Espresso_espresso_out_event_espresso_1/68
+90 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/78, {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/70, {req.espresso}/109, {req.milk}/110
+91 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/79, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/70, {req.coffee}/109, {req.milk}/111
+92 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/80, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/70, {req.coffee}/110, {req.espresso}/111
+93 -> {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/73, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/72, {req.cappuccino}/106, {req.milk}/112
+94 -> {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/74, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/72, {req.cappuccino}/107, {req.espresso}/112
+95 -> {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/74, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/73, {req.cappuccino}/108, {req.coffee}/112
+96 -> t20/113
+97 -> t22/113
+98 -> t10_inout_Coffee_1/114
+99 -> {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/79, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/78, {req.cappuccino}/109, {req.milk}/115
+100 -> {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/80, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/78, {req.cappuccino}/110, {req.espresso}/115
+101 -> {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/80, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/79, {req.cappuccino}/111, {req.coffee}/115
+102 -> t20/103
+103 -> t14/116
+104 -> end_running_in_event_reset_0/117
+105 -> Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1/118
+106 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/93, {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/87, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/86, {req.milk}/119
+107 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/94, {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/88, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/86, {req.espresso}/119
+108 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/95, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/88, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/87, {req.coffee}/119
+109 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/99, {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/91, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/90, {req.milk}/120
+110 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/100, {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/92, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/90, {req.espresso}/120
+111 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/101, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/92, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/91, {req.coffee}/120
+112 -> {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/95, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/94, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/93, {req.cappuccino}/119
+113 -> t14/121
+114 -> t5/122
+115 -> {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/101, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/100, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/99, {req.cappuccino}/120
+116 -> t2_inout_Milk_1/123
+117 -> Espresso_None_reset_in_state_None_0_out_event_reset_1/118
+118 -> t24_inout_state_None_1/0
+119 -> {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/112, {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/108, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/107, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/106
+120 -> {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/115, {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/111, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/110, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/109
+121 -> t10_inout_Coffee_1/124, t2_inout_Milk_1/125
+122 -> t11/126
+123 -> t4/127
+124 -> t5/128
+125 -> t4/129
+126 -> end_running_in_event_reset_0/130
+127 -> end_running_in_event_reset_0/131
+128 -> t11/129
+129 -> end_running_in_event_reset_0/132
+130 -> Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1/118
+131 -> {Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1}/118
+132 -> {Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1}/118
+
+0.001s
+
+LIVENESS ANALYSIS ----------------------------------------------- 
+
+not live
+reversible
+
+0 dead marking(s), 133 live marking(s)
+13 dead transition(s), 49 live transition(s)
+
+dead transition(s): end_running_in_event_reset_1_MUST_BE_DEAD None_None_reset_inout_state_None_1_out_event_reset_1 None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1 None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1 None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1 None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1 Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1 {Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1} {Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1} Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1 {Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1} {Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1} Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+
+STRONG CONNECTED COMPONENTS:
+
+0 : 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118 117 116 115 114 113 112 111 110 109 108 107 106 105 104 103 102 101 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+
+SCC GRAPH:
+
+0 -> {Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1}/0, {Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1}/0, Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1/0, end_running_in_event_reset_0/0, t11/0, t4/0, t5/0, t10_inout_Coffee_1/0, t2_inout_Milk_1/0, {Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1}/0, {Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1}/0, {Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1}/0, {Espresso-Milk_Espresso-Milk_milk_out_event_milk_1}/0, {Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1}/0, {Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1}/0, {Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1}/0, {Coffee-Milk_Coffee-Milk_milk_out_event_milk_1}/0, t24_inout_state_None_1/0, Espresso_None_reset_in_state_None_0_out_event_reset_1/0, {req.cappuccino}/0, t14/0, {req.coffee}/0, {req.espresso}/0, {req.milk}/0, Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1/0, t20/0, t22/0, {Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1}/0, Espresso_Espresso_cappuccino_out_event_cappuccino_1/0, Espresso_Espresso_coffee_out_event_coffee_1/0, Espresso_Espresso_espresso_out_event_espresso_1/0, {Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1}/0, Coffee_Coffee_cappuccino_out_event_cappuccino_1/0, Coffee_Coffee_coffee_out_event_coffee_1/0, Coffee_Coffee_espresso_out_event_espresso_1/0, Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1/0, Cappuccino_Cappuccino_coffee_out_event_coffee_1/0, Cappuccino_Cappuccino_espresso_out_event_espresso_1/0, Cappuccino_Cappuccino_milk_out_event_milk_1/0, no_prepare/0, t19_inout_Milk_1/0, t_espresso/0, t21_inout_Coffee_1/0, t_capp2_inout_Cappuccino_1/0, start_transition/0, None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1/0, None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1/0, None_Espresso_espresso_out_state_None_1_out_event_espresso_1/0, None_None_milk_inout_state_None_1_out_event_milk_1/0
+
+0.000s
+
+ANALYSIS COMPLETED ---------------------------------------------- 
+

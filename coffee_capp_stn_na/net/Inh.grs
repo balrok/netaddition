@@ -1,0 +1,9 @@
+new pn1:PetriNet(id = "Inh")
+new net:Page(id = "Inh")
+new pn1-:pages->net
+new p:Place(id = "p")
+new net-:places->p
+new t:Transition(id = "t")
+new net-:transitions->t
+
+new p -:inhibitorArc-> t

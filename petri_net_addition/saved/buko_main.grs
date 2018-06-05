@@ -1,0 +1,62 @@
+new pn:PetriNet(id="buko_main")
+
+new main:Page(id="buko_main")
+new pn -:pages-> main
+
+new p1:Place(id="p1")
+new p3:Place(id="p3")
+new p6:Place(id="p6")
+new p7:Place(id="p7")
+new p11:Place(id="p11")
+new ptemp:Place(id="ptemp")
+
+
+
+new main-:places->p1
+new main-:places->p3
+new main-:places->p6
+new main-:places->p7
+new main-:places->p11
+new main-:places->ptemp
+
+new t2:Transition(id="t2")
+new t5:Transition(id="t5")
+new t6:Transition(id="t6")
+new t8:Transition(id="t8")
+new ttemp:Transition(id="ttemp")
+
+new main-:transitions->t2
+new main-:transitions->t5
+new main-:transitions->t6
+new main-:transitions->t8
+new main-:transitions->ttemp
+
+
+
+new p1-:outArc->t2
+new p3-:outArc->t2
+new p6-:outArc->t5
+new p7-:outArc->t6
+#new p8-:outArc->t
+new p11-:outArc->t8
+
+
+new t5-:inArc->p1
+new t8-:inArc->p3
+new t2-:inArc->p6
+new t5-:inArc->p7
+new t6-:inArc->p11
+new t8-:inArc->ptemp
+new ptemp-:outArc->ttemp
+
+
+new tok1:Token
+new tok2:Token
+new tok3:Token
+
+new p1-:tokens->tok1
+new p3-:tokens->tok2
+new ptemp-:tokens->tok3
+
+
+

@@ -1,0 +1,13 @@
+new cn1:ContextNet(id="cnet 1")
+new c_Coffee:Context(id="Coffee",bound=1)
+new cn1-:contexts->c_Coffee
+new c_Milk:Context(id="Milk",bound=1)
+new cn1-:contexts->c_Milk
+new c_Cappuccino:Context(id="Cappuccino",bound=1)
+new cn1-:contexts->c_Cappuccino
+new c_Espresso:Context(id="Espresso",bound=1)
+new cn1-:contexts->c_Espresso
+new c_Coffee -:exclusion- c_Cappuccino
+new c_Coffee -:exclusion- c_Espresso
+new c_Cappuccino -:strong_inclusion-> c_Milk
+new c_Cappuccino -:strong_inclusion-> c_Espresso

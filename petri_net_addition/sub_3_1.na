@@ -1,0 +1,6 @@
+result = (z_sub + generic + generic[1])
+    (
+        generic.p_3_tok/z_sub.x -> x,
+        generic.p_1_tok/z_sub.y -> y,
+        generic[1].p_1_tok/z_sub.f -> f,
+    )

@@ -1,0 +1,475 @@
+0it [00:00, ?it/s]GrShell v4.4 (enter "help" for a list of commands)
+Will execute: "include buko.na.grsi;;exit"
+New graph "DefaultGraph" and actions created from spec file "../allinone/Rules.grg".
+New node "$0" of type "PetriNet" has been created.
+New node "$1" of type "Page" has been created.
+New edge "$2" of type "pages" has been created from "$0" to "$1".
+New node "$3" of type "Place" has been created.
+New node "$4" of type "Place" has been created.
+New node "$5" of type "Place" has been created.
+New node "$6" of type "Place" has been created.
+New node "$7" of type "Place" has been created.
+New node "$8" of type "Place" has been created.
+New edge "$9" of type "places" has been created from "$1" to "$3".
+New edge "$A" of type "places" has been created from "$1" to "$4".
+New edge "$B" of type "places" has been created from "$1" to "$5".
+New edge "$C" of type "places" has been created from "$1" to "$6".
+New edge "$D" of type "places" has been created from "$1" to "$7".
+New edge "$E" of type "places" has been created from "$1" to "$8".
+New node "$F" of type "Transition" has been created.
+New node "$10" of type "Transition" has been created.
+New node "$11" of type "Transition" has been created.
+New node "$12" of type "Transition" has been created.
+New node "$13" of type "Transition" has been created.
+New edge "$14" of type "transitions" has been created from "$1" to "$F".
+New edge "$15" of type "transitions" has been created from "$1" to "$10".
+New edge "$16" of type "transitions" has been created from "$1" to "$11".
+New edge "$17" of type "transitions" has been created from "$1" to "$12".
+New edge "$18" of type "transitions" has been created from "$1" to "$13".
+New edge "$19" of type "outArc" has been created from "$3" to "$F".
+New edge "$1A" of type "outArc" has been created from "$4" to "$F".
+New edge "$1B" of type "outArc" has been created from "$5" to "$10".
+New edge "$1C" of type "outArc" has been created from "$6" to "$11".
+New edge "$1D" of type "inArc" has been created from "$10" to "$3".
+New edge "$1E" of type "inArc" has been created from "$12" to "$4".
+New edge "$1F" of type "inArc" has been created from "$F" to "$5".
+New edge "$20" of type "inArc" has been created from "$10" to "$6".
+New edge "$21" of type "inArc" has been created from "$11" to "$7".
+New edge "$22" of type "outArc" has been created from "$8" to "$13".
+New edge "$23" of type "inArc" has been created from "$12" to "$8".
+New edge "$24" of type "outArc" has been created from "$7" to "$12".
+New node "$25" of type "Token" has been created.
+New node "$26" of type "Token" has been created.
+New node "$27" of type "Token" has been created.
+New edge "$28" of type "tokens" has been created from "$3" to "$25".
+New edge "$29" of type "tokens" has been created from "$4" to "$26".
+New edge "$2A" of type "tokens" has been created from "$8" to "$27".
+New node "$2B" of type "PetriNet" has been created.
+New node "$2C" of type "Page" has been created.
+New edge "$2D" of type "pages" has been created from "$2B" to "$2C".
+New node "$2E" of type "Place" has been created.
+New node "$2F" of type "Place" has been created.
+New node "$30" of type "Place" has been created.
+New edge "$31" of type "places" has been created from "$2C" to "$2F".
+New edge "$32" of type "places" has been created from "$2C" to "$30".
+New edge "$33" of type "places" has been created from "$2C" to "$2E".
+New node "$34" of type "Transition" has been created.
+New node "$35" of type "Transition" has been created.
+New edge "$36" of type "transitions" has been created from "$2C" to "$34".
+New edge "$37" of type "transitions" has been created from "$2C" to "$35".
+New edge "$38" of type "outArc" has been created from "$2E" to "$34".
+New edge "$39" of type "outArc" has been created from "$30" to "$35".
+New edge "$3A" of type "inArc" has been created from "$35" to "$2F".
+New edge "$3B" of type "inArc" has been created from "$34" to "$30".
+New node "$3C" of type "Transition" has been created.
+New edge "$3D" of type "transitions" has been created from "$2C" to "$3C".
+New node "$3E" of type "Transition" has been created.
+New edge "$3F" of type "transitions" has been created from "$2C" to "$3E".
+New edge "$40" of type "inArc" has been created from "$3C" to "$2E".
+New edge "$41" of type "outArc" has been created from "$2F" to "$3E".
+New node "$42" of type "PetriNet" has been created.
+New node "$43" of type "Page" has been created.
+New edge "$44" of type "pages" has been created from "$42" to "$43".
+New node "$45" of type "Place" has been created.
+New edge "$46" of type "places" has been created from "$43" to "$45".
+New node "$47" of type "Transition" has been created.
+New node "$48" of type "Transition" has been created.
+New edge "$49" of type "transitions" has been created from "$43" to "$47".
+New edge "$4A" of type "transitions" has been created from "$43" to "$48".
+New edge "$4B" of type "outArc" has been created from "$45" to "$48".
+New edge "$4C" of type "inhibitorArc" has been created from "$45" to "$47".
+New edge "$4D" of type "inArc" has been created from "$47" to "$45".
+New node "$4E" of type "PetriNet" has been created.
+New node "$4F" of type "Page" has been created.
+New edge "$50" of type "pages" has been created from "$4E" to "$4F".
+New node "$51" of type "Place" has been created.
+New node "$52" of type "Place" has been created.
+New edge "$53" of type "places" has been created from "$4F" to "$51".
+New edge "$54" of type "places" has been created from "$4F" to "$52".
+New node "$55" of type "Transition" has been created.
+New edge "$56" of type "transitions" has been created from "$4F" to "$55".
+New edge "$57" of type "outArc" has been created from "$52" to "$55".
+New edge "$58" of type "inArc" has been created from "$55" to "$51".
+New node "$59" of type "Transition" has been created.
+New edge "$5A" of type "transitions" has been created from "$4F" to "$59".
+New node "$5B" of type "Transition" has been created.
+New edge "$5C" of type "transitions" has been created from "$4F" to "$5B".
+New edge "$5D" of type "inArc" has been created from "$59" to "$52".
+New edge "$5E" of type "outArc" has been created from "$51" to "$5B".
+New node "$5F" of type "net_addition::System" has been created.
+New node "$60" of type "net_addition::PN" has been created.
+New node "$61" of type "net_addition::Addition" has been created.
+New edge "$62" of type "net_addition::rules" has been created from "$5F" to "$61".
+New node "$63" of type "net_addition::PN" has been created.
+New edge "$64" of type "net_addition::petrinets" has been created from "$61" to "$63".
+New node "$65" of type "net_addition::PN" has been created.
+New edge "$66" of type "net_addition::petrinets" has been created from "$61" to "$65".
+New node "$67" of type "net_addition::PN" has been created.
+New edge "$68" of type "net_addition::petrinets" has been created from "$61" to "$67".
+New node "$69" of type "net_addition::PN" has been created.
+New edge "$6A" of type "net_addition::petrinets" has been created from "$61" to "$69".
+New node "$6B" of type "net_addition::PetriNode" has been created.
+New edge "$6C" of type "net_addition::pn_nodes" has been created from "$60" to "$6B".
+New edge "$6D" of type "net_addition::configures" has been created from "$6B" to "$63".
+New node "$6E" of type "net_addition::PetriNode" has been created.
+New edge "$6F" of type "net_addition::pn_nodes" has been created from "$60" to "$6E".
+New edge "$70" of type "net_addition::configures" has been created from "$6E" to "$65".
+New node "$71" of type "net_addition::Fusion" has been created.
+New edge "$72" of type "net_addition::fusions" has been created from "$61" to "$71".
+New node "$73" of type "net_addition::PetriNode" has been created.
+New edge "$74" of type "net_addition::pn_nodes" has been created from "$67" to "$73".
+New edge "$75" of type "net_addition::sources" has been created from "$71" to "$73".
+New node "$76" of type "net_addition::PetriNode" has been created.
+New edge "$77" of type "net_addition::pn_nodes" has been created from "$63" to "$76".
+New edge "$78" of type "net_addition::sources" has been created from "$71" to "$76".
+New node "$79" of type "net_addition::PetriNode" has been created.
+New edge "$7A" of type "net_addition::pn_nodes" has been created from "$65" to "$79".
+New edge "$7B" of type "net_addition::sources" has been created from "$71" to "$79".
+New node "$7C" of type "net_addition::Fusion" has been created.
+New edge "$7D" of type "net_addition::fusions" has been created from "$61" to "$7C".
+New node "$7E" of type "net_addition::PetriNode" has been created.
+New edge "$7F" of type "net_addition::pn_nodes" has been created from "$67" to "$7E".
+New edge "$80" of type "net_addition::sources" has been created from "$7C" to "$7E".
+New node "$81" of type "net_addition::PetriNode" has been created.
+New edge "$82" of type "net_addition::pn_nodes" has been created from "$63" to "$81".
+New edge "$83" of type "net_addition::sources" has been created from "$7C" to "$81".
+New node "$84" of type "net_addition::PetriNode" has been created.
+New edge "$85" of type "net_addition::pn_nodes" has been created from "$65" to "$84".
+New edge "$86" of type "net_addition::sources" has been created from "$7C" to "$84".
+The graph is valid.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Transform addition with target result
+Could not connect node cfg
+Could not connect node cfg
+copied $5B
+copied $51
+copied $55
+copied $52
+copied $59
+copied $4F
+copied $3E
+copied $2F
+copied $35
+copied $30
+copied $34
+copied $2E
+copied $3C
+copied $2C
+copied $26
+copied $4
+copied $13
+copied $27
+copied $8
+copied $12
+copied $7
+copied $11
+copied $6
+copied $10
+copied $5
+copied $F
+copied $25
+copied $3
+copied $1
+copied $48
+copied $47
+copied $45
+copied $43
+Apply fusion for ttemp to tin
+Apply fusion for tin to tin
+Apply fusion for tin to tin
+delete edge $12B to tin - remaining is $121
+delete edge $12C to tin - remaining is $121
+delete edge $12D to tin - remaining is $121
+Apply fusion for t6 to tout
+Apply fusion for tout to tout
+Apply fusion for tout to tout
+delete edge $13A to tout - remaining is $12F
+delete edge $13B to tout - remaining is $12F
+delete edge $13C to tout - remaining is $12F
+Executing Graph Rewrite Sequence done after 116.0 ms with result True:
+ - 145 matches found
+ - 145 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 44.3 ms with result True:
+ - 26 matches found
+ - 26 rewrites performed
+The graph is valid.
+export done after: 21 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Flatten ConfStructure $144
+Flatten Interface Transition $120 tin
+Flatten Interface Transition $12E tout
+Flatten ConfStructure $13D
+Flatten Interface Transition $120 tin
+Flatten Interface Transition $12E tout
+Flatten Interface Transition $14D tin
+Flatten Interface Transition $156 tout
+Executing Graph Rewrite Sequence done after 54.4 ms with result True:
+ - 39 matches found
+ - 39 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+CLEANUP WARNING: transition tout is inhibited+connected at same time - will never fire..
+CLEANUP WARNING: transition tin is inhibited+connected at same time - will never fire..
+CLEANUP WARNING: transition tout is inhibited+connected at same time - will never fire..
+CLEANUP WARNING: transition tin is inhibited+connected at same time - will never fire..
+Executing Graph Rewrite Sequence done after 21.1 ms with result True:
+ - 4 matches found
+ - 4 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 3.9 ms with result True:
+ - 25 matches found
+ - 25 rewrites performed
+The graph is valid.
+export done after: 1 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 7.1 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Added bound to cfg
+Executing Graph Rewrite Sequence done after 10.4 ms with result True:
+ - 1 matches found
+ - 1 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Substitution place for cfg -> cfg_0
+Substitution place for cfg -> cfg_1
+Remove inhibitorArc $118 between cfg and t_net1
+Remove inhibitorArc $164 between cfg and tin
+Remove inhibitorArc $16E between cfg and tout
+reconnect out tout_uniq_2
+reconnect out tin_uniq_2
+reconnect out t_net2
+Executing Graph Rewrite Sequence done after 59.6 ms with result True:
+ - 36 matches found
+ - 36 rewrites performed
+The graph is valid.
+export done after: 1 ms
+Graph "DefaultGraph" exported.
+Bye!
+
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319
+2it [00:01,  1.04it/s]Loading source: /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/buko.na.noinh.grs
+Depending on gm-files: /Users/cmai/Desktop/reconfnet/tools/../grgen/general/Id.gm, /Users/cmai/Desktop/reconfnet/tools/../grgen/petri/PetriModel.gm
+ERROR new graph "Rules" "DefaultGraph"
+unhandled node  PetriNet
+unhandled edge  pages
+3it [00:02,  1.18it/s]lola: reading net from petrinet.lola
+lola: finished parsing
+lola: closed net file petrinet.lola
+lola: 25/65536 symbol table entries, 0 collisions
+lola: preprocessing net
+lola: computing forward-conflicting sets
+lola: computing back-conflicting sets
+lola: 19 transition conflict sets
+lola: finding significant places
+lola: 13 places, 12 transitions, 9 significant places
+lola: read: !(EF (DEADLOCK))
+lola: formula length: 16
+lola: checking absence of deadlocks
+lola: using a bit-perfect encoder (--encoder)
+lola: using 36 bytes per marking, with 0 unused bits
+lola: using a prefix store (--store)
+lola: checking a formula (--check=modelchecking)
+lola: finished preprocessing
+lola: result: yes
+lola: The net satisfies the given formula.
+lola: print witness state (--state)
+lola: writing witness state to stdout
+lola: no witness state generated
+lola: closed witness state file stdout
+lola: print witness path (--path)
+lola: writing witness path to stdout
+lola: closed witness path file stdout
+lola: 12 markings, 16 edges
+NOSTATE
+lola: reading net from petrinet.lola
+lola: finished parsing
+lola: closed net file petrinet.lola
+lola: 25/65536 symbol table entries, 0 collisions
+lola: preprocessing net
+lola: computing forward-conflicting sets
+lola: computing back-conflicting sets
+lola: 19 transition conflict sets
+lola: finding significant places
+lola: 13 places, 12 transitions, 9 significant places
+lola: read: AG (EF (INITIAL))
+lola: formula length: 17
+lola: checking liveness
+lola: processing formula
+lola: processed formula: !(E(TRUE U !(E(TRUE U (p1 <= 1 AND (p1 > 0 AND (p3 <= 1 AND (p3 > 0 AND (p82 <= 0 AND (p82 > -1 AND (p7 <= 0 AND (p7 > -1 AND (p8 <= 0 AND (p8 > -1 AND (p9 <= 0 AND (p9 > -1 AND (cfg_0 <= 1 AND (cfg_0 > 0 AND (p12 <= 0 AND (p12 > -1 AND (ptemp <= 1 AND (ptemp > 0 AND (p11 <= 0 AND (p11 > -1 AND (cfg_1 <= 0 AND (cfg_1 > -1 AND (p6 <= 0 AND (p6 > -1 AND (p92 <= 0 AND p92 > -1))))))))))))))))))))))))... (shortened)
+lola: processed formula length: 405
+lola: 174 rewrites
+lola: formula mentions 13 of 13 places; total mentions: 26
+lola: using a bit-perfect encoder (--encoder)
+lola: using 36 bytes per marking, with 0 unused bits
+lola: using a prefix store (--store)
+lola: checking a formula (--check=modelchecking)
+lola: finished preprocessing
+lola: CTL formula contains 2 significant temporal operators and needs 9 bytes of payload
+lola: result: yes
+lola: The net satisfies the given formula.
+lola: print witness state (--state)
+lola: writing witness state to stdout
+lola: no witness state generated
+lola: closed witness state file stdout
+lola: print witness path (--path)
+lola: writing witness path to stdout
+lola: closed witness path file stdout
+lola: 38 markings, 182 edges
+NOSTATE
+Tina version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+
+mode -R
+
+INPUT NET ------------------------------------------------------- 
+
+parsed net noname
+
+13 places, 12 transitions
+
+net noname
+tr t10 p12 -> p92 
+tr t2 p1 p3 -> p6 
+tr t5 p6 -> p1 p7 
+tr t8 p11 -> p3 ptemp 
+tr t9 p9 -> p8 
+tr t92 p92 -> p82 
+tr t_net1 cfg_0 -> cfg_1 
+tr t_net2_out_cfg_1 cfg_1 -> cfg_0 
+tr tin cfg_0 ptemp -> cfg_0 p12 
+tr tin_uniq_2_out_cfg_1 cfg_1 ptemp -> cfg_0 p9 
+tr tout cfg_0 p7 p82 -> cfg_0 p11 
+tr tout_uniq_2_out_cfg_1 cfg_1 p7 p8 -> cfg_0 p11 
+pl cfg_0 (1)
+pl p1 (1)
+pl p3 (1)
+pl ptemp (1)
+
+0.002s
+
+REACHABILITY ANALYSIS ------------------------------------------- 
+
+bounded
+
+38 marking(s), 90 transition(s)
+
+MARKINGS:
+
+0 : cfg_0 p1 p3 ptemp
+1 : cfg_0 p6 ptemp
+2 : cfg_1 p1 p3 ptemp
+3 : cfg_0 p1 p12 p3
+4 : cfg_0 p1 p7 ptemp
+5 : cfg_1 p6 ptemp
+6 : cfg_0 p12 p6
+7 : cfg_0 p1 p3 p9
+8 : cfg_0 p1 p3 p92
+9 : cfg_1 p1 p12 p3
+10 : cfg_1 p1 p7 ptemp
+11 : cfg_0 p1 p12 p7
+12 : cfg_0 p6 p9
+13 : cfg_0 p6 p92
+14 : cfg_1 p12 p6
+15 : cfg_0 p1 p3 p8
+16 : cfg_1 p1 p3 p9
+17 : cfg_0 p1 p3 p82
+18 : cfg_1 p1 p3 p92
+19 : cfg_0 p1 p7 p9
+20 : cfg_0 p1 p7 p92
+21 : cfg_1 p1 p12 p7
+22 : cfg_0 p6 p8
+23 : cfg_1 p6 p9
+24 : cfg_0 p6 p82
+25 : cfg_1 p6 p92
+26 : cfg_1 p1 p3 p8
+27 : cfg_1 p1 p3 p82
+28 : cfg_0 p1 p7 p8
+29 : cfg_1 p1 p7 p9
+30 : cfg_0 p1 p7 p82
+31 : cfg_1 p1 p7 p92
+32 : cfg_1 p6 p8
+33 : cfg_1 p6 p82
+34 : cfg_1 p1 p7 p8
+35 : cfg_1 p1 p7 p82
+36 : cfg_0 p1 p11
+37 : cfg_1 p1 p11
+
+REACHABILITY GRAPH:
+
+0 -> t2/1, t_net1/2, tin/3
+1 -> t5/4, t_net1/5, tin/6
+2 -> t2/5, t_net2_out_cfg_1/0, tin_uniq_2_out_cfg_1/7
+3 -> t10/8, t2/6, t_net1/9
+4 -> t_net1/10, tin/11
+5 -> t5/10, t_net2_out_cfg_1/1, tin_uniq_2_out_cfg_1/12
+6 -> t10/13, t5/11, t_net1/14
+7 -> t2/12, t9/15, t_net1/16
+8 -> t2/13, t92/17, t_net1/18
+9 -> t10/18, t2/14, t_net2_out_cfg_1/3
+10 -> t_net2_out_cfg_1/4, tin_uniq_2_out_cfg_1/19
+11 -> t10/20, t_net1/21
+12 -> t5/19, t9/22, t_net1/23
+13 -> t5/20, t92/24, t_net1/25
+14 -> t10/25, t5/21, t_net2_out_cfg_1/6
+15 -> t2/22, t_net1/26
+16 -> t2/23, t9/26, t_net2_out_cfg_1/7
+17 -> t2/24, t_net1/27
+18 -> t2/25, t92/27, t_net2_out_cfg_1/8
+19 -> t9/28, t_net1/29
+20 -> t92/30, t_net1/31
+21 -> t10/31, t_net2_out_cfg_1/11
+22 -> t5/28, t_net1/32
+23 -> t5/29, t9/32, t_net2_out_cfg_1/12
+24 -> t5/30, t_net1/33
+25 -> t5/31, t92/33, t_net2_out_cfg_1/13
+26 -> t2/32, t_net2_out_cfg_1/15
+27 -> t2/33, t_net2_out_cfg_1/17
+28 -> t_net1/34
+29 -> t9/34, t_net2_out_cfg_1/19
+30 -> t_net1/35, tout/36
+31 -> t92/35, t_net2_out_cfg_1/20
+32 -> t5/34, t_net2_out_cfg_1/22
+33 -> t5/35, t_net2_out_cfg_1/24
+34 -> t_net2_out_cfg_1/28, tout_uniq_2_out_cfg_1/36
+35 -> t_net2_out_cfg_1/30
+36 -> t8/0, t_net1/37
+37 -> t8/2, t_net2_out_cfg_1/36
+
+0.000s
+
+LIVENESS ANALYSIS ----------------------------------------------- 
+
+live
+reversible
+
+0 dead marking(s), 38 live marking(s)
+0 dead transition(s), 12 live transition(s)
+
+STRONG CONNECTED COMPONENTS:
+
+0 : 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+
+SCC GRAPH:
+
+0 -> t8/0, t_net2_out_cfg_1/0, t_net1/0, tout_uniq_2_out_cfg_1/0, t5/0, t92/0, tout/0, t9/0, t2/0, t10/0, tin_uniq_2_out_cfg_1/0, tin/0
+
+0.000s
+
+ANALYSIS COMPLETED ---------------------------------------------- 
+
+# net noname, 13 places, 12 transitions                                #
+# bounded, live, reversible                                            #
+# abstraction        count      props      psets       dead       live #
+#      states           38         13          ?          0         38 # 
+# transitions           90         12          ?          0         12 #
+6it [00:02,  2.34it/s]
+buko.na.grsi
+Running the transformation
+grsi to pnml
+pnml to lola
+No deadlocks:
+Reversible:
+Tina

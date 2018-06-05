@@ -1,0 +1,265 @@
+
+-----
+GrShell v4.5.2 (enter "help" for a list of commands)
+New graph "DefaultGraph" and actions created from spec file "../allinone/Rules.grg".
+New node "$0" of type "PetriNet" has been created.
+New node "$1" of type "Page" has been created.
+New edge "$2" of type "pages" has been created from "$0" to "$1".
+New node "$3" of type "Place" has been created.
+New edge "$4" of type "places" has been created from "$1" to "$3".
+New node "$5" of type "Place" has been created.
+New edge "$6" of type "places" has been created from "$1" to "$5".
+New node "$7" of type "Token" has been created.
+New edge "$8" of type "tokens" has been created from "$5" to "$7".
+New node "$9" of type "Place" has been created.
+New edge "$A" of type "places" has been created from "$1" to "$9".
+New node "$B" of type "Token" has been created.
+New edge "$C" of type "tokens" has been created from "$9" to "$B".
+New node "$D" of type "Token" has been created.
+New edge "$E" of type "tokens" has been created from "$9" to "$D".
+New node "$F" of type "Place" has been created.
+New edge "$10" of type "places" has been created from "$1" to "$F".
+New node "$11" of type "Token" has been created.
+New edge "$12" of type "tokens" has been created from "$F" to "$11".
+New node "$13" of type "Token" has been created.
+New edge "$14" of type "tokens" has been created from "$F" to "$13".
+New node "$15" of type "Token" has been created.
+New edge "$16" of type "tokens" has been created from "$F" to "$15".
+New node "$17" of type "Place" has been created.
+New edge "$18" of type "places" has been created from "$1" to "$17".
+New node "$19" of type "Token" has been created.
+New edge "$1A" of type "tokens" has been created from "$17" to "$19".
+New node "$1B" of type "Token" has been created.
+New edge "$1C" of type "tokens" has been created from "$17" to "$1B".
+New node "$1D" of type "Token" has been created.
+New edge "$1E" of type "tokens" has been created from "$17" to "$1D".
+New node "$1F" of type "Token" has been created.
+New edge "$20" of type "tokens" has been created from "$17" to "$1F".
+New node "$21" of type "Place" has been created.
+New edge "$22" of type "places" has been created from "$1" to "$21".
+New node "$23" of type "Token" has been created.
+New edge "$24" of type "tokens" has been created from "$21" to "$23".
+New node "$25" of type "Token" has been created.
+New edge "$26" of type "tokens" has been created from "$21" to "$25".
+New node "$27" of type "Token" has been created.
+New edge "$28" of type "tokens" has been created from "$21" to "$27".
+New node "$29" of type "Token" has been created.
+New edge "$2A" of type "tokens" has been created from "$21" to "$29".
+New node "$2B" of type "Token" has been created.
+New edge "$2C" of type "tokens" has been created from "$21" to "$2B".
+New node "$2D" of type "PetriNet" has been created.
+New node "$2E" of type "Page" has been created.
+New edge "$2F" of type "pages" has been created from "$2D" to "$2E".
+New node "$30" of type "Place" has been created.
+New edge "$31" of type "places" has been created from "$2E" to "$30".
+New node "$32" of type "Place" has been created.
+New edge "$33" of type "places" has been created from "$2E" to "$32".
+New node "$34" of type "Place" has been created.
+New edge "$35" of type "places" has been created from "$2E" to "$34".
+New node "$36" of type "Place" has been created.
+New edge "$37" of type "places" has been created from "$2E" to "$36".
+New node "$38" of type "Place" has been created.
+New edge "$39" of type "places" has been created from "$2E" to "$38".
+New node "$3A" of type "Transition" has been created.
+New edge "$3B" of type "transitions" has been created from "$2E" to "$3A".
+New node "$3C" of type "Transition" has been created.
+New edge "$3D" of type "transitions" has been created from "$2E" to "$3C".
+New node "$3E" of type "Transition" has been created.
+New edge "$3F" of type "transitions" has been created from "$2E" to "$3E".
+New edge "$40" of type "outArc" has been created from "$30" to "$3A".
+New edge "$41" of type "inhibitorArc" has been created from "$30" to "$3E".
+New edge "$42" of type "outArc" has been created from "$32" to "$3C".
+New edge "$43" of type "inhibitorArc" has been created from "$32" to "$3E".
+New edge "$44" of type "inhibitorArc" has been created from "$34" to "$3A".
+New edge "$45" of type "inhibitorArc" has been created from "$34" to "$3C".
+New edge "$46" of type "inhibitorArc" has been created from "$34" to "$3E".
+New edge "$47" of type "outArc" has been created from "$38" to "$3E".
+New edge "$48" of type "inArc" has been created from "$3A" to "$36".
+New edge "$49" of type "inArc" has been created from "$3C" to "$36".
+New edge "$4A" of type "inArc" has been created from "$3E" to "$34".
+New node "$4B" of type "net_addition::System" has been created.
+New node "$4C" of type "net_addition::PN" has been created.
+New node "$4D" of type "net_addition::Addition" has been created.
+New edge "$4E" of type "net_addition::rules" has been created from "$4B" to "$4D".
+New node "$4F" of type "net_addition::PN" has been created.
+New edge "$50" of type "net_addition::petrinets" has been created from "$4D" to "$4F".
+New node "$51" of type "net_addition::PN" has been created.
+New edge "$52" of type "net_addition::petrinets" has been created from "$4D" to "$51".
+New node "$53" of type "net_addition::Fusion" has been created.
+New edge "$54" of type "net_addition::fusions" has been created from "$4D" to "$53".
+New node "$55" of type "net_addition::PetriNode" has been created.
+New edge "$56" of type "net_addition::pn_nodes" has been created from "$51" to "$55".
+New edge "$57" of type "net_addition::sources" has been created from "$53" to "$55".
+New node "$58" of type "net_addition::PetriNode" has been created.
+New edge "$59" of type "net_addition::pn_nodes" has been created from "$4F" to "$58".
+New edge "$5A" of type "net_addition::sources" has been created from "$53" to "$58".
+New node "$5B" of type "net_addition::Fusion" has been created.
+New edge "$5C" of type "net_addition::fusions" has been created from "$4D" to "$5B".
+New node "$5D" of type "net_addition::PetriNode" has been created.
+New edge "$5E" of type "net_addition::pn_nodes" has been created from "$51" to "$5D".
+New edge "$5F" of type "net_addition::sources" has been created from "$5B" to "$5D".
+New node "$60" of type "net_addition::PetriNode" has been created.
+New edge "$61" of type "net_addition::pn_nodes" has been created from "$4F" to "$60".
+New edge "$62" of type "net_addition::sources" has been created from "$5B" to "$60".
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Transform addition with target result
+Had to create a PetriNet for 'result'
+Copy net for pn z_add
+copied $36
+copied $3A
+copied $3C
+copied $34
+copied $3E
+copied $30
+copied $32
+copied $38
+copied $2E
+PN z_add($4F) has node x($58)
+PN z_add($4F) has node y($60)
+Connect node $58 to x($67)
+Connect node $60 to y($73)
+Copy net for pn generic
+copied $3
+copied $7
+copied $5
+copied $B
+copied $D
+copied $9
+copied $11
+copied $13
+copied $15
+copied $F
+copied $19
+copied $1B
+copied $1D
+copied $1F
+copied $17
+copied $23
+copied $25
+copied $27
+copied $29
+copied $2B
+copied $21
+copied $1
+PN generic($51) has node p_2_tok($55)
+PN generic($51) has node p_3_tok($5D)
+Connect node $55 to p_2_tok($9B)
+Connect node $5D to p_3_tok($A1)
+Apply fusion for p_2_tok to x
+Updating fusion item of p_2_tok($55) from $9B to $DC
+Apply fusion for x to x
+Updating fusion item of x($58) from $67 to $DC
+delete edge $E6 to x - remaining is $DD
+delete edge $E7 to x - remaining is $DD
+Apply fusion for p_3_tok to y
+Updating fusion item of p_3_tok($5D) from $A1 to $E8
+Apply fusion for y to y
+Updating fusion item of y($60) from $73 to $E8
+delete edge $F3 to y - remaining is $E9
+delete edge $F4 to y - remaining is $E9
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 103 matches found
+ - 103 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Delete subgraph of generic
+Delete subgraph of z_add
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 47 matches found
+ - 47 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+CLEANUP WARNING: place p_5_tok is not connected to anything besides the page
+CLEANUP WARNING: place p_4_tok is not connected to anything besides the page
+CLEANUP WARNING: place p_1_tok is not connected to anything besides the page
+CLEANUP WARNING: place p_0_tok is not connected to anything besides the page
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 18 matches found
+ - 18 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 1 matches found
+ - 1 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 9 matches found
+ - 9 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Added bound to s
+Added bound to y
+Added bound to x
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 7 matches found
+ - 7 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Substitution place for x -> x_0
+Substitution place for x -> x_1
+Substitution place for x -> x_2
+Substitution place for x -> x_3
+Substitution place for x -> x_4
+Remove inhibitorArc $E5 between x and t3
+reconnect out t1
+Substitution place for y -> y_0
+Substitution place for y -> y_1
+Substitution place for y -> y_2
+Substitution place for y -> y_3
+Substitution place for y -> y_4
+Remove inhibitorArc $F2 between y and t3
+reconnect out t2
+Substitution place for s -> s_0
+Substitution place for s -> s_1
+Remove inhibitorArc $7C between s and t3
+Remove inhibitorArc $117 between s and t1_out_x_1
+Remove inhibitorArc $11B between s and t1_out_x_2
+Remove inhibitorArc $11F between s and t1_out_x_3
+Remove inhibitorArc $123 between s and t1_out_x_4
+Remove inhibitorArc $142 between s and t2_out_y_1
+Remove inhibitorArc $146 between s and t2_out_y_2
+Remove inhibitorArc $14A between s and t2_out_y_3
+Remove inhibitorArc $14E between s and t2_out_y_4
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 158 matches found
+ - 158 rewrites performed
+The graph is valid.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 101 matches found
+ - 101 rewrites performed
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+> The graph is valid.
+> Number of nodes compatible to type "Node": 28
+> Number of nodes compatible to type "PetriNet": 1
+> Number of nodes compatible to type "Page": 1
+> Number of nodes compatible to type "PetriNetNode": 23
+> Number of nodes compatible to type "PlaceNode": 14
+> Number of nodes compatible to type "Place": 14
+> Number of nodes compatible to type "TransitionNode": 9
+> Number of nodes compatible to type "Transition": 9
+> Number of nodes compatible to type "Token": 3
+> Number of edges compatible to type "AEdge": 74
+> Number of edges compatible to type "EIdent": 47
+> Number of edges compatible to type "pages": 1
+> Number of edges compatible to type "transitions_places": 23
+> Number of edges compatible to type "places": 14
+> Number of edges compatible to type "transitions": 9
+> Number of edges compatible to type "tokens": 3
+> Number of edges compatible to type "Arc": 47
+> Number of edges compatible to type "inArc": 27
+> Number of edges compatible to type "outArc": 20
+> Bye!
+
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319

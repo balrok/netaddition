@@ -1,0 +1,30 @@
+new pn:PetriNet(id="PNC")
+new net:Page(id="PNC")
+new pn -:pages-> net
+
+new mon:Place(id="conf")
+new mof:Place(id="off")
+
+new  net-:places->mon
+new  net-:places->mof
+
+
+
+new mdisable:Transition(id="disable")
+new menable:Transition(id="enable")
+
+new  net-:transitions->mdisable
+new  net-:transitions->menable
+
+
+
+new menable-:inArc->mon
+
+
+new mon -:outArc->mdisable
+new tok:Token
+new mon-:tokens->tok
+
+
+new mof -:outArc->menable
+new mdisable -:inArc-> mof

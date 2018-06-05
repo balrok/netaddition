@@ -1,0 +1,5 @@
+result = (z_add + generic)
+    (
+        generic.p_2_tok/z_add.x -> x,
+        generic.p_3_tok/z_add.y -> y,
+    )

@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml>
+ <snakes version="0.9.25">
+  <plugins>
+   <object type="tuple">
+    <object type="str">snakes.nets</object>
+    <object type="str">snakes.plugins.clusters</object>
+    <object type="str">snakes.plugins.pos</object>
+    <object type="str">snakes.plugins.gv</object>
+   </object>
+  </plugins>
+ </snakes>
+ <net id="result">
+  <page id="result_page">
+   <place id="f">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="x_0">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="x_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="x_2">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="x_3">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="x_4">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="y_0">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="y_1">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="y_2">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="y_3">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="y_4">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="s_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="s_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="z">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <transition id="t4"/>
+   <transition id="t2_out_x_1"/>
+   <transition id="t2_out_x_2"/>
+   <transition id="t2_out_x_3"/>
+   <transition id="t2_out_x_4"/>
+   <transition id="t1_out_x_3_out_y_1"/>
+   <transition id="t1_out_x_3_out_y_2"/>
+   <transition id="t1_out_x_3_out_y_3"/>
+   <transition id="t1_out_x_3_out_y_4"/>
+   <transition id="t1_out_x_2_out_y_4"/>
+   <transition id="t1_out_x_2_out_y_1"/>
+   <transition id="t1_out_x_2_out_y_2"/>
+   <transition id="t1_out_x_2_out_y_3"/>
+   <transition id="t1_out_x_1_out_y_3"/>
+   <transition id="t1_out_x_1_out_y_4"/>
+   <transition id="t1_out_x_1_out_y_1"/>
+   <transition id="t1_out_x_1_out_y_2"/>
+   <transition id="t1_out_x_4_out_y_2"/>
+   <transition id="t1_out_x_4_out_y_3"/>
+   <transition id="t1_out_x_4_out_y_4"/>
+   <transition id="t1_out_x_4_out_y_1"/>
+   <transition id="t3_out_y_1"/>
+   <transition id="t3_out_y_2"/>
+   <transition id="t3_out_y_3"/>
+   <transition id="t3_out_y_4"/>
+   <arc id="s_0:t4" source="s_0" target="t4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_0:t4" source="y_0" target="t4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_0:t4" source="x_0" target="t4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="f:t4" source="f" target="t4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t4:y_0" source="t4" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t4:s_1" source="t4" target="s_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t4:x_0" source="t4" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t2_out_x_1" source="s_0" target="t2_out_x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_0:t2_out_x_1" source="y_0" target="t2_out_x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_1:t2_out_x_1" source="x_1" target="t2_out_x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_1:x_0" source="t2_out_x_1" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_1:y_0" source="t2_out_x_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_1:s_0" source="t2_out_x_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_1:z" source="t2_out_x_1" target="z">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t2_out_x_2" source="s_0" target="t2_out_x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_0:t2_out_x_2" source="y_0" target="t2_out_x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_2:t2_out_x_2" source="x_2" target="t2_out_x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_2:x_1" source="t2_out_x_2" target="x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_2:y_0" source="t2_out_x_2" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_2:s_0" source="t2_out_x_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_2:z" source="t2_out_x_2" target="z">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t2_out_x_3" source="s_0" target="t2_out_x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_0:t2_out_x_3" source="y_0" target="t2_out_x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_3:t2_out_x_3" source="x_3" target="t2_out_x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_3:x_2" source="t2_out_x_3" target="x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_3:y_0" source="t2_out_x_3" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_3:s_0" source="t2_out_x_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_3:z" source="t2_out_x_3" target="z">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t2_out_x_4" source="s_0" target="t2_out_x_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_0:t2_out_x_4" source="y_0" target="t2_out_x_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_4:t2_out_x_4" source="x_4" target="t2_out_x_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_4:x_3" source="t2_out_x_4" target="x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_4:y_0" source="t2_out_x_4" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_4:s_0" source="t2_out_x_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_out_x_4:z" source="t2_out_x_4" target="z">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_3_out_y_1" source="s_0" target="t1_out_x_3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_1:t1_out_x_3_out_y_1" source="y_1" target="t1_out_x_3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_3:t1_out_x_3_out_y_1" source="x_3" target="t1_out_x_3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_1:y_0" source="t1_out_x_3_out_y_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_1:s_0" source="t1_out_x_3_out_y_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_1:x_2" source="t1_out_x_3_out_y_1" target="x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_3_out_y_2" source="s_0" target="t1_out_x_3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_2:t1_out_x_3_out_y_2" source="y_2" target="t1_out_x_3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_3:t1_out_x_3_out_y_2" source="x_3" target="t1_out_x_3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_2:y_1" source="t1_out_x_3_out_y_2" target="y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_2:s_0" source="t1_out_x_3_out_y_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_2:x_2" source="t1_out_x_3_out_y_2" target="x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_3_out_y_3" source="s_0" target="t1_out_x_3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_3:t1_out_x_3_out_y_3" source="y_3" target="t1_out_x_3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_3:t1_out_x_3_out_y_3" source="x_3" target="t1_out_x_3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_3:y_2" source="t1_out_x_3_out_y_3" target="y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_3:s_0" source="t1_out_x_3_out_y_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_3:x_2" source="t1_out_x_3_out_y_3" target="x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_3_out_y_4" source="s_0" target="t1_out_x_3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_4:t1_out_x_3_out_y_4" source="y_4" target="t1_out_x_3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_3:t1_out_x_3_out_y_4" source="x_3" target="t1_out_x_3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_4:y_3" source="t1_out_x_3_out_y_4" target="y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_4:s_0" source="t1_out_x_3_out_y_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_3_out_y_4:x_2" source="t1_out_x_3_out_y_4" target="x_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_2_out_y_4" source="s_0" target="t1_out_x_2_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_4:t1_out_x_2_out_y_4" source="y_4" target="t1_out_x_2_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_2:t1_out_x_2_out_y_4" source="x_2" target="t1_out_x_2_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_4:y_3" source="t1_out_x_2_out_y_4" target="y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_4:s_0" source="t1_out_x_2_out_y_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_4:x_1" source="t1_out_x_2_out_y_4" target="x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_2_out_y_1" source="s_0" target="t1_out_x_2_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_1:t1_out_x_2_out_y_1" source="y_1" target="t1_out_x_2_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_2:t1_out_x_2_out_y_1" source="x_2" target="t1_out_x_2_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_1:y_0" source="t1_out_x_2_out_y_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_1:s_0" source="t1_out_x_2_out_y_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_1:x_1" source="t1_out_x_2_out_y_1" target="x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_2_out_y_2" source="s_0" target="t1_out_x_2_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_2:t1_out_x_2_out_y_2" source="y_2" target="t1_out_x_2_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_2:t1_out_x_2_out_y_2" source="x_2" target="t1_out_x_2_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_2:y_1" source="t1_out_x_2_out_y_2" target="y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_2:s_0" source="t1_out_x_2_out_y_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_2:x_1" source="t1_out_x_2_out_y_2" target="x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_2_out_y_3" source="s_0" target="t1_out_x_2_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_3:t1_out_x_2_out_y_3" source="y_3" target="t1_out_x_2_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_2:t1_out_x_2_out_y_3" source="x_2" target="t1_out_x_2_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_3:y_2" source="t1_out_x_2_out_y_3" target="y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_3:s_0" source="t1_out_x_2_out_y_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_2_out_y_3:x_1" source="t1_out_x_2_out_y_3" target="x_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_1_out_y_3" source="s_0" target="t1_out_x_1_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_3:t1_out_x_1_out_y_3" source="y_3" target="t1_out_x_1_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_1:t1_out_x_1_out_y_3" source="x_1" target="t1_out_x_1_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_3:y_2" source="t1_out_x_1_out_y_3" target="y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_3:s_0" source="t1_out_x_1_out_y_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_3:x_0" source="t1_out_x_1_out_y_3" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_1_out_y_4" source="s_0" target="t1_out_x_1_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_4:t1_out_x_1_out_y_4" source="y_4" target="t1_out_x_1_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_1:t1_out_x_1_out_y_4" source="x_1" target="t1_out_x_1_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_4:y_3" source="t1_out_x_1_out_y_4" target="y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_4:s_0" source="t1_out_x_1_out_y_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_4:x_0" source="t1_out_x_1_out_y_4" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_1_out_y_1" source="s_0" target="t1_out_x_1_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_1:t1_out_x_1_out_y_1" source="y_1" target="t1_out_x_1_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_1:t1_out_x_1_out_y_1" source="x_1" target="t1_out_x_1_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_1:y_0" source="t1_out_x_1_out_y_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_1:s_0" source="t1_out_x_1_out_y_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_1:x_0" source="t1_out_x_1_out_y_1" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_1_out_y_2" source="s_0" target="t1_out_x_1_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_2:t1_out_x_1_out_y_2" source="y_2" target="t1_out_x_1_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_1:t1_out_x_1_out_y_2" source="x_1" target="t1_out_x_1_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_2:y_1" source="t1_out_x_1_out_y_2" target="y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_2:s_0" source="t1_out_x_1_out_y_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_1_out_y_2:x_0" source="t1_out_x_1_out_y_2" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_4_out_y_2" source="s_0" target="t1_out_x_4_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_2:t1_out_x_4_out_y_2" source="y_2" target="t1_out_x_4_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_4:t1_out_x_4_out_y_2" source="x_4" target="t1_out_x_4_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_2:y_1" source="t1_out_x_4_out_y_2" target="y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_2:s_0" source="t1_out_x_4_out_y_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_2:x_3" source="t1_out_x_4_out_y_2" target="x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_4_out_y_3" source="s_0" target="t1_out_x_4_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_3:t1_out_x_4_out_y_3" source="y_3" target="t1_out_x_4_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_4:t1_out_x_4_out_y_3" source="x_4" target="t1_out_x_4_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_3:y_2" source="t1_out_x_4_out_y_3" target="y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_3:s_0" source="t1_out_x_4_out_y_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_3:x_3" source="t1_out_x_4_out_y_3" target="x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_4_out_y_4" source="s_0" target="t1_out_x_4_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_4:t1_out_x_4_out_y_4" source="y_4" target="t1_out_x_4_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_4:t1_out_x_4_out_y_4" source="x_4" target="t1_out_x_4_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_4:y_3" source="t1_out_x_4_out_y_4" target="y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_4:s_0" source="t1_out_x_4_out_y_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_4:x_3" source="t1_out_x_4_out_y_4" target="x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t1_out_x_4_out_y_1" source="s_0" target="t1_out_x_4_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_1:t1_out_x_4_out_y_1" source="y_1" target="t1_out_x_4_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_4:t1_out_x_4_out_y_1" source="x_4" target="t1_out_x_4_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_1:y_0" source="t1_out_x_4_out_y_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_1:s_0" source="t1_out_x_4_out_y_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t1_out_x_4_out_y_1:x_3" source="t1_out_x_4_out_y_1" target="x_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t3_out_y_1" source="s_0" target="t3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_1:t3_out_y_1" source="y_1" target="t3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_0:t3_out_y_1" source="x_0" target="t3_out_y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_1:y_0" source="t3_out_y_1" target="y_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_1:s_0" source="t3_out_y_1" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_1:x_0" source="t3_out_y_1" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t3_out_y_2" source="s_0" target="t3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_2:t3_out_y_2" source="y_2" target="t3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_0:t3_out_y_2" source="x_0" target="t3_out_y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_2:y_1" source="t3_out_y_2" target="y_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_2:s_0" source="t3_out_y_2" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_2:x_0" source="t3_out_y_2" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t3_out_y_3" source="s_0" target="t3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_3:t3_out_y_3" source="y_3" target="t3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_0:t3_out_y_3" source="x_0" target="t3_out_y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_3:y_2" source="t3_out_y_3" target="y_2">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_3:s_0" source="t3_out_y_3" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_3:x_0" source="t3_out_y_3" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="s_0:t3_out_y_4" source="s_0" target="t3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="y_4:t3_out_y_4" source="y_4" target="t3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="x_0:t3_out_y_4" source="x_0" target="t3_out_y_4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_4:y_3" source="t3_out_y_4" target="y_3">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_4:s_0" source="t3_out_y_4" target="s_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t3_out_y_4:x_0" source="t3_out_y_4" target="x_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+  </page>
+  <clusters>
+   <node>t1_out_x_4_out_y_1</node>
+   <node>t1_out_x_1_out_y_2</node>
+   <node>x_3</node>
+   <node>t1_out_x_1_out_y_4</node>
+   <node>t1_out_x_3_out_y_1</node>
+   <node>t2_out_x_1</node>
+   <node>t1_out_x_1_out_y_3</node>
+   <node>t1_out_x_3_out_y_2</node>
+   <node>y_3</node>
+   <node>t2_out_x_2</node>
+   <node>x_4</node>
+   <node>f</node>
+   <node>t2_out_x_3</node>
+   <node>t1_out_x_2_out_y_2</node>
+   <node>t1_out_x_2_out_y_3</node>
+   <node>t1_out_x_4_out_y_4</node>
+   <node>t1_out_x_1_out_y_1</node>
+   <node>x_1</node>
+   <node>y_4</node>
+   <node>t3_out_y_3</node>
+   <node>t3_out_y_2</node>
+   <node>t1_out_x_3_out_y_3</node>
+   <node>t1_out_x_3_out_y_4</node>
+   <node>t2_out_x_4</node>
+   <node>t4</node>
+   <node>t1_out_x_2_out_y_1</node>
+   <node>t3_out_y_4</node>
+   <node>t1_out_x_2_out_y_4</node>
+   <node>z</node>
+   <node>x_2</node>
+   <node>t1_out_x_4_out_y_2</node>
+   <node>y_1</node>
+   <node>y_0</node>
+   <node>t1_out_x_4_out_y_3</node>
+   <node>t3_out_y_1</node>
+   <node>x_0</node>
+   <node>y_2</node>
+   <node>s_1</node>
+   <node>s_0</node>
+  </clusters>
+ </net>
+</pnml>

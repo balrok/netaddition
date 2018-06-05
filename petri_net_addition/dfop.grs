@@ -1,0 +1,187 @@
+new graph "../allinone/Rules.grg"
+include layout.grsi
+
+
+new pn:PetriNet(id="main")
+
+new net:Page(id="main")
+new pn -:pages-> net
+
+new wait:Place(id="wait")
+new ready:Place(id="ready")
+new full:Place(id="coffee full")
+new refillable:Place(id="coffee refillable")
+
+new net-:places->wait
+new net-:places->ready
+new net-:places->full
+new net-:places->refillable
+
+
+
+new serve:Transition(id="serve")
+new brew:Transition(id="brew coffee")
+new refill:Transition(id="refill coffee")
+
+
+new net-:transitions->serve
+new net-:transitions->brew
+new net-:transitions->refill
+
+
+
+
+
+new ready-:outArc->serve
+new wait-:outArc->brew
+new full-:outArc->brew
+new refillable-:outArc->refill
+new serve-:inArc->wait
+new brew-:inArc->ready
+new brew-:inArc->refillable
+new refill-:inArc->full
+
+
+new tok1:Token
+new tok2:Token
+new wait-:tokens->tok1
+new full-:tokens->tok2
+
+
+
+
+new pn:PetriNet(id="conf")
+new net:Page(id="conf")
+new pn -:pages-> net
+
+new mon:Place(id="milk on")
+new mof:Place(id="milk off")
+new inout:Place(id="INOUT")
+
+new  net-:places->mon
+new  net-:places->mof
+new  net-:places->inout
+
+
+
+new mdisable:Transition(id="disable")
+new menable:Transition(id="enable")
+
+new  net-:transitions->mdisable
+new  net-:transitions->menable
+
+
+
+new menable-:inArc->mon
+new menable-:inArc->inout
+new mdisable-:inArc->inout
+
+
+
+new mon -:outArc->mdisable
+new tok:Token
+new mon-:tokens->tok
+
+
+new mof -:outArc->menable
+new mdisable -:inArc-> mof
+
+
+new inout-:outArc->menable
+new inout-:outArc->mdisable
+
+
+
+
+new pn:PetriNet(id="milk")
+new net:Page(id="milk")
+new pn -:pages-> net
+
+new mready:Place(id="milk ready")
+new mfull:Place(id="milk full")
+new mrefillable:Place(id="milk refillable")
+new min:Place(id="IN")
+new mout:Place(id="OUT")
+
+
+new net-:places->mready
+new net-:places->mfull
+new net-:places->mrefillable
+new net-:places->min
+new net-:places->mout
+
+
+
+new mserve:Transition(id="serve")
+new addmilk:Transition(id="add-milk")
+new mrefill:Transition(id="refill milk")
+
+
+new net-:transitions->mserve
+new net-:transitions->addmilk
+new net-:transitions->mrefill
+
+
+
+new min -:outArc->addmilk
+new mserve -:inArc-> mout
+new mready -:outArc-> mserve
+new addmilk -:inArc-> mready
+new mfull -:outArc-> addmilk
+new mrefillable -:outArc-> mrefill
+new addmilk -:inArc-> mrefillable
+new mrefill -:inArc-> mfull
+
+
+new tok3:Token
+new mfull-:tokens->tok3
+
+
+
+new sys:net_addition::System()
+new pn_result:net_addition::PN(net_s="result")
+new a_result:net_addition::Addition(target=pn_result)
+new sys-:net_addition::rules(order=1)->a_result
+new pn_milk:net_addition::PN(net_s="milk")
+new a_result-:net_addition::petrinets->pn_milk
+new pn_main:net_addition::PN(net_s="main")
+new a_result-:net_addition::petrinets->pn_main
+new pn_conf:net_addition::PN(net_s="conf")
+new a_result-:net_addition::petrinets->pn_conf
+new n_pn_conf_On:net_addition::PetriNode(item_s="On")
+new pn_conf-:net_addition::pn_nodes->n_pn_conf_On
+new n_pn_conf_On -:net_addition::configures(activates=True, weight=1)-> pn_milk
+new f_ready:net_addition::Fusion(rename="ready")
+new a_result-:net_addition::fusions->f_ready
+new n_pn_main_ready:net_addition::PetriNode(item_s="ready")
+new pn_main-:net_addition::pn_nodes->n_pn_main_ready
+new f_ready-:net_addition::sources->n_pn_main_ready
+new n_pn_milk_IN:net_addition::PetriNode(item_s="IN")
+new pn_milk-:net_addition::pn_nodes->n_pn_milk_IN
+new f_ready-:net_addition::sources->n_pn_milk_IN
+new f_wait:net_addition::Fusion(rename="wait")
+new a_result-:net_addition::fusions->f_wait
+new n_pn_main_wait:net_addition::PetriNode(item_s="wait")
+new pn_main-:net_addition::pn_nodes->n_pn_main_wait
+new f_wait-:net_addition::sources->n_pn_main_wait
+new n_pn_milk_OUT:net_addition::PetriNode(item_s="OUT")
+new pn_milk-:net_addition::pn_nodes->n_pn_milk_OUT
+new f_wait-:net_addition::sources->n_pn_milk_OUT
+new n_pn_conf_INOUT:net_addition::PetriNode(item_s="INOUT")
+new pn_conf-:net_addition::pn_nodes->n_pn_conf_INOUT
+new f_wait-:net_addition::sources->n_pn_conf_INOUT
+exec na::Transform()
+exec na::NACleanup()
+exec PetrinetCleanup()*
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/PhD/papers/adaptive_pn/figures/05_feature_dyn3.na.transformed.grs
+exec dyn2r::flatten()
+exec PetrinetCleanup()*
+exec id_unique()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/PhD/papers/adaptive_pn/figures/05_feature_dyn3.na.nodyn.grs
+exec TransformMultiArcsToWeight()*
+exec Init(6)
+exec ToPTNet()* | [InfoInhibitors()] | CheckError()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/PhD/papers/adaptive_pn/figures/05_feature_dyn3.na.noinh.grs

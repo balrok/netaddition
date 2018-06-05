@@ -1,0 +1,1985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml>
+ <snakes version="0.9.25">
+  <plugins>
+   <object type="tuple">
+    <object type="str">snakes.nets</object>
+    <object type="str">snakes.plugins.clusters</object>
+    <object type="str">snakes.plugins.pos</object>
+    <object type="str">snakes.plugins.gv</object>
+   </object>
+  </plugins>
+ </snakes>
+ <net id="result">
+  <page id="result_page">
+   <place id="Preparing">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Preparing_out">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Ingredients">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Ingredients_out">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Water_Heating">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Pump">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Grind_Coffee">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Milk_Heating">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Ingredients_Coffee">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Ingredients_Milk">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Running">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Stopping">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Stopped">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="state_Espresso-Milk">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_Espresso">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_Coffee-Milk">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_Coffee">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Espresso">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Coffee_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="Coffee_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Milk_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="Milk_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="Cappuccino_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="Cappuccino_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_None_0">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_None_1">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_reset_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_reset_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="event_cappuccino_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_cappuccino_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="event_milk_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_milk_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="event_espresso_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_espresso_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="event_coffee_0">
+    <initialMarking>
+     <text>1</text>
+    </initialMarking>
+   </place>
+   <place id="event_coffee_1">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <place id="state_Cappuccino">
+    <initialMarking>
+     <text>0</text>
+    </initialMarking>
+   </place>
+   <transition id="req.coffee"/>
+   <transition id="req.espresso"/>
+   <transition id="req.milk"/>
+   <transition id="req.cappuccino"/>
+   <transition id="start_transition"/>
+   <transition id="t11"/>
+   <transition id="t5"/>
+   <transition id="t4"/>
+   <transition id="no_prepare"/>
+   <transition id="t_espresso"/>
+   <transition id="t22"/>
+   <transition id="t20"/>
+   <transition id="t14"/>
+   <transition id="t10_inout_Coffee_1"/>
+   <transition id="t21_inout_Coffee_1"/>
+   <transition id="t2_inout_Milk_1"/>
+   <transition id="t19_inout_Milk_1"/>
+   <transition id="t_capp2_inout_Cappuccino_1"/>
+   <transition id="t24_inout_state_None_1"/>
+   <transition id="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1"/>
+   <transition id="Espresso_None_reset_in_state_None_0_out_event_reset_1"/>
+   <transition id="None_None_reset_inout_state_None_1_out_event_reset_1"/>
+   <transition id="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1"/>
+   <transition id="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1"/>
+   <transition id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1"/>
+   <transition id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1"/>
+   <transition id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1"/>
+   <transition id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1"/>
+   <transition id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1"/>
+   <transition id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1"/>
+   <transition id="end_running_in_event_reset_1_MUST_BE_DEAD"/>
+   <transition id="end_running_in_event_reset_0"/>
+   <transition id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1"/>
+   <transition id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1"/>
+   <transition id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1"/>
+   <transition id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1"/>
+   <transition id="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1"/>
+   <transition id="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1"/>
+   <transition id="Espresso_Espresso_cappuccino_out_event_cappuccino_1"/>
+   <transition id="Coffee_Coffee_cappuccino_out_event_cappuccino_1"/>
+   <transition id="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1"/>
+   <transition id="None_None_milk_inout_state_None_1_out_event_milk_1"/>
+   <transition id="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1"/>
+   <transition id="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1"/>
+   <transition id="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1"/>
+   <transition id="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1"/>
+   <transition id="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1"/>
+   <transition id="Cappuccino_Cappuccino_milk_out_event_milk_1"/>
+   <transition id="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1"/>
+   <transition id="None_Espresso_espresso_out_state_None_1_out_event_espresso_1"/>
+   <transition id="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1"/>
+   <transition id="Cappuccino_Cappuccino_espresso_out_event_espresso_1"/>
+   <transition id="Espresso_Espresso_espresso_out_event_espresso_1"/>
+   <transition id="Coffee_Coffee_espresso_out_event_espresso_1"/>
+   <transition id="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1"/>
+   <transition id="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1"/>
+   <transition id="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1"/>
+   <transition id="Cappuccino_Cappuccino_coffee_out_event_coffee_1"/>
+   <transition id="Espresso_Espresso_coffee_out_event_coffee_1"/>
+   <transition id="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1"/>
+   <transition id="Coffee_Coffee_coffee_out_event_coffee_1"/>
+   <transition id="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1"/>
+   <arc id="event_coffee_0:req.coffee" source="event_coffee_0" target="req.coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopped:req.coffee" source="Stopped" target="req.coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.coffee:event_coffee_1" source="req.coffee" target="event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.coffee:Stopped" source="req.coffee" target="Stopped">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_0:req.espresso" source="event_espresso_0" target="req.espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopped:req.espresso" source="Stopped" target="req.espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.espresso:event_espresso_1" source="req.espresso" target="event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.espresso:Stopped" source="req.espresso" target="Stopped">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_0:req.milk" source="event_milk_0" target="req.milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopped:req.milk" source="Stopped" target="req.milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.milk:event_milk_1" source="req.milk" target="event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.milk:Stopped" source="req.milk" target="Stopped">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_0:req.cappuccino" source="event_cappuccino_0" target="req.cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopped:req.cappuccino" source="Stopped" target="req.cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.cappuccino:event_cappuccino_1" source="req.cappuccino" target="event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="req.cappuccino:Stopped" source="req.cappuccino" target="Stopped">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_0:start_transition" source="event_coffee_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_0:start_transition" source="event_espresso_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_0:start_transition" source="event_milk_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_0:start_transition" source="event_cappuccino_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_0:start_transition" source="event_reset_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:start_transition" source="state_None_0" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopped:start_transition" source="Stopped" target="start_transition">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:Running" source="start_transition" target="Running">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:state_None_0" source="start_transition" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:event_reset_0" source="start_transition" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:event_cappuccino_0" source="start_transition" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:event_milk_0" source="start_transition" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:event_espresso_0" source="start_transition" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:event_coffee_0" source="start_transition" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="start_transition:Ingredients" source="start_transition" target="Ingredients">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Pump:t11" source="Pump" target="t11">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t11:Preparing_out" source="t11" target="Preparing_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Water_Heating:t5" source="Water_Heating" target="t5">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Grind_Coffee:t5" source="Grind_Coffee" target="t5">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t5:Pump" source="t5" target="Pump">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_Heating:t4" source="Milk_Heating" target="t4">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t4:Preparing_out" source="t4" target="Preparing_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_0:no_prepare" source="Cappuccino_0" target="no_prepare">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_0:no_prepare" source="Milk_0" target="no_prepare">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_0:no_prepare" source="Coffee_0" target="no_prepare">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing:no_prepare" source="Preparing" target="no_prepare">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="no_prepare:Coffee_0" source="no_prepare" target="Coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="no_prepare:Milk_0" source="no_prepare" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="no_prepare:Cappuccino_0" source="no_prepare" target="Cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="no_prepare:Preparing_out" source="no_prepare" target="Preparing_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:t_espresso" source="Espresso" target="t_espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients:t_espresso" source="Ingredients" target="t_espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t_espresso:Ingredients_out" source="t_espresso" target="Ingredients_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t_espresso:Espresso" source="t_espresso" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients_Coffee:t22" source="Ingredients_Coffee" target="t22">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t22:Ingredients_out" source="t22" target="Ingredients_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients_Milk:t20" source="Ingredients_Milk" target="t20">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t20:Ingredients_out" source="t20" target="Ingredients_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients_out:t14" source="Ingredients_out" target="t14">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t14:Preparing" source="t14" target="Preparing">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:t10_inout_Coffee_1" source="Coffee_1" target="t10_inout_Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing:t10_inout_Coffee_1" source="Preparing" target="t10_inout_Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t10_inout_Coffee_1:Grind_Coffee" source="t10_inout_Coffee_1" target="Grind_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t10_inout_Coffee_1:Coffee_1" source="t10_inout_Coffee_1" target="Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t10_inout_Coffee_1:Water_Heating" source="t10_inout_Coffee_1" target="Water_Heating">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:t21_inout_Coffee_1" source="Coffee_1" target="t21_inout_Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients:t21_inout_Coffee_1" source="Ingredients" target="t21_inout_Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t21_inout_Coffee_1:Coffee_1" source="t21_inout_Coffee_1" target="Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t21_inout_Coffee_1:Ingredients_Coffee" source="t21_inout_Coffee_1" target="Ingredients_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_0:t2_inout_Milk_1" source="Cappuccino_0" target="t2_inout_Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:t2_inout_Milk_1" source="Milk_1" target="t2_inout_Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing:t2_inout_Milk_1" source="Preparing" target="t2_inout_Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_inout_Milk_1:Milk_1" source="t2_inout_Milk_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_inout_Milk_1:Cappuccino_0" source="t2_inout_Milk_1" target="Cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t2_inout_Milk_1:Milk_Heating" source="t2_inout_Milk_1" target="Milk_Heating">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:t19_inout_Milk_1" source="Milk_1" target="t19_inout_Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Ingredients:t19_inout_Milk_1" source="Ingredients" target="t19_inout_Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t19_inout_Milk_1:Milk_1" source="t19_inout_Milk_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t19_inout_Milk_1:Ingredients_Milk" source="t19_inout_Milk_1" target="Ingredients_Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_1:t_capp2_inout_Cappuccino_1" source="Cappuccino_1" target="t_capp2_inout_Cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing:t_capp2_inout_Cappuccino_1" source="Preparing" target="t_capp2_inout_Cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t_capp2_inout_Cappuccino_1:Cappuccino_1" source="t_capp2_inout_Cappuccino_1" target="Cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t_capp2_inout_Cappuccino_1:Preparing_out" source="t_capp2_inout_Cappuccino_1" target="Preparing_out">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:t24_inout_state_None_1" source="state_None_1" target="t24_inout_state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Stopping:t24_inout_state_None_1" source="Stopping" target="t24_inout_state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t24_inout_state_None_1:state_None_1" source="t24_inout_state_None_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="t24_inout_state_None_1:Stopped" source="t24_inout_state_None_1" target="Stopped">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="event_reset_1" target="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_None_1" target="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Espresso" target="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_Espresso" target="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:event_reset_0" source="Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Espresso_None_reset_in_state_None_0_out_event_reset_1" source="event_reset_1" target="Espresso_None_reset_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:Espresso_None_reset_in_state_None_0_out_event_reset_1" source="state_None_0" target="Espresso_None_reset_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Espresso_None_reset_in_state_None_0_out_event_reset_1" source="Espresso" target="Espresso_None_reset_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_None_reset_in_state_None_0_out_event_reset_1" source="state_Espresso" target="Espresso_None_reset_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_None_reset_in_state_None_0_out_event_reset_1:event_reset_0" source="Espresso_None_reset_in_state_None_0_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_None_reset_in_state_None_0_out_event_reset_1:state_None_1" source="Espresso_None_reset_in_state_None_0_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:None_None_reset_inout_state_None_1_out_event_reset_1" source="event_reset_1" target="None_None_reset_inout_state_None_1_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_None_reset_inout_state_None_1_out_event_reset_1" source="state_None_1" target="None_None_reset_inout_state_None_1_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_None_reset_inout_state_None_1_out_event_reset_1:event_reset_0" source="None_None_reset_inout_state_None_1_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_None_reset_inout_state_None_1_out_event_reset_1:state_None_1" source="None_None_reset_inout_state_None_1_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="event_reset_1" target="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_None_1" target="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Coffee_1" target="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_Coffee" target="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:event_reset_0" source="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Coffee_0" source="Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" source="event_reset_1" target="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" source="state_None_0" target="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" source="Coffee_1" target="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" source="state_Coffee" target="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1:Coffee_0" source="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" target="Coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1:event_reset_0" source="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1:state_None_1" source="Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="event_reset_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_None_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Milk_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Coffee_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_Coffee-Milk" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Coffee_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:event_reset_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Milk_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" source="event_reset_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" source="state_None_0" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" source="Milk_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" source="Coffee_1" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" source="state_Coffee-Milk" target="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1:Milk_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1:Coffee_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" target="Coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1:event_reset_0" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1:state_None_1" source="Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="event_reset_1" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_None_1" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Milk_1" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_Espresso-Milk" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Espresso" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:event_reset_0" source="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Milk_0" source="Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" source="event_reset_1" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" source="state_None_0" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" source="Milk_1" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" source="state_Espresso-Milk" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" source="Espresso" target="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1:Milk_0" source="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1:event_reset_0" source="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1:state_None_1" source="Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="event_reset_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_0:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="state_None_0" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="Cappuccino_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="Milk_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="Espresso" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" source="state_Cappuccino" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1:Cappuccino_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" target="Cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1:Milk_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1:event_reset_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1:state_None_1" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="event_reset_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_None_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Cappuccino_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Milk_1" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="Espresso" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" source="state_Cappuccino" target="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Milk_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:event_reset_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1:Cappuccino_0" source="Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1" target="Cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_1:end_running_in_event_reset_1_MUST_BE_DEAD" source="event_reset_1" target="end_running_in_event_reset_1_MUST_BE_DEAD">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Running:end_running_in_event_reset_1_MUST_BE_DEAD" source="Running" target="end_running_in_event_reset_1_MUST_BE_DEAD">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing_out:end_running_in_event_reset_1_MUST_BE_DEAD" source="Preparing_out" target="end_running_in_event_reset_1_MUST_BE_DEAD">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="end_running_in_event_reset_1_MUST_BE_DEAD:Stopping" source="end_running_in_event_reset_1_MUST_BE_DEAD" target="Stopping">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_reset_0:end_running_in_event_reset_0" source="event_reset_0" target="end_running_in_event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Running:end_running_in_event_reset_0" source="Running" target="end_running_in_event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Preparing_out:end_running_in_event_reset_0" source="Preparing_out" target="end_running_in_event_reset_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="end_running_in_event_reset_0:event_reset_1" source="end_running_in_event_reset_0" target="event_reset_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="end_running_in_event_reset_0:Stopping" source="end_running_in_event_reset_0" target="Stopping">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="event_cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="state_None_1" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_1:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="Cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_0:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="Milk_0" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:Milk_1" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:Espresso" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:state_Cappuccino" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:event_cappuccino_0" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:state_None_0" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="event_cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="state_None_1" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_0:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="Cappuccino_0" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_0:None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="Milk_0" target="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:Cappuccino_1" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="Cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:Milk_1" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:Espresso" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:state_Cappuccino" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:event_cappuccino_0" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:state_None_0" source="None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="event_cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="state_None_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_0:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="Cappuccino_0" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" source="Milk_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:Cappuccino_1" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="Cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:Espresso" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:state_Cappuccino" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:event_cappuccino_0" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1:state_None_0" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="event_cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="state_None_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="Cappuccino_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" source="Milk_1" target="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:Espresso" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:state_Cappuccino" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:event_cappuccino_0" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1:state_None_0" source="None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1" source="event_cappuccino_1" target="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1" source="state_Espresso-Milk" target="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1:event_cappuccino_0" source="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1:state_Espresso-Milk" source="Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1" source="event_cappuccino_1" target="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1" source="state_Cappuccino" target="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1:event_cappuccino_0" source="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1:state_Cappuccino" source="Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:Espresso_Espresso_cappuccino_out_event_cappuccino_1" source="event_cappuccino_1" target="Espresso_Espresso_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_Espresso_cappuccino_out_event_cappuccino_1" source="state_Espresso" target="Espresso_Espresso_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_cappuccino_out_event_cappuccino_1:event_cappuccino_0" source="Espresso_Espresso_cappuccino_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_cappuccino_out_event_cappuccino_1:state_Espresso" source="Espresso_Espresso_cappuccino_out_event_cappuccino_1" target="state_Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:Coffee_Coffee_cappuccino_out_event_cappuccino_1" source="event_cappuccino_1" target="Coffee_Coffee_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_Coffee_cappuccino_out_event_cappuccino_1" source="state_Coffee" target="Coffee_Coffee_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_cappuccino_out_event_cappuccino_1:event_cappuccino_0" source="Coffee_Coffee_cappuccino_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_cappuccino_out_event_cappuccino_1:state_Coffee" source="Coffee_Coffee_cappuccino_out_event_cappuccino_1" target="state_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_cappuccino_1:Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1" source="event_cappuccino_1" target="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1" source="state_Coffee-Milk" target="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1:event_cappuccino_0" source="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1" target="event_cappuccino_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1:state_Coffee-Milk" source="Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:None_None_milk_inout_state_None_1_out_event_milk_1" source="event_milk_1" target="None_None_milk_inout_state_None_1_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_None_milk_inout_state_None_1_out_event_milk_1" source="state_None_1" target="None_None_milk_inout_state_None_1_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_None_milk_inout_state_None_1_out_event_milk_1:event_milk_0" source="None_None_milk_inout_state_None_1_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_None_milk_inout_state_None_1_out_event_milk_1:state_None_1" source="None_None_milk_inout_state_None_1_out_event_milk_1" target="state_None_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="event_milk_1" target="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="Milk_1" target="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="state_Coffee" target="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1:event_milk_0" source="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1:state_Coffee-Milk" source="Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" source="event_milk_1" target="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_0:Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" source="Milk_0" target="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" source="state_Coffee" target="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1:state_Coffee-Milk" source="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1:event_milk_0" source="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1:Milk_1" source="Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" source="event_milk_1" target="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_0:Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" source="Milk_0" target="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" source="state_Espresso" target="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1:state_Espresso-Milk" source="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1:event_milk_0" source="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1:Milk_1" source="Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1" target="Milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="event_milk_1" target="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Milk_1:Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="Milk_1" target="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" source="state_Espresso" target="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1:event_milk_0" source="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1:state_Espresso-Milk" source="Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Espresso-Milk_Espresso-Milk_milk_out_event_milk_1" source="event_milk_1" target="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_Espresso-Milk_milk_out_event_milk_1" source="state_Espresso-Milk" target="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1:event_milk_0" source="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1:state_Espresso-Milk" source="Espresso-Milk_Espresso-Milk_milk_out_event_milk_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Cappuccino_Cappuccino_milk_out_event_milk_1" source="event_milk_1" target="Cappuccino_Cappuccino_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_Cappuccino_milk_out_event_milk_1" source="state_Cappuccino" target="Cappuccino_Cappuccino_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_milk_out_event_milk_1:event_milk_0" source="Cappuccino_Cappuccino_milk_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_milk_out_event_milk_1:state_Cappuccino" source="Cappuccino_Cappuccino_milk_out_event_milk_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_milk_1:Coffee-Milk_Coffee-Milk_milk_out_event_milk_1" source="event_milk_1" target="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_Coffee-Milk_milk_out_event_milk_1" source="state_Coffee-Milk" target="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1:event_milk_0" source="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1" target="event_milk_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1:state_Coffee-Milk" source="Coffee-Milk_Coffee-Milk_milk_out_event_milk_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:None_Espresso_espresso_out_state_None_1_out_event_espresso_1" source="event_espresso_1" target="None_Espresso_espresso_out_state_None_1_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Espresso_espresso_out_state_None_1_out_event_espresso_1" source="state_None_1" target="None_Espresso_espresso_out_state_None_1_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Espresso_espresso_out_state_None_1_out_event_espresso_1:Espresso" source="None_Espresso_espresso_out_state_None_1_out_event_espresso_1" target="Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Espresso_espresso_out_state_None_1_out_event_espresso_1:state_Espresso" source="None_Espresso_espresso_out_state_None_1_out_event_espresso_1" target="state_Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Espresso_espresso_out_state_None_1_out_event_espresso_1:event_espresso_0" source="None_Espresso_espresso_out_state_None_1_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Espresso_espresso_out_state_None_1_out_event_espresso_1:state_None_0" source="None_Espresso_espresso_out_state_None_1_out_event_espresso_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1" source="event_espresso_1" target="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1" source="state_Espresso-Milk" target="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1:event_espresso_0" source="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1:state_Espresso-Milk" source="Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:Cappuccino_Cappuccino_espresso_out_event_espresso_1" source="event_espresso_1" target="Cappuccino_Cappuccino_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_Cappuccino_espresso_out_event_espresso_1" source="state_Cappuccino" target="Cappuccino_Cappuccino_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_espresso_out_event_espresso_1:event_espresso_0" source="Cappuccino_Cappuccino_espresso_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_espresso_out_event_espresso_1:state_Cappuccino" source="Cappuccino_Cappuccino_espresso_out_event_espresso_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:Espresso_Espresso_espresso_out_event_espresso_1" source="event_espresso_1" target="Espresso_Espresso_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_Espresso_espresso_out_event_espresso_1" source="state_Espresso" target="Espresso_Espresso_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_espresso_out_event_espresso_1:event_espresso_0" source="Espresso_Espresso_espresso_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_espresso_out_event_espresso_1:state_Espresso" source="Espresso_Espresso_espresso_out_event_espresso_1" target="state_Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:Coffee_Coffee_espresso_out_event_espresso_1" source="event_espresso_1" target="Coffee_Coffee_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_Coffee_espresso_out_event_espresso_1" source="state_Coffee" target="Coffee_Coffee_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_espresso_out_event_espresso_1:event_espresso_0" source="Coffee_Coffee_espresso_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_espresso_out_event_espresso_1:state_Coffee" source="Coffee_Coffee_espresso_out_event_espresso_1" target="state_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_espresso_1:Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1" source="event_espresso_1" target="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1" source="state_Coffee-Milk" target="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1:event_espresso_0" source="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1" target="event_espresso_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1:state_Coffee-Milk" source="Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" source="event_coffee_1" target="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" source="state_None_1" target="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_1:None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" source="Coffee_1" target="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1:state_Coffee" source="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" target="state_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1:event_coffee_0" source="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1:state_None_0" source="None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" source="event_coffee_1" target="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_None_1:None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" source="state_None_1" target="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_0:None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" source="Coffee_0" target="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1:Coffee_1" source="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" target="Coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1:state_Coffee" source="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" target="state_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1:event_coffee_0" source="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1:state_None_0" source="None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1" target="state_None_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:Cappuccino_Cappuccino_coffee_out_event_coffee_1" source="event_coffee_1" target="Cappuccino_Cappuccino_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Cappuccino:Cappuccino_Cappuccino_coffee_out_event_coffee_1" source="state_Cappuccino" target="Cappuccino_Cappuccino_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_coffee_out_event_coffee_1:event_coffee_0" source="Cappuccino_Cappuccino_coffee_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Cappuccino_Cappuccino_coffee_out_event_coffee_1:state_Cappuccino" source="Cappuccino_Cappuccino_coffee_out_event_coffee_1" target="state_Cappuccino">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:Espresso_Espresso_coffee_out_event_coffee_1" source="event_coffee_1" target="Espresso_Espresso_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso:Espresso_Espresso_coffee_out_event_coffee_1" source="state_Espresso" target="Espresso_Espresso_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_coffee_out_event_coffee_1:event_coffee_0" source="Espresso_Espresso_coffee_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso_Espresso_coffee_out_event_coffee_1:state_Espresso" source="Espresso_Espresso_coffee_out_event_coffee_1" target="state_Espresso">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1" source="event_coffee_1" target="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee-Milk:Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1" source="state_Coffee-Milk" target="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1:event_coffee_0" source="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1:state_Coffee-Milk" source="Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1" target="state_Coffee-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:Coffee_Coffee_coffee_out_event_coffee_1" source="event_coffee_1" target="Coffee_Coffee_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Coffee:Coffee_Coffee_coffee_out_event_coffee_1" source="state_Coffee" target="Coffee_Coffee_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_coffee_out_event_coffee_1:event_coffee_0" source="Coffee_Coffee_coffee_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Coffee_Coffee_coffee_out_event_coffee_1:state_Coffee" source="Coffee_Coffee_coffee_out_event_coffee_1" target="state_Coffee">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="event_coffee_1:Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1" source="event_coffee_1" target="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="state_Espresso-Milk:Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1" source="state_Espresso-Milk" target="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1:event_coffee_0" source="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1" target="event_coffee_0">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+   <arc id="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1:state_Espresso-Milk" source="Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1" target="state_Espresso-Milk">
+    <inscription>
+     <text>1</text>
+    </inscription>
+   </arc>
+  </page>
+  <clusters>
+   <node>Coffee_Coffee_coffee_out_event_coffee_1</node>
+   <node>Running</node>
+   <node>Milk_1</node>
+   <node>Ingredients_out</node>
+   <node>start_transition</node>
+   <node>Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1</node>
+   <node>t14</node>
+   <node>t24_inout_state_None_1</node>
+   <node>t_capp2_inout_Cappuccino_1</node>
+   <node>None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1</node>
+   <node>Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1</node>
+   <node>Cappuccino_Cappuccino_milk_out_event_milk_1</node>
+   <node>Coffee_0</node>
+   <node>Cappuccino_Cappuccino_espresso_out_event_espresso_1</node>
+   <node>Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1</node>
+   <node>t11</node>
+   <node>Cappuccino_Cappuccino_coffee_out_event_coffee_1</node>
+   <node>Preparing_out</node>
+   <node>event_cappuccino_1</node>
+   <node>None_None_milk_inout_state_None_1_out_event_milk_1</node>
+   <node>req.cappuccino</node>
+   <node>event_reset_1</node>
+   <node>Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1</node>
+   <node>event_milk_0</node>
+   <node>None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1</node>
+   <node>Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1</node>
+   <node>Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1</node>
+   <node>event_espresso_1</node>
+   <node>Coffee_1</node>
+   <node>Ingredients</node>
+   <node>Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1</node>
+   <node>Espresso_Espresso_cappuccino_out_event_cappuccino_1</node>
+   <node>t22</node>
+   <node>state_Espresso-Milk</node>
+   <node>Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1</node>
+   <node>Milk_Heating</node>
+   <node>t2_inout_Milk_1</node>
+   <node>event_coffee_1</node>
+   <node>req.coffee</node>
+   <node>t21_inout_Coffee_1</node>
+   <node>t10_inout_Coffee_1</node>
+   <node>Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1</node>
+   <node>Preparing</node>
+   <node>Espresso_Espresso_espresso_out_event_espresso_1</node>
+   <node>state_None_1</node>
+   <node>Ingredients_Coffee</node>
+   <node>event_coffee_0</node>
+   <node>Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1</node>
+   <node>end_running_in_event_reset_1_MUST_BE_DEAD</node>
+   <node>req.espresso</node>
+   <node>Ingredients_Milk</node>
+   <node>Stopped</node>
+   <node>Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1</node>
+   <node>None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1</node>
+   <node>event_espresso_0</node>
+   <node>req.milk</node>
+   <node>t20</node>
+   <node>Grind_Coffee</node>
+   <node>Coffee_Coffee_espresso_out_event_espresso_1</node>
+   <node>Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1</node>
+   <node>None_None_reset_inout_state_None_1_out_event_reset_1</node>
+   <node>no_prepare</node>
+   <node>t4</node>
+   <node>Espresso-Milk_Espresso-Milk_milk_out_event_milk_1</node>
+   <node>Espresso</node>
+   <node>Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1</node>
+   <node>None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1</node>
+   <node>Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1</node>
+   <node>Pump</node>
+   <node>t_espresso</node>
+   <node>Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1</node>
+   <node>Coffee_Coffee_cappuccino_out_event_cappuccino_1</node>
+   <node>Stopping</node>
+   <node>end_running_in_event_reset_0</node>
+   <node>t19_inout_Milk_1</node>
+   <node>Cappuccino_1</node>
+   <node>Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1</node>
+   <node>state_None_0</node>
+   <node>Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1</node>
+   <node>Coffee-Milk_Coffee-Milk_milk_out_event_milk_1</node>
+   <node>None_Espresso_espresso_out_state_None_1_out_event_espresso_1</node>
+   <node>None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1</node>
+   <node>Espresso_Espresso_coffee_out_event_coffee_1</node>
+   <node>Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1</node>
+   <node>Water_Heating</node>
+   <node>None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1</node>
+   <node>event_cappuccino_0</node>
+   <node>Cappuccino_0</node>
+   <node>event_reset_0</node>
+   <node>state_Coffee-Milk</node>
+   <node>Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1</node>
+   <node>t5</node>
+   <node>state_Cappuccino</node>
+   <node>Milk_0</node>
+   <node>state_Coffee</node>
+   <node>Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1</node>
+   <node>state_Espresso</node>
+   <node>event_milk_1</node>
+   <node>Espresso_None_reset_in_state_None_0_out_event_reset_1</node>
+  </clusters>
+ </net>
+</pnml>

@@ -1,0 +1,30 @@
+# Dead Transitions:
+new :pninfo::DeadT(id="None_None_reset_inout_state_None_1_out_event_reset_1")
+
+# Dead Places:
+
+# Dead Places (marking=1):
+
+# 1-Formula (took 0.01s)
+#  Places (63): AG((A = 1 AND (B = 1)) OR (NOT(A = 1) AND NOT(B = 1)))
+# AG((Cappuccino_1 = 1 AND (state_Cappuccino = 1)) OR (NOT(Cappuccino_1 = 1) AND NOT(state_Cappuccino = 1)))
+new s_1:boo::Symbol(id="state_Cappuccino")
+# state_Cappuccino
+
+# state_Cappuccino
+
+
+new s1_1:pninfo::AlternativeP(id="Cappuccino")
+new s1_1 -:pninfo::alternative_formula-> s_1
+# AG((Grind_Coffee = 1 AND (Water_Heating = 1)) OR (NOT(Grind_Coffee = 1) AND NOT(Water_Heating = 1)))
+new s_2:boo::Symbol(id="Water_Heating")
+# Water_Heating
+
+# Water_Heating
+
+
+new s1_2:pninfo::AlternativeP(id="Grind_Coffee")
+new s1_2 -:pninfo::alternative_formula-> s_2
+# (took 0.00s for 63 elements)
+
+#  Places (54): AG((A = 1 AND (B = 0)) OR (NOT(A = 1) AND NOT(B = 0))) (took 0.00s for 54 elements)

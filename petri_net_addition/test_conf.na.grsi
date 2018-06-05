@@ -1,0 +1,51 @@
+new graph "../allinone/Rules.grg"
+include layout.grsi
+include PN1.grs
+include PN2.grs
+include PNC.grs
+
+new sys:net_addition::System()
+new pn_PN3:net_addition::PN(net_s="PN3")
+new a_PN3:net_addition::Addition(target=pn_PN3)
+new sys-:net_addition::rules(order=1)->a_PN3
+new pn_PN1:net_addition::PN(net_s="PN1")
+new a_PN3-:net_addition::petrinets->pn_PN1
+new pn_PN2:net_addition::PN(net_s="PN2")
+new a_PN3-:net_addition::petrinets->pn_PN2
+new pn_PNC:net_addition::PN(net_s="PNC")
+new a_PN3-:net_addition::petrinets->pn_PNC
+new n_pn_PN3_p_conf:net_addition::PetriNode(item_s="p_conf")
+new pn_PN3-:net_addition::pn_nodes->n_pn_PN3_p_conf
+new n_pn_PN3_p_conf -:net_addition::configures(activates=True, weight=1)-> pn_PN2
+new f_p3_11:net_addition::Fusion(rename="p3_11")
+new a_PN3-:net_addition::fusions->f_p3_11
+new n_pn_PN1_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN1-:net_addition::pn_nodes->n_pn_PN1_p1
+new f_p3_11-:net_addition::sources->n_pn_PN1_p1
+new n_pn_PN2_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN2-:net_addition::pn_nodes->n_pn_PN2_p1
+new f_p3_11-:net_addition::sources->n_pn_PN2_p1
+new f_p4_44:net_addition::Fusion(rename="p4_44")
+new a_PN3-:net_addition::fusions->f_p4_44
+new n_pn_PN1_p4:net_addition::PetriNode(item_s="p4")
+new pn_PN1-:net_addition::pn_nodes->n_pn_PN1_p4
+new f_p4_44-:net_addition::sources->n_pn_PN1_p4
+new n_pn_PN2_p4:net_addition::PetriNode(item_s="p4")
+new pn_PN2-:net_addition::pn_nodes->n_pn_PN2_p4
+new f_p4_44-:net_addition::sources->n_pn_PN2_p4
+exec na::Transform()
+exec na::NACleanup()
+exec PetrinetCleanup()*
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/test_conf.na.transformed.grs
+exec dyn2r::flatten()
+exec PetrinetCleanup()*
+exec id_unique()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/test_conf.na.nodyn.grs
+exec TransformMultiArcsToWeight()*
+exec Init(4)
+exec ToPTNet()* | [InfoInhibitors()] | CheckError()
+validate exitonfailure strict only specified
+exec id_replace_lola()
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/test_conf.na.noinh.grs

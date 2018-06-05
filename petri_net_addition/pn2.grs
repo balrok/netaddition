@@ -1,0 +1,24 @@
+new pn:PetriNet(id="PN2")
+new net:Page(id="pn2")
+new pn -:pages-> net
+
+new p1:Place(id="p1")
+new net -:places-> p1
+new p2:Place(id="p2")
+new net -:places-> p2
+new p3:Place(id="p3")
+new net -:places-> p3
+new p4:Place(id="p4")
+new net -:places-> p4
+
+new t1:Transition(id="t1")
+new net -:transitions-> t1
+new t2:Transition(id="t2")
+new net -:transitions-> t2
+
+new t1 -ia1:inArc(id="ia1")-> p3
+new t1 -ia2:inArc(id="ia2")-> p4
+new p1 -oa1:outArc(id="oa1")-> t1
+new p2 -oa2:outArc(id="oa2")-> t1
+new t2 -ia3:inArc(id="ia3")-> p4
+

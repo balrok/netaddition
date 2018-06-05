@@ -1,0 +1,34 @@
+new pn:PetriNet(id="z_add")
+new net:Page(id="z_add")
+new pn -:pages-> net
+
+new x:Place(id="x")
+new net-:places->x
+new y:Place(id="y")
+new net-:places->y
+new s:Place(id="s")
+new net-:places->s
+new f:Place(id="f")
+new net-:places->f
+new z:Place(id="z")
+new net-:places->z
+
+new t1:Transition(id="t1")
+new net:transitions->t1
+new t2:Transition(id="t2")
+new net:transitions->t2
+new t3:Transition(id="t3")
+new net:transitions->t3
+
+
+new x-:outArc->t1
+new y-:outArc->t2
+new f-:outArc->t3
+new t1-:inArc->z
+new t2-:inArc->z
+new t3-:inArc->s
+new x-:inhibitorArc->t3
+new y-:inhibitorArc->t3
+new s-:inhibitorArc->t1
+new s-:inhibitorArc->t2
+new s-:inhibitorArc->t3

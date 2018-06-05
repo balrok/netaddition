@@ -1,0 +1,61 @@
+new graph "../allinone/Rules.grg"
+include layout.grsi
+include buko_1.grs
+include buko_2.grs
+include buko_conf.grs
+include buko_main.grs
+
+new sys:net_addition::System()
+new pn_result:net_addition::PN(net_s="result")
+new a_result:net_addition::Addition(target=pn_result)
+new sys-:net_addition::rules(order=1)->a_result
+new pn_buko_1:net_addition::PN(net_s="buko_1")
+new a_result-:net_addition::petrinets->pn_buko_1
+new pn_buko_2:net_addition::PN(net_s="buko_2")
+new a_result-:net_addition::petrinets->pn_buko_2
+new pn_buko_main:net_addition::PN(net_s="buko_main")
+new a_result-:net_addition::petrinets->pn_buko_main
+new pn_buko_conf:net_addition::PN(net_s="buko_conf")
+new a_result-:net_addition::petrinets->pn_buko_conf
+new n_pn_result_cfg:net_addition::PetriNode(item_s="cfg")
+new pn_result-:net_addition::pn_nodes->n_pn_result_cfg
+new n_pn_result_cfg -:net_addition::configures(activates=True, weight=1)-> pn_buko_1
+new n_pn_result_cfg -:net_addition::configures(activates=False, weight=1)-> pn_buko_2
+new f_tin:net_addition::Fusion(rename="tin")
+new a_result-:net_addition::fusions->f_tin
+new n_pn_buko_main_ttemp:net_addition::PetriNode(item_s="ttemp")
+new pn_buko_main-:net_addition::pn_nodes->n_pn_buko_main_ttemp
+new f_tin-:net_addition::sources->n_pn_buko_main_ttemp
+new n_pn_buko_1_tin:net_addition::PetriNode(item_s="tin")
+new pn_buko_1-:net_addition::pn_nodes->n_pn_buko_1_tin
+new f_tin-:net_addition::sources->n_pn_buko_1_tin
+new n_pn_buko_2_tin:net_addition::PetriNode(item_s="tin")
+new pn_buko_2-:net_addition::pn_nodes->n_pn_buko_2_tin
+new f_tin-:net_addition::sources->n_pn_buko_2_tin
+new f_tout:net_addition::Fusion(rename="tout")
+new a_result-:net_addition::fusions->f_tout
+new n_pn_buko_main_t6:net_addition::PetriNode(item_s="t6")
+new pn_buko_main-:net_addition::pn_nodes->n_pn_buko_main_t6
+new f_tout-:net_addition::sources->n_pn_buko_main_t6
+new n_pn_buko_1_tout:net_addition::PetriNode(item_s="tout")
+new pn_buko_1-:net_addition::pn_nodes->n_pn_buko_1_tout
+new f_tout-:net_addition::sources->n_pn_buko_1_tout
+new n_pn_buko_2_tout:net_addition::PetriNode(item_s="tout")
+new pn_buko_2-:net_addition::pn_nodes->n_pn_buko_2_tout
+new f_tout-:net_addition::sources->n_pn_buko_2_tout
+exec na::Transform()
+exec na::NACleanup()
+exec PetrinetCleanup()*
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/buko.na.transformed.grs
+exec dyn2r::flatten()
+exec PetrinetCleanup()*
+exec id_unique()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/buko.na.nodyn.grs
+exec TransformMultiArcsToWeight()*
+exec Init(4)
+exec ToPTNet()* | [InfoInhibitors()] | CheckError()
+validate exitonfailure strict only specified
+exec id_replace_lola()
+export /Users/cmai/Desktop/reconfnet/grgen/petri_net_addition/buko.na.noinh.grs

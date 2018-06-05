@@ -1,0 +1,69 @@
+
+Check reversible
+----------------
+lola: reading net from /Users/cmai/Desktop/reconfnet/grgen/allinone/inhibitortransform.grs.grsi.pnml.lola
+lola: finished parsing
+lola: closed net file /Users/cmai/Desktop/reconfnet/grgen/allinone/inhibitortransform.grs.grsi.pnml.lola
+lola: 99/65536 symbol table entries, 0 collisions
+lola: preprocessing net
+lola: computing forward-conflicting sets
+lola: computing back-conflicting sets
+lola: 113 transition conflict sets
+lola: finding significant places
+lola: 37 places, 62 transitions, 25 significant places
+lola: read: AG (EF (INITIAL))
+lola: formula length: 17
+lola: checking liveness
+lola: processing formula
+lola: processed formula: !(E(TRUE U !(E(TRUE U (state_None_0 <= 0 AND (state_None_0 > -1 AND (state_None_1 <= 1 AND (state_None_1 > 0 AND (Coffee_0 <= 1 AND (Coffee_0 > 0 AND (Coffee_1 <= 0 AND (Coffee_1 > -1 AND (state_Cappuccino <= 0 AND (state_Cappuccino > -1 AND (event_cappuccino_0 <= 1 AND (event_cappuccino_0 > 0 AND (event_milk_0 <= 1 AND (event_milk_0 > 0 AND (state_Espresso <= 0 AND (state_Espresso > -1 AND (Stopp... (shortened)
+lola: processed formula length: 1803
+lola: 1374 rewrites
+lola: formula mentions 37 of 37 places; total mentions: 74
+lola: using a bit-perfect encoder (--encoder)
+lola: using 100 bytes per marking, with 0 unused bits
+lola: using a prefix store (--store)
+lola: checking a formula (--check=modelchecking)
+lola: finished preprocessing
+lola: CTL formula contains 2 significant temporal operators and needs 9 bytes of payload
+lola: result: yes
+lola: The net satisfies the given formula.
+lola: print witness state (--state)
+lola: writing witness state to stdout
+lola: no witness state generated
+lola: closed witness state file stdout
+lola: print witness path (--path)
+lola: writing witness path to stdout
+lola: closed witness path file stdout
+lola: 133 markings, 799 edges
+NOSTATE
+Check deadlock
+--------------
+lola: reading net from /Users/cmai/Desktop/reconfnet/grgen/allinone/inhibitortransform.grs.grsi.pnml.lola
+lola: finished parsing
+lola: closed net file /Users/cmai/Desktop/reconfnet/grgen/allinone/inhibitortransform.grs.grsi.pnml.lola
+lola: 99/65536 symbol table entries, 0 collisions
+lola: preprocessing net
+lola: computing forward-conflicting sets
+lola: computing back-conflicting sets
+lola: 113 transition conflict sets
+lola: finding significant places
+lola: 37 places, 62 transitions, 25 significant places
+lola: read: EF (DEADLOCK)
+lola: formula length: 13
+lola: checking reachability of deadlocks
+lola: using a bit-perfect encoder (--encoder)
+lola: using 100 bytes per marking, with 0 unused bits
+lola: using a prefix store (--store)
+lola: checking a formula (--check=modelchecking)
+lola: finished preprocessing
+lola: result: no
+lola: The net does not satisfy the given formula.
+lola: print witness state (--state)
+lola: writing witness state to stdout
+lola: no witness state generated
+lola: closed witness state file stdout
+lola: print witness path (--path)
+lola: writing witness path to stdout
+lola: closed witness path file stdout
+lola: 133 markings, 430 edges
+NOSTATE

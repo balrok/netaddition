@@ -1,0 +1,435 @@
+package na {
+/*
+ * when we get a net addition file it will contain:
+ *  - petri net pages, which have an id
+ *  - net addition rules
+ *
+ * What we should do with this file:
+ *  1. `[connect()]` all net addition nodes with the petri net pages
+ *  2. `[prepare()]` create pages for lefthand side of an addition and moves all nodes there
+ *  3. `[apply()]` perform all the net addition rules
+ *  4. `[cleanup()]` Remove all not needed information
+ *  5. `[deep_cleanup()]` Remove also all annotations which are used by configuration places
+
+
+    rule connect() {
+
+    }
+*/
+    rule Transform() {
+        modify {
+            exec([TransformSingle() \orderAscendingBy<order>]);
+        }
+    }
+
+    rule TransformSingle() {
+        s:net_addition::System;
+        s -r:net_addition::rules-> a:net_addition::Addition;
+
+        def var order:int;
+        yield { yield order = r.order; }
+        modify {
+            emit("Transform addition with target ",a.target.net_s,"\n");
+            exec(
+                [ConnectAllNets(a)]
+                | [Apply(a)]
+                | [ConnectConfPlaces2(a)]
+                | [ConnectConfStructures(a)]
+            );
+        }
+    } \ orderAscendingBy<order>
+
+
+    rule ConnectAllNets(a:net_addition::Addition) {
+        pn:net_addition::PN;
+        alternative {
+            case_a {
+                a -:net_addition::petrinets-> pn;
+                modify{}
+            }
+            case_b {
+                if {a.target == pn;}
+                modify{}
+            }
+        }
+        negative {
+            if { pn.net == n; }
+            n:PetriNet;
+        }
+        modify {
+            exec(
+                ConnectPN(pn)
+                || CreatePN(pn)
+            );
+        }
+    }
+
+    rule PrintAllPNNodes(pn:net_addition::PN) {
+        pn -:net_addition::pn_nodes-> n:net_addition::PetriNode;
+        modify {
+            emit("PN ",pn.net_s,"(",pn,") has node ",n.item_s,"(",n,")\n");
+        }
+    }
+
+    rule ConnectAllNodesPNtoPage(pn:net_addition::PN, page:Page) {
+        pn -:net_addition::pn_nodes-> n:net_addition::PetriNode;
+        negative {
+            if { n.item == pnode; }
+            pnode:PetriNetNode;
+        }
+        modify {
+            exec(
+                ConnectNodeByPage(n, page)
+                || ErrorConnectNodeByPage(n, page)
+            );
+        }
+    }
+
+    rule castPage(x:Node) : (Page) {
+        modify {
+            y:Page<x>;
+            return(y);
+        }
+    }
+
+    rule ErrorConnectNodeByPage(n:net_addition::PetriNode, net:Page) {
+        modify { emit("Could not connect node ", n.item_s, " by page ",net.id,"\n"); }
+    }
+
+    rule ConnectPN(pn:net_addition::PN) {
+        n:PetriNet;
+        if {n.id == pn.net_s;}
+        modify {
+            eval {pn.net = n;}
+        }
+    }
+
+    rule CreatePN(pn:net_addition::PN) {
+        modify {
+            emit("Had to create a PetriNet for '",pn.net_s,"'\n");
+            n:PetriNet;
+            n -:pages-> np:Page;
+            eval {
+                n.id = pn.net_s;
+                np.id = pn.net_s;
+            }
+            eval {pn.net = n;}
+        }
+    }
+
+    /**
+     * connects to a real node via item_s
+     * the connection happens only after the page was duplicated
+     * and must be updated when nodes are fused
+     */
+    rule ConnectNodeByPage(n:net_addition::PetriNode, net:Page) {
+        net -:transitions_places-> pnode:PetriNetNode;
+        if {pnode.id == n.item_s;}
+        modify {
+            emit("Connect node ",n," to ",pnode.id,"(",pnode,")\n");
+            eval {n.item = pnode;}
+        }
+    }
+
+    /**
+      * 1. copy all PN-stuff into the target
+      * 2. iterate all fusions and do them
+      */
+    rule Apply(a:net_addition::Addition) {
+        target:PetriNet -:pages-> target_net:Page;
+        if {a.target.net == target; }
+        modify {
+            exec(
+                [CopyAllNets(a, target_net)]
+                && [ApplyAllFusions(a, target_net)]
+            );
+        }
+    }
+
+    rule CopyAllNets(a:net_addition::Addition, target_net:Page) {
+        a -:net_addition::petrinets-> napn:net_addition::PN;
+        pn:PetriNet -:pages-> source_net:Page;
+        if { napn.net == pn; }
+        modify {
+            emit("Copy net for pn ",napn.net_s,"\n");
+            exec(
+                // copy the source (sourcenetCopy is a :Page)
+                (sourcenetCopy:Node) = copySubgraph(source_net, map<Node, Node>{})
+                | (net:Page) = castPage(sourcenetCopy)
+                // all the arcs from source are copied to target
+                | copyOutArcs(net, target_net)
+                // | [ConnectNewNet(net)]
+                | [PrintAllPNNodes(napn)]
+                | [ConnectAllNodesPNtoPage(napn, net)]
+                | [CreateConfStructures(a, napn, net)]
+                | [ConnectConfPlaces1(a, napn, net)]
+                // copy-node is deleted
+                | delete_node(net)
+            );
+        }
+    }
+
+    rule ConnectNewNet(net:Page) {
+        net -:transitions_places-> n:PetriNetNode;
+        n -:ECopy-> norig:PetriNetNode;
+        modify {
+            exec (
+                UpdateItems(norig, n)
+            );
+        }
+    }
+
+    rule ApplyAllFusions(a:net_addition::Addition, target_net:Page) {
+        a -:net_addition::fusions-> f:net_addition::Fusion;
+        modify {
+            exec(
+                (n:PetriNetNode) = CreateFusionTarget(f, target_net)
+                && [ApplyFusion(f, target_net, n)]
+                && RemoveDuplicatedArcs(n)*
+            );
+        }
+    }
+
+    rule CreateFusionTarget(f:net_addition::Fusion, target_net:Page) : (PetriNetNode) {
+        // take one sample node
+        f -:net_addition::sources-> n:net_addition::PetriNode;
+        alternative {
+            is_place {
+                p:Place;
+                if { n.item == p; }
+                modify {
+                    new:Place;
+                    target_net -:places-> new;
+                    eval {
+                        new.id = f.rename;
+                        yield ret = new;
+                    }
+                }
+            }
+            is_transition {
+                t:Transition;
+                if { n.item == t; }
+                modify {
+                    new:Transition;
+                    target_net -:transitions-> new;
+                    eval {
+                        new.id = f.rename;
+                        yield ret = new;
+                    }
+                }
+            }
+        }
+        modify {
+            def var ret:PetriNetNode;
+            return(ret);
+        }
+    }
+
+    rule ApplyFusion(f:net_addition::Fusion, target_net:Page, new:PetriNetNode) {
+        f -:net_addition::sources-> n:net_addition::PetriNode;
+        if { n.item == target_node; }
+        target_net -:transitions_places-> target_node:PetriNetNode;
+
+        modify {
+            emit("Apply fusion for ",n.item_s," to ",new.id,"\n");
+            // update the item of the net_addition::PetriNode
+            exec(
+                copyArcs(target_node, new)
+                | UpdateItems(target_node, new)
+                | delete_node(target_node)
+            );
+        }
+    }
+
+    rule UpdateItems(old:PetriNetNode, new:PetriNetNode) {
+        n:net_addition::PetriNode;
+        if {n.item == old;}
+        modify {
+            emit("Updating fusion item of ",n.item_s,"(",n,") from ",old," to ",new,"\n");
+            eval {n.item = new;}
+        }
+    }
+
+    rule RemoveDuplicatedArcs(new:PetriNetNode) {
+        alternative {
+            tr_pl{
+                p:Page -e0:transitions_places-> new;
+                -e:transitions_places-> new;
+                modify {
+                    emit("delete edge ",e," to ",new.id," - remaining is ",e0,"\n");
+                    delete(e);
+                }
+            }
+            netadd {
+                -e0:net_addition::pn_nodes-> new;
+                -e:net_addition::pn_nodes-> new;
+                modify {
+                    delete(e);
+                }
+            }
+        }
+    }
+
+    /*
+     * Starting here - ConfStructure are created based on -configures-> arcs
+     * This is done when the final net of the net-addition is created
+     */
+    // how to implement conf-place
+    //
+    // -configures-> arc
+    rule ConnectConfPlaces1(a:net_addition::Addition, pn:net_addition::PN, net:Page) {
+        pn -:net_addition::pn_nodes-> n:net_addition::PetriNode -c:net_addition::configures-> :net_addition::PN;
+        a -:net_addition::petrinets->pn;
+        modify {
+            emit("Connect1 confplace for ", n.item_s,"\n");
+            exec(
+                ConnectNodeByPage(n, net)
+                || ErrorConnectNodeByPage(n, net)
+            );
+        }
+    }
+
+    rule ConnectConfPlaces2(a:net_addition::Addition) {
+        n:net_addition::PetriNode;
+        n -c:net_addition::configures-> pn:net_addition::PN;
+        a -:net_addition::petrinets->pn;
+        petri:PetriNet;
+        if {a.target.net == petri; }
+        petri -:pages-> net:Page;
+        negative {
+            if { n.item == pnode; }
+            pnode:PetriNetNode;
+        }
+        modify {
+            emit("Connect2 confplace for ", n.item_s,"\n");
+            exec(
+                ConnectNodeByPage(n, net)
+                || ErrorConnectNodeByPage(n, net)
+            );
+        }
+    }
+
+    rule CreateConfStructures(a:net_addition::Addition, pn:net_addition::PN, net:Page) {
+        n:net_addition::PetriNode -c:net_addition::configures-> pn;
+        modify {
+            exec(CreateConfStructure(a, n, c, net, pn));
+        }
+    }
+
+    rule ConnectConfStructures(a:net_addition::Addition) {
+        a -:net_addition::petrinets-> pn:net_addition::PN;
+        pn --> cs:dyn2::ConfStructure -naconf:dyn2::confplace-> n:net_addition::PetriNode;
+
+        //n:net_addition::PetriNode -c:net_addition::configures-> pn;
+        pl:Place;
+        if { n.item == pl; }
+        negative {
+            cs -:dyn2::confplace-> pl;
+        }
+        modify {
+            emit("Connect ConfStructure ",cs," for confplace ", n.item_s," ",n,"(",pl.id," ",pl,") weight:",cs.weight, " act:",cs.activates," target:",pn,"\n");
+            cs -:dyn2::confplace-> pl;
+            delete(naconf);
+        }
+    }
+
+    // this will work when copying in another rule:
+    // eg:
+    //     * pn3 = pn1-c + pn2
+    //     * pn4 = pn3 + pn3
+    // because c is part of pn3 anyway
+    rule CreateConfStructure(a:net_addition::Addition, n:net_addition::PetriNode, -c:net_addition::configures->, net:Page, pn:net_addition::PN) {
+        modify {
+            emit("Create ConfStructure for confplace ", n.item_s," weight:",c.weight, " act:",c.activates," target:",pn,"\n");
+            cs:dyn2::ConfStructure;
+            // following is invalid but I need to connect here
+            // otherwise when multiple confplaces configure a single net, we don't know which ConfStructure belongs to which place
+            cs -:dyn2::confplace-> n;
+            pn --> cs;
+            eval {
+                cs.activates = c.activates;
+                cs.weight = c.weight;
+            }
+            exec(
+                [ConnectConfStructureInternal(cs, net)]
+                | [ConnectConfStructureInterface(a, cs, pn)]
+            );
+        }
+    }
+
+    /*
+     * go over all fusions and mark the PetriNodes which belong to the pn
+     */
+    rule ConnectConfStructureInterface(a:net_addition::Addition, cs:dyn2::ConfStructure, pn:net_addition::PN) {
+        a -:net_addition::fusions-> f:net_addition::Fusion;
+        f -:net_addition::sources-> n:net_addition::PetriNode;
+        pn -:net_addition::pn_nodes-> n;
+        if { n.item == target_node; }
+        target_node:PetriNetNode;
+        // don't add twice
+        negative {
+            cs -:dyn2::interface_nodes-> target_node;
+        }
+
+        modify {
+            emit("Add interface ",target_node.id,"\n");
+            cs -:dyn2::interface_nodes-> target_node;
+            exec([RemoveInternal(cs, target_node)]);
+        }
+    }
+
+    rule RemoveInternal(cs:dyn2::ConfStructure, target_node:PetriNetNode) {
+        cs -e:dyn2::internal_nodes-> target_node;
+        modify { delete(e); }
+    }
+
+    rule ConnectConfStructureInternal(cs:dyn2::ConfStructure, net:Page) {
+        net -:transitions_places-> n:PetriNetNode;
+        modify {
+            emit("Add internal ",n.id,"\n");
+            cs -:dyn2::internal_nodes-> n;
+        }
+    }
+
+    rule NACleanup() {
+        modify {
+            exec(
+                [Cleanup0()]
+                | [Cleanup1()]
+                | Cleanup2()*
+            );
+        }
+    }
+
+    rule Cleanup0() {
+        -:ECopy->;
+        replace {}
+    }
+
+    rule Cleanup1() {
+        -:net_addition::petrinets-> pn:net_addition::PN;
+        net:PetriNet;
+        if {pn.net == net;}
+        modify {
+            emit("Delete subgraph of ", net.id,"\n");
+            exec(deleteSubgraph(net));
+        }
+    }
+
+    rule Cleanup2() {
+        alternative {
+            a { :net_addition::System; replace {} }
+            b { -:net_addition::rules->; replace {} }
+            c { :net_addition::PN; replace {} }
+            d { :net_addition::Addition; replace {} }
+            e { -:net_addition::petrinets->; replace {} }
+            f { :net_addition::Fusion; replace {} }
+            g { -:net_addition::fusions->; replace {} }
+            h { :net_addition::PetriNode; replace {} }
+            i { -:net_addition::sources->; replace {} }
+            j { -:net_addition::pn_nodes->; replace {} }
+            k { -:net_addition::configures->; replace {} }
+        }
+        modify {}
+    }
+}

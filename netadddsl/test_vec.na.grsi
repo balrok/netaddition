@@ -1,0 +1,19 @@
+new graph "Rules.grg"
+include layout.grsi
+
+new sys:net_addition::System()
+new pn_PN3:net_addition::PN(net_s="PN3")
+new a_PN3:net_addition::Addition(target=pn_PN3)
+new sys-:net_addition::rules(order=1)->a_PN3
+new pn_PN1_v1:net_addition::PN(net_s="PN1")
+new a_PN3-:net_addition::petrinets->pn_PN1_v1
+new pn_PN1_v2:net_addition::PN(net_s="PN1")
+new a_PN3-:net_addition::petrinets->pn_PN1_v2
+new f_p3:net_addition::Fusion(rename="p3")
+new a_PN3-:net_addition::fusions->f_p3
+new n_pn_PN1_v1_p1:net_addition::PetriNode(item_s="p1")
+new pn_PN1_v1-:net_addition::pn_nodes->n_pn_PN1_v1_p1
+new f_p3-:net_addition::sources->n_pn_PN1_v1_p1
+new n_pn_PN1_v2_p2:net_addition::PetriNode(item_s="p2")
+new pn_PN1_v2-:net_addition::pn_nodes->n_pn_PN1_v2_p2
+new f_p3-:net_addition::sources->n_pn_PN1_v2_p2

@@ -1,0 +1,15 @@
+new pn:PetriNet(id="buko_conf")
+new net:Page(id="buko_conf")
+new pn -:pages-> net
+
+new cfg_net:Place(id="cfg")
+new net-:places->cfg_net
+new t_net1:Transition(id="t_net1")
+new t_net2:Transition(id="t_net2")
+new net-:transitions->t_net1
+new net-:transitions->t_net2
+new cfg_net -:outArc-> t_net2
+new cfg_net -:inhibitorArc-> t_net1
+new t_net1 -:inArc-> cfg_net
+
+

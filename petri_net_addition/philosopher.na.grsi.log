@@ -1,0 +1,630 @@
+
+-----
+GrShell v4.5.2 (enter "help" for a list of commands)
+New graph "DefaultGraph" and actions created from spec file "../allinone/Rules.grg".
+New node "$0" of type "PetriNet" has been created.
+New node "$1" of type "Page" has been created.
+New edge "$2" of type "pages" has been created from "$0" to "$1".
+New node "$3" of type "Place" has been created.
+New node "$4" of type "Place" has been created.
+New node "$5" of type "Place" has been created.
+New node "$6" of type "Place" has been created.
+New node "$7" of type "Place" has been created.
+New edge "$8" of type "places" has been created from "$1" to "$3".
+New edge "$9" of type "places" has been created from "$1" to "$4".
+New edge "$A" of type "places" has been created from "$1" to "$5".
+New edge "$B" of type "places" has been created from "$1" to "$6".
+New edge "$C" of type "places" has been created from "$1" to "$7".
+New node "$D" of type "Transition" has been created.
+New node "$E" of type "Transition" has been created.
+New edge "$F" of type "transitions" has been created from "$1" to "$D".
+New edge "$10" of type "transitions" has been created from "$1" to "$E".
+New edge "$11" of type "inArc" has been created from "$D" to "$3".
+New edge "$12" of type "inArc" has been created from "$D" to "$4".
+New edge "$13" of type "inArc" has been created from "$D" to "$6".
+New edge "$14" of type "inArc" has been created from "$D" to "$7".
+New edge "$15" of type "inArc" has been created from "$E" to "$5".
+New edge "$16" of type "outArc" has been created from "$4" to "$E".
+New edge "$17" of type "outArc" has been created from "$5" to "$D".
+New edge "$18" of type "outArc" has been created from "$6" to "$E".
+New edge "$19" of type "outArc" has been created from "$7" to "$E".
+New node "$1A" of type "Token" has been created.
+New edge "$1B" of type "tokens" has been created from "$6" to "$1A".
+New node "$1C" of type "Token" has been created.
+New edge "$1D" of type "tokens" has been created from "$4" to "$1C".
+New node "$1E" of type "PetriNet" has been created.
+New node "$1F" of type "Page" has been created.
+New edge "$20" of type "pages" has been created from "$1E" to "$1F".
+New node "$21" of type "Place" has been created.
+New node "$22" of type "Place" has been created.
+New edge "$23" of type "places" has been created from "$1F" to "$21".
+New edge "$24" of type "places" has been created from "$1F" to "$22".
+New node "$25" of type "Transition" has been created.
+New edge "$26" of type "transitions" has been created from "$1F" to "$25".
+New edge "$27" of type "outArc" has been created from "$21" to "$25".
+New edge "$28" of type "inArc" has been created from "$25" to "$22".
+New node "$29" of type "PetriNet" has been created.
+New node "$2A" of type "Page" has been created.
+New edge "$2B" of type "pages" has been created from "$29" to "$2A".
+New node "$2C" of type "Place" has been created.
+New node "$2D" of type "Place" has been created.
+New edge "$2E" of type "places" has been created from "$2A" to "$2C".
+New edge "$2F" of type "places" has been created from "$2A" to "$2D".
+New node "$30" of type "Transition" has been created.
+New edge "$31" of type "transitions" has been created from "$2A" to "$30".
+New edge "$32" of type "outArc" has been created from "$2C" to "$30".
+New edge "$33" of type "inArc" has been created from "$30" to "$2D".
+New node "$34" of type "net_addition::System" has been created.
+New node "$35" of type "net_addition::PN" has been created.
+New node "$36" of type "net_addition::Addition" has been created.
+New edge "$37" of type "net_addition::rules" has been created from "$34" to "$36".
+New node "$38" of type "net_addition::PN" has been created.
+New edge "$39" of type "net_addition::petrinets" has been created from "$36" to "$38".
+New node "$3A" of type "net_addition::PN" has been created.
+New edge "$3B" of type "net_addition::petrinets" has been created from "$36" to "$3A".
+New node "$3C" of type "net_addition::PN" has been created.
+New edge "$3D" of type "net_addition::petrinets" has been created from "$36" to "$3C".
+New node "$3E" of type "net_addition::PN" has been created.
+New edge "$3F" of type "net_addition::petrinets" has been created from "$36" to "$3E".
+New node "$40" of type "net_addition::PN" has been created.
+New edge "$41" of type "net_addition::petrinets" has been created from "$36" to "$40".
+New node "$42" of type "net_addition::PN" has been created.
+New edge "$43" of type "net_addition::petrinets" has been created from "$36" to "$42".
+New node "$44" of type "net_addition::PN" has been created.
+New edge "$45" of type "net_addition::petrinets" has been created from "$36" to "$44".
+New node "$46" of type "net_addition::PN" has been created.
+New edge "$47" of type "net_addition::petrinets" has been created from "$36" to "$46".
+New node "$48" of type "net_addition::PN" has been created.
+New edge "$49" of type "net_addition::petrinets" has been created from "$36" to "$48".
+New node "$4A" of type "net_addition::PetriNode" has been created.
+New edge "$4B" of type "net_addition::pn_nodes" has been created from "$38" to "$4A".
+New edge "$4C" of type "net_addition::configures" has been created from "$4A" to "$38".
+New node "$4D" of type "net_addition::PetriNode" has been created.
+New edge "$4E" of type "net_addition::pn_nodes" has been created from "$3A" to "$4D".
+New edge "$4F" of type "net_addition::configures" has been created from "$4D" to "$3A".
+New node "$50" of type "net_addition::PetriNode" has been created.
+New edge "$51" of type "net_addition::pn_nodes" has been created from "$3C" to "$50".
+New edge "$52" of type "net_addition::configures" has been created from "$50" to "$3C".
+New edge "$53" of type "net_addition::configures" has been created from "$4A" to "$3E".
+New edge "$54" of type "net_addition::configures" has been created from "$4D" to "$40".
+New edge "$55" of type "net_addition::configures" has been created from "$50" to "$42".
+New node "$56" of type "net_addition::PetriNode" has been created.
+New edge "$57" of type "net_addition::pn_nodes" has been created from "$35" to "$56".
+New edge "$58" of type "net_addition::configures" has been created from "$56" to "$44".
+New edge "$59" of type "net_addition::configures" has been created from "$56" to "$46".
+New edge "$5A" of type "net_addition::configures" has been created from "$56" to "$48".
+New node "$5B" of type "net_addition::Fusion" has been created.
+New edge "$5C" of type "net_addition::fusions" has been created from "$36" to "$5B".
+New node "$5D" of type "net_addition::PetriNode" has been created.
+New edge "$5E" of type "net_addition::pn_nodes" has been created from "$44" to "$5D".
+New edge "$5F" of type "net_addition::sources" has been created from "$5B" to "$5D".
+New node "$60" of type "net_addition::PetriNode" has been created.
+New edge "$61" of type "net_addition::pn_nodes" has been created from "$38" to "$60".
+New edge "$62" of type "net_addition::sources" has been created from "$5B" to "$60".
+New node "$63" of type "net_addition::PetriNode" has been created.
+New edge "$64" of type "net_addition::pn_nodes" has been created from "$3A" to "$63".
+New edge "$65" of type "net_addition::sources" has been created from "$5B" to "$63".
+New node "$66" of type "net_addition::Fusion" has been created.
+New edge "$67" of type "net_addition::fusions" has been created from "$36" to "$66".
+New node "$68" of type "net_addition::PetriNode" has been created.
+New edge "$69" of type "net_addition::pn_nodes" has been created from "$46" to "$68".
+New edge "$6A" of type "net_addition::sources" has been created from "$66" to "$68".
+New node "$6B" of type "net_addition::PetriNode" has been created.
+New edge "$6C" of type "net_addition::pn_nodes" has been created from "$3A" to "$6B".
+New edge "$6D" of type "net_addition::sources" has been created from "$66" to "$6B".
+New node "$6E" of type "net_addition::PetriNode" has been created.
+New edge "$6F" of type "net_addition::pn_nodes" has been created from "$3C" to "$6E".
+New edge "$70" of type "net_addition::sources" has been created from "$66" to "$6E".
+New node "$71" of type "net_addition::Fusion" has been created.
+New edge "$72" of type "net_addition::fusions" has been created from "$36" to "$71".
+New node "$73" of type "net_addition::PetriNode" has been created.
+New edge "$74" of type "net_addition::pn_nodes" has been created from "$48" to "$73".
+New edge "$75" of type "net_addition::sources" has been created from "$71" to "$73".
+New node "$76" of type "net_addition::PetriNode" has been created.
+New edge "$77" of type "net_addition::pn_nodes" has been created from "$3C" to "$76".
+New edge "$78" of type "net_addition::sources" has been created from "$71" to "$76".
+New node "$79" of type "net_addition::PetriNode" has been created.
+New edge "$7A" of type "net_addition::pn_nodes" has been created from "$38" to "$79".
+New edge "$7B" of type "net_addition::sources" has been created from "$71" to "$79".
+New node "$7C" of type "net_addition::Fusion" has been created.
+New edge "$7D" of type "net_addition::fusions" has been created from "$36" to "$7C".
+New node "$7E" of type "net_addition::PetriNode" has been created.
+New edge "$7F" of type "net_addition::pn_nodes" has been created from "$44" to "$7E".
+New edge "$80" of type "net_addition::sources" has been created from "$7C" to "$7E".
+New node "$81" of type "net_addition::PetriNode" has been created.
+New edge "$82" of type "net_addition::pn_nodes" has been created from "$46" to "$81".
+New edge "$83" of type "net_addition::sources" has been created from "$7C" to "$81".
+New node "$84" of type "net_addition::PetriNode" has been created.
+New edge "$85" of type "net_addition::pn_nodes" has been created from "$48" to "$84".
+New edge "$86" of type "net_addition::sources" has been created from "$7C" to "$84".
+New node "$87" of type "net_addition::Fusion" has been created.
+New edge "$88" of type "net_addition::fusions" has been created from "$36" to "$87".
+New node "$89" of type "net_addition::PetriNode" has been created.
+New edge "$8A" of type "net_addition::pn_nodes" has been created from "$38" to "$89".
+New edge "$8B" of type "net_addition::sources" has been created from "$87" to "$89".
+New node "$8C" of type "net_addition::PetriNode" has been created.
+New edge "$8D" of type "net_addition::pn_nodes" has been created from "$3E" to "$8C".
+New edge "$8E" of type "net_addition::sources" has been created from "$87" to "$8C".
+New node "$8F" of type "net_addition::Fusion" has been created.
+New edge "$90" of type "net_addition::fusions" has been created from "$36" to "$8F".
+New node "$91" of type "net_addition::PetriNode" has been created.
+New edge "$92" of type "net_addition::pn_nodes" has been created from "$3A" to "$91".
+New edge "$93" of type "net_addition::sources" has been created from "$8F" to "$91".
+New node "$94" of type "net_addition::PetriNode" has been created.
+New edge "$95" of type "net_addition::pn_nodes" has been created from "$40" to "$94".
+New edge "$96" of type "net_addition::sources" has been created from "$8F" to "$94".
+New node "$97" of type "net_addition::Fusion" has been created.
+New edge "$98" of type "net_addition::fusions" has been created from "$36" to "$97".
+New node "$99" of type "net_addition::PetriNode" has been created.
+New edge "$9A" of type "net_addition::pn_nodes" has been created from "$3C" to "$99".
+New edge "$9B" of type "net_addition::sources" has been created from "$97" to "$99".
+New node "$9C" of type "net_addition::PetriNode" has been created.
+New edge "$9D" of type "net_addition::pn_nodes" has been created from "$42" to "$9C".
+New edge "$9E" of type "net_addition::sources" has been created from "$97" to "$9C".
+New node "$9F" of type "net_addition::Fusion" has been created.
+New edge "$A0" of type "net_addition::fusions" has been created from "$36" to "$9F".
+New node "$A1" of type "net_addition::PetriNode" has been created.
+New edge "$A2" of type "net_addition::pn_nodes" has been created from "$3E" to "$A1".
+New edge "$A3" of type "net_addition::sources" has been created from "$9F" to "$A1".
+New node "$A4" of type "net_addition::PetriNode" has been created.
+New edge "$A5" of type "net_addition::pn_nodes" has been created from "$40" to "$A4".
+New edge "$A6" of type "net_addition::sources" has been created from "$9F" to "$A4".
+New node "$A7" of type "net_addition::PetriNode" has been created.
+New edge "$A8" of type "net_addition::pn_nodes" has been created from "$42" to "$A7".
+New edge "$A9" of type "net_addition::sources" has been created from "$9F" to "$A7".
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Transform addition with target result
+Had to create a PetriNet for 'result'
+Copy net for pn phil
+copied $3
+copied $1A
+copied $6
+copied $7
+copied $D
+copied $5
+copied $E
+copied $1C
+copied $4
+copied $1
+PN phil($38) has node full($4A)
+PN phil($38) has node fork2($60)
+PN phil($38) has node fork1($79)
+PN phil($38) has node think($89)
+Connect node $4A to full($AE)
+Connect node $60 to fork2($B8)
+Connect node $79 to fork1($B4)
+Connect node $89 to think($B0)
+Create ConfStructure for confplace full weight:2 act:False target:$38
+Add internal eat
+Add internal fork1
+Add internal fork2
+Add internal t1
+Add internal t2
+Add internal full
+Add internal think
+Add interface fork2
+Add interface fork1
+Add interface think
+Connect1 confplace for full
+Connect node $4A to full($AE)
+Copy net for pn phil
+copied $3
+copied $1A
+copied $6
+copied $7
+copied $D
+copied $5
+copied $E
+copied $1C
+copied $4
+copied $1
+PN phil($3A) has node full($4D)
+PN phil($3A) has node fork1($63)
+PN phil($3A) has node fork2($6B)
+PN phil($3A) has node think($91)
+Connect node $4D to full($E9)
+Connect node $63 to fork1($EF)
+Connect node $6B to fork2($F3)
+Connect node $91 to think($EB)
+Create ConfStructure for confplace full weight:2 act:False target:$3A
+Add internal eat
+Add internal fork1
+Add internal fork2
+Add internal t1
+Add internal t2
+Add internal full
+Add internal think
+Add interface fork1
+Add interface fork2
+Add interface think
+Connect1 confplace for full
+Connect node $4D to full($E9)
+Copy net for pn phil
+copied $3
+copied $1A
+copied $6
+copied $7
+copied $D
+copied $5
+copied $E
+copied $1C
+copied $4
+copied $1
+PN phil($3C) has node full($50)
+PN phil($3C) has node fork1($6E)
+PN phil($3C) has node fork2($76)
+PN phil($3C) has node think($99)
+Connect node $50 to full($124)
+Connect node $6E to fork1($12A)
+Connect node $76 to fork2($12E)
+Connect node $99 to think($126)
+Create ConfStructure for confplace full weight:2 act:False target:$3C
+Add internal eat
+Add internal fork1
+Add internal fork2
+Add internal t1
+Add internal t2
+Add internal full
+Add internal think
+Add interface fork1
+Add interface fork2
+Add interface think
+Connect1 confplace for full
+Connect node $50 to full($124)
+Copy net for pn talk
+copied $2D
+copied $30
+copied $2C
+copied $2A
+PN talk($3E) has node think($8C)
+PN talk($3E) has node talk($A1)
+Connect node $8C to think($15F)
+Connect node $A1 to talk($161)
+Create ConfStructure for confplace full weight:2 act:True target:$3E
+Add internal do
+Add internal think
+Add internal talk
+Add interface think
+Add interface talk
+Copy net for pn talk
+copied $2D
+copied $30
+copied $2C
+copied $2A
+PN talk($40) has node think($94)
+PN talk($40) has node talk($A4)
+Connect node $94 to think($178)
+Connect node $A4 to talk($17A)
+Create ConfStructure for confplace full weight:2 act:True target:$40
+Add internal do
+Add internal think
+Add internal talk
+Add interface think
+Add interface talk
+Copy net for pn talk
+copied $2D
+copied $30
+copied $2C
+copied $2A
+PN talk($42) has node think($9C)
+PN talk($42) has node talk($A7)
+Connect node $9C to think($191)
+Connect node $A7 to talk($193)
+Create ConfStructure for confplace full weight:2 act:True target:$42
+Add internal do
+Add internal think
+Add internal talk
+Add interface think
+Add interface talk
+Copy net for pn service
+copied $22
+copied $25
+copied $21
+copied $1F
+PN service($44) has node fork($5D)
+PN service($44) has node wash($7E)
+Connect node $5D to fork($1AA)
+Connect node $7E to wash($1AC)
+Create ConfStructure for confplace talk weight:3 act:True target:$44
+Add internal t1
+Add internal fork
+Add internal wash
+Add interface fork
+Add interface wash
+Copy net for pn service
+copied $22
+copied $25
+copied $21
+copied $1F
+PN service($46) has node fork($68)
+PN service($46) has node wash($81)
+Connect node $68 to fork($1C3)
+Connect node $81 to wash($1C5)
+Create ConfStructure for confplace talk weight:3 act:True target:$46
+Add internal t1
+Add internal fork
+Add internal wash
+Add interface fork
+Add interface wash
+Copy net for pn service
+copied $22
+copied $25
+copied $21
+copied $1F
+PN service($48) has node fork($73)
+PN service($48) has node wash($84)
+Connect node $73 to fork($1DC)
+Connect node $84 to wash($1DE)
+Create ConfStructure for confplace talk weight:3 act:True target:$48
+Add internal t1
+Add internal fork
+Add internal wash
+Add interface fork
+Add interface wash
+Apply fusion for fork to fork1
+Updating fusion item of fork($5D) from $1AA to $1F4
+Apply fusion for fork2 to fork1
+Updating fusion item of fork2($60) from $B8 to $1F4
+Apply fusion for fork1 to fork1
+Updating fusion item of fork1($63) from $EF to $1F4
+delete edge $205 to fork1 - remaining is $1F5
+delete edge $206 to fork1 - remaining is $1F5
+delete edge $207 to fork1 - remaining is $1F5
+Apply fusion for fork to fork2
+Updating fusion item of fork($68) from $1C3 to $208
+Apply fusion for fork2 to fork2
+Updating fusion item of fork2($6B) from $F3 to $208
+Apply fusion for fork1 to fork2
+Updating fusion item of fork1($6E) from $12A to $208
+delete edge $219 to fork2 - remaining is $209
+delete edge $21A to fork2 - remaining is $209
+delete edge $21B to fork2 - remaining is $209
+Apply fusion for fork to fork3
+Updating fusion item of fork($73) from $1DC to $21C
+Apply fusion for fork2 to fork3
+Updating fusion item of fork2($76) from $12E to $21C
+Apply fusion for fork1 to fork3
+Updating fusion item of fork1($79) from $B4 to $21C
+delete edge $22D to fork3 - remaining is $21D
+delete edge $22E to fork3 - remaining is $21D
+delete edge $22F to fork3 - remaining is $21D
+Apply fusion for wash to wash
+Updating fusion item of wash($7E) from $1AC to $230
+Apply fusion for wash to wash
+Updating fusion item of wash($81) from $1C5 to $230
+Apply fusion for wash to wash
+Updating fusion item of wash($84) from $1DE to $230
+delete edge $23E to wash - remaining is $231
+delete edge $23F to wash - remaining is $231
+delete edge $240 to wash - remaining is $231
+Apply fusion for think to think1
+Updating fusion item of think($89) from $B0 to $241
+Apply fusion for think to think1
+Updating fusion item of think($8C) from $15F to $241
+delete edge $24D to think1 - remaining is $242
+delete edge $24E to think1 - remaining is $242
+Apply fusion for think to think2
+Updating fusion item of think($91) from $EB to $24F
+Apply fusion for think to think2
+Updating fusion item of think($94) from $178 to $24F
+delete edge $25B to think2 - remaining is $250
+delete edge $25C to think2 - remaining is $250
+Apply fusion for think to think3
+Updating fusion item of think($99) from $126 to $25D
+Apply fusion for think to think3
+Updating fusion item of think($9C) from $191 to $25D
+delete edge $269 to think3 - remaining is $25E
+delete edge $26A to think3 - remaining is $25E
+Apply fusion for talk to talk
+Updating fusion item of talk($A1) from $161 to $26B
+Apply fusion for talk to talk
+Updating fusion item of talk($A4) from $17A to $26B
+Apply fusion for talk to talk
+Updating fusion item of talk($A7) from $193 to $26B
+delete edge $279 to talk - remaining is $26C
+delete edge $27A to talk - remaining is $26C
+delete edge $27B to talk - remaining is $26C
+Connect2 confplace for talk
+Connect node $56 to talk($26B)
+Connect2 confplace for talk
+Connect node $56 to talk($26B)
+Connect2 confplace for talk
+Connect node $56 to talk($26B)
+Connect ConfStructure $DB for confplace full $4A(full $AE) weight:2 act:False target:$38
+Connect ConfStructure $116 for confplace full $4D(full $E9) weight:2 act:False target:$3A
+Connect ConfStructure $151 for confplace full $50(full $124) weight:2 act:False target:$3C
+Connect ConfStructure $16F for confplace full $4A(full $AE) weight:2 act:True target:$3E
+Connect ConfStructure $188 for confplace full $4D(full $E9) weight:2 act:True target:$40
+Connect ConfStructure $1A1 for confplace full $50(full $124) weight:2 act:True target:$42
+Connect ConfStructure $1BA for confplace talk $56(talk $26B) weight:3 act:True target:$44
+Connect ConfStructure $1D3 for confplace talk $56(talk $26B) weight:3 act:True target:$46
+Connect ConfStructure $1EC for confplace talk $56(talk $26B) weight:3 act:True target:$48
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 507 matches found
+ - 507 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Delete subgraph of service
+Delete subgraph of service
+Delete subgraph of service
+Delete subgraph of talk
+Delete subgraph of talk
+Delete subgraph of talk
+Delete subgraph of phil
+Delete subgraph of phil
+Delete subgraph of phil
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 118 matches found
+ - 118 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+WARNING: duplicated confstructure with place talk - might be a bug - or not.. who knows
+Flatten ConfStructure $1EC confplace: talk($26B) weight:3 act:True
+internal Transition t1($1DD) out:wash, in:fork3,
+interface Place fork3($21C) out:t1,t2,t2, in:t1,t1,
+interface Place wash($230) out: in:t1,t1,t1,
+Flatten interface place fork3->t1
+inout $26BTransition t1($1DD) out:wash, in:fork3,
+Flatten ConfStructure $1D3 confplace: talk($26B) weight:3 act:True
+internal Transition t1($1C4) out:wash, in:fork2,
+interface Place fork2($208) out:t1,t2,t2, in:t1,t1,
+interface Place wash($230) out: in:t1,t1,t1,
+Flatten interface place fork2->t1
+inout $26BTransition t1($1C4) out:wash, in:fork2,
+Flatten ConfStructure $1BA confplace: talk($26B) weight:3 act:True
+internal Transition t1($1AB) out:wash, in:fork1,
+interface Place fork1($1F4) out:t1,t2,t2, in:t1,t1,
+interface Place wash($230) out: in:t1,t1,t1,
+Flatten interface place fork1->t1
+inout $26BTransition t1($1AB) out:wash, in:fork1,
+Flatten ConfStructure $1A1 confplace: full($124) weight:2 act:True
+internal Transition do($192) out:talk, in:think3,
+interface Place think3($25D) out:t2,do, in:t1,
+interface Place talk($26B) out:t1,t1,t1, in:do,do,do,t1,t1,t1,
+Flatten interface place think3->do
+inout $124Transition do($192) out:talk, in:think3,
+Flatten ConfStructure $188 confplace: full($E9) weight:2 act:True
+internal Transition do($179) out:talk, in:think2,
+interface Place think2($24F) out:t2,do, in:t1,
+interface Place talk($26B) out:t1,t1,t1, in:do,do,do,t1,t1,t1,
+Flatten interface place think2->do
+inout $E9Transition do($179) out:talk, in:think2,
+Flatten ConfStructure $16F confplace: full($AE) weight:2 act:True
+internal Transition do($160) out:talk, in:think1,
+interface Place think1($241) out:t2,do, in:t1,
+interface Place talk($26B) out:t1,t1,t1, in:do,do,do,t1,t1,t1,
+Flatten interface place think1->do
+inout $AETransition do($160) out:talk, in:think1,
+Flatten ConfStructure $151 confplace: full($124) weight:2 act:False
+internal Place eat($128) out:t1, in:t2,
+internal Transition t1($129) out:full,fork2,fork3,think3, in:eat,
+internal Transition t2($127) out:eat, in:fork2,fork3,think3,
+internal Place full($124) out:do, in:t1,do,
+interface Place fork2($208) out:t1,t2,t2, in:t1,t1,
+interface Place fork3($21C) out:t1,t2,t2, in:t1,t1,
+interface Place think3($25D) out:t2,do, in:t1,
+Flatten interface place fork2->t2
+inh $124Transition t2($127) out:eat, in:fork2,fork3,think3,
+Flatten interface place fork3->t2
+Flatten interface place think3->t2
+Flatten ConfStructure $116 confplace: full($E9) weight:2 act:False
+internal Place eat($ED) out:t1, in:t2,
+internal Transition t1($EE) out:full,fork1,fork2,think2, in:eat,
+internal Transition t2($EC) out:eat, in:fork1,fork2,think2,
+internal Place full($E9) out:do, in:t1,do,
+interface Place fork1($1F4) out:t1,t2,t2, in:t1,t1,
+interface Place fork2($208) out:t1,t2,t2, in:t1,t1,
+interface Place think2($24F) out:t2,do, in:t1,
+Flatten interface place fork1->t2
+inh $E9Transition t2($EC) out:eat, in:fork1,fork2,think2,
+Flatten interface place fork2->t2
+Flatten interface place think2->t2
+Flatten ConfStructure $DB confplace: full($AE) weight:2 act:False
+internal Place eat($B2) out:t1, in:t2,
+internal Transition t1($B3) out:full,fork1,fork3,think1, in:eat,
+internal Transition t2($B1) out:eat, in:fork1,fork3,think1,
+internal Place full($AE) out:do, in:t1,do,
+interface Place fork1($1F4) out:t1,t2,t2, in:t1,t1,
+interface Place fork3($21C) out:t1,t2,t2, in:t1,t1,
+interface Place think1($241) out:t2,do, in:t1,
+Flatten interface place fork1->t2
+inh $AETransition t2($B1) out:eat, in:fork1,fork3,think1,
+Flatten interface place fork3->t2
+Flatten interface place think1->t2
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 535 matches found
+ - 535 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 27 matches found
+ - 27 rewrites performed
+The graph is valid.
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 0 matches found
+ - 0 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Added bound to full_uniq_3
+Added bound to full_uniq_2
+Added bound to full
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 7 matches found
+ - 7 rewrites performed
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Substitution place for full -> full_0
+Substitution place for full -> full_1
+Substitution place for full -> full_2
+Substitution place for full -> full_3
+Substitution place for full -> full_4
+Remove inhibitorArc $291 between full and t2
+Duplicate (because of weighted inh arc) 't2' now 't2_dup_1'
+reconnect inout do
+reconnect in t1_uniq_4
+Substitution place for full_uniq_2 -> full_uniq_2_0
+Substitution place for full_uniq_2 -> full_uniq_2_1
+Substitution place for full_uniq_2 -> full_uniq_2_2
+Substitution place for full_uniq_2 -> full_uniq_2_3
+Substitution place for full_uniq_2 -> full_uniq_2_4
+Remove inhibitorArc $292 between full_uniq_2 and t2_uniq_2
+Duplicate (because of weighted inh arc) 't2_uniq_2' now 't2_uniq_2_dup_1'
+reconnect inout do_uniq_2
+reconnect in t1_uniq_5
+Substitution place for full_uniq_3 -> full_uniq_3_0
+Substitution place for full_uniq_3 -> full_uniq_3_1
+Substitution place for full_uniq_3 -> full_uniq_3_2
+Substitution place for full_uniq_3 -> full_uniq_3_3
+Substitution place for full_uniq_3 -> full_uniq_3_4
+Remove inhibitorArc $293 between full_uniq_3 and t2_uniq_3
+Duplicate (because of weighted inh arc) 't2_uniq_3' now 't2_uniq_3_dup_1'
+reconnect inout do_uniq_3
+reconnect in t1_uniq_6
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 213 matches found
+ - 213 rewrites performed
+The graph is valid.
+Executing Graph Rewrite Sequence (CTRL+C for abort) ...
+Executing Graph Rewrite Sequence done after 000 ms with result True:
+ - 245 matches found
+ - 245 rewrites performed
+export done after: 00 ms
+Graph "DefaultGraph" exported.
+> The graph is valid.
+> Number of nodes compatible to type "Node": 70
+> Number of nodes compatible to type "PetriNet": 1
+> Number of nodes compatible to type "Page": 1
+> Number of nodes compatible to type "PetriNetNode": 59
+> Number of nodes compatible to type "PlaceNode": 26
+> Number of nodes compatible to type "Place": 26
+> Number of nodes compatible to type "TransitionNode": 33
+> Number of nodes compatible to type "Transition": 33
+> Number of nodes compatible to type "Token": 9
+> Number of edges compatible to type "AEdge": 240
+> Number of edges compatible to type "EIdent": 171
+> Number of edges compatible to type "pages": 1
+> Number of edges compatible to type "transitions_places": 59
+> Number of edges compatible to type "places": 26
+> Number of edges compatible to type "transitions": 33
+> Number of edges compatible to type "tokens": 9
+> Number of edges compatible to type "Arc": 171
+> Number of edges compatible to type "inArc": 93
+> Number of edges compatible to type "outArc": 78
+> Bye!
+
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319

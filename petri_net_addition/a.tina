@@ -1,0 +1,135 @@
+Tina version 3.4.4 -- 01/05/16 -- LAAS/CNRS
+
+mode -R
+
+INPUT NET ------------------------------------------------------- 
+
+parsed net noname
+
+13 places, 12 transitions
+
+net noname
+tr t10 p12 -> p92 
+tr t2 p1 p3 -> p6 
+tr t5 p6 -> p1 p7 
+tr t8 p11 -> p3 ptemp 
+tr t9 p9 -> p8 
+tr t92 p92 -> p82 
+tr t_net1 cfg_0 -> cfg_1 
+tr t_net2_out_cfg_1 cfg_1 -> cfg_0 
+tr tin cfg_0 ptemp -> cfg_0 p92 
+tr tin_uniq_2_out_cfg_1 cfg_1 ptemp -> cfg_0 p9 
+tr tout cfg_0 p7 p82 -> cfg_0 p11 
+tr tout_uniq_2_out_cfg_1 cfg_1 p7 p8 -> cfg_0 p11 
+pl cfg_0 (1)
+pl p1 (1)
+pl p3 (1)
+pl ptemp (1)
+
+0.002s
+
+REACHABILITY ANALYSIS ------------------------------------------- 
+
+bounded
+
+32 marking(s), 74 transition(s)
+
+MARKINGS:
+
+0 : cfg_0 p1 p3 ptemp
+1 : cfg_0 p6 ptemp
+2 : cfg_1 p1 p3 ptemp
+3 : cfg_0 p1 p3 p92
+4 : cfg_0 p1 p7 ptemp
+5 : cfg_1 p6 ptemp
+6 : cfg_0 p6 p92
+7 : cfg_0 p1 p3 p9
+8 : cfg_0 p1 p3 p82
+9 : cfg_1 p1 p3 p92
+10 : cfg_1 p1 p7 ptemp
+11 : cfg_0 p1 p7 p92
+12 : cfg_0 p6 p9
+13 : cfg_0 p6 p82
+14 : cfg_1 p6 p92
+15 : cfg_0 p1 p3 p8
+16 : cfg_1 p1 p3 p9
+17 : cfg_1 p1 p3 p82
+18 : cfg_0 p1 p7 p9
+19 : cfg_0 p1 p7 p82
+20 : cfg_1 p1 p7 p92
+21 : cfg_0 p6 p8
+22 : cfg_1 p6 p9
+23 : cfg_1 p6 p82
+24 : cfg_1 p1 p3 p8
+25 : cfg_0 p1 p7 p8
+26 : cfg_1 p1 p7 p9
+27 : cfg_1 p1 p7 p82
+28 : cfg_0 p1 p11
+29 : cfg_1 p6 p8
+30 : cfg_1 p1 p7 p8
+31 : cfg_1 p1 p11
+
+REACHABILITY GRAPH:
+
+0 -> t2/1, t_net1/2, tin/3
+1 -> t5/4, t_net1/5, tin/6
+2 -> t2/5, t_net2_out_cfg_1/0, tin_uniq_2_out_cfg_1/7
+3 -> t2/6, t92/8, t_net1/9
+4 -> t_net1/10, tin/11
+5 -> t5/10, t_net2_out_cfg_1/1, tin_uniq_2_out_cfg_1/12
+6 -> t5/11, t92/13, t_net1/14
+7 -> t2/12, t9/15, t_net1/16
+8 -> t2/13, t_net1/17
+9 -> t2/14, t92/17, t_net2_out_cfg_1/3
+10 -> t_net2_out_cfg_1/4, tin_uniq_2_out_cfg_1/18
+11 -> t92/19, t_net1/20
+12 -> t5/18, t9/21, t_net1/22
+13 -> t5/19, t_net1/23
+14 -> t5/20, t92/23, t_net2_out_cfg_1/6
+15 -> t2/21, t_net1/24
+16 -> t2/22, t9/24, t_net2_out_cfg_1/7
+17 -> t2/23, t_net2_out_cfg_1/8
+18 -> t9/25, t_net1/26
+19 -> t_net1/27, tout/28
+20 -> t92/27, t_net2_out_cfg_1/11
+21 -> t5/25, t_net1/29
+22 -> t5/26, t9/29, t_net2_out_cfg_1/12
+23 -> t5/27, t_net2_out_cfg_1/13
+24 -> t2/29, t_net2_out_cfg_1/15
+25 -> t_net1/30
+26 -> t9/30, t_net2_out_cfg_1/18
+27 -> t_net2_out_cfg_1/19
+28 -> t8/0, t_net1/31
+29 -> t5/30, t_net2_out_cfg_1/21
+30 -> t_net2_out_cfg_1/25, tout_uniq_2_out_cfg_1/28
+31 -> t8/2, t_net2_out_cfg_1/28
+
+0.000s
+
+LIVENESS ANALYSIS ----------------------------------------------- 
+
+not live
+reversible
+
+0 dead marking(s), 32 live marking(s)
+1 dead transition(s), 11 live transition(s)
+
+dead transition(s): t10
+
+STRONG CONNECTED COMPONENTS:
+
+0 : 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+
+SCC GRAPH:
+
+0 -> t8/0, t_net2_out_cfg_1/0, tout_uniq_2_out_cfg_1/0, t5/0, t_net1/0, t9/0, t2/0, t92/0, tout/0, tin_uniq_2_out_cfg_1/0, tin/0
+
+0.000s
+
+ANALYSIS COMPLETED ---------------------------------------------- 
+
+# net noname, 13 places, 12 transitions                                #
+# bounded, not live, reversible                                        #
+# abstraction        count      props      psets       dead       live #
+#      states           32         13          ?          0         32 # 
+# transitions           74         12          ?          1         11 #

@@ -1,0 +1,7 @@
+include ../petri/layout.grsi
+debug set layout Hierarchic
+dump set node Place shape circle
+
+dump add node net_addition::Addition group by hidden outgoing net_addition::fusions
+dump add node net_addition::Addition group by hidden outgoing net_addition::petrinets
+dump add node net_addition::Fusion group by hidden outgoing net_addition::sources

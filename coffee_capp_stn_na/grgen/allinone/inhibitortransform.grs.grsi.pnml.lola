@@ -1,0 +1,253 @@
+PLACE
+	Cappuccino_0, Cappuccino_1, Coffee_0, Coffee_1, Espresso, Grind_Coffee, Ingredients, Ingredients_Coffee, Ingredients_Milk, Ingredients_out, Milk_0, Milk_1, Milk_Heating, Preparing, Preparing_out, Pump, Running, Stopped, Stopping, Water_Heating, event_cappuccino_0, event_cappuccino_1, event_coffee_0, event_coffee_1, event_espresso_0, event_espresso_1, event_milk_0, event_milk_1, event_reset_0, event_reset_1, state_Cappuccino, state_Coffee, state_Coffee-Milk, state_Espresso, state_Espresso-Milk, state_None_0, state_None_1;
+
+MARKING
+	state_None_1: 1,event_reset_0: 1,event_milk_0: 1,event_espresso_0: 1,event_coffee_0: 1,event_cappuccino_0: 1,Stopped: 1,Milk_0: 1,Coffee_0: 1,Cappuccino_0: 1;
+
+TRANSITION t_espresso
+	CONSUME Ingredients: 1,Espresso: 1;
+	PRODUCE Ingredients_out: 1,Espresso: 1;
+
+TRANSITION t_capp2_inout_Cappuccino_1
+	CONSUME Preparing: 1,Cappuccino_1: 1;
+	PRODUCE Preparing_out: 1,Cappuccino_1: 1;
+
+TRANSITION t5
+	CONSUME Water_Heating: 1,Grind_Coffee: 1;
+	PRODUCE Pump: 1;
+
+TRANSITION t4
+	CONSUME Milk_Heating: 1;
+	PRODUCE Preparing_out: 1;
+
+TRANSITION t2_inout_Milk_1
+	CONSUME Preparing: 1,Milk_1: 1,Cappuccino_0: 1;
+	PRODUCE Milk_Heating: 1,Milk_1: 1,Cappuccino_0: 1;
+
+TRANSITION t24_inout_state_None_1
+	CONSUME state_None_1: 1,Stopping: 1;
+	PRODUCE state_None_1: 1,Stopped: 1;
+
+TRANSITION t22
+	CONSUME Ingredients_Coffee: 1;
+	PRODUCE Ingredients_out: 1;
+
+TRANSITION t21_inout_Coffee_1
+	CONSUME Ingredients: 1,Coffee_1: 1;
+	PRODUCE Ingredients_Coffee: 1,Coffee_1: 1;
+
+TRANSITION t20
+	CONSUME Ingredients_Milk: 1;
+	PRODUCE Ingredients_out: 1;
+
+TRANSITION t19_inout_Milk_1
+	CONSUME Milk_1: 1,Ingredients: 1;
+	PRODUCE Milk_1: 1,Ingredients_Milk: 1;
+
+TRANSITION t14
+	CONSUME Ingredients_out: 1;
+	PRODUCE Preparing: 1;
+
+TRANSITION t11
+	CONSUME Pump: 1;
+	PRODUCE Preparing_out: 1;
+
+TRANSITION t10_inout_Coffee_1
+	CONSUME Preparing: 1,Coffee_1: 1;
+	PRODUCE Water_Heating: 1,Grind_Coffee: 1,Coffee_1: 1;
+
+TRANSITION start_transition
+	CONSUME state_None_0: 1,event_reset_0: 1,event_milk_0: 1,event_espresso_0: 1,event_coffee_0: 1,event_cappuccino_0: 1,Stopped: 1;
+	PRODUCE state_None_0: 1,event_reset_0: 1,event_milk_0: 1,event_espresso_0: 1,event_coffee_0: 1,event_cappuccino_0: 1,Running: 1,Ingredients: 1;
+
+TRANSITION req.milk
+	CONSUME event_milk_0: 1,Stopped: 1;
+	PRODUCE event_milk_1: 1,Stopped: 1;
+
+TRANSITION req.espresso
+	CONSUME event_espresso_0: 1,Stopped: 1;
+	PRODUCE event_espresso_1: 1,Stopped: 1;
+
+TRANSITION req.coffee
+	CONSUME event_coffee_0: 1,Stopped: 1;
+	PRODUCE event_coffee_1: 1,Stopped: 1;
+
+TRANSITION req.cappuccino
+	CONSUME event_cappuccino_0: 1,Stopped: 1;
+	PRODUCE event_cappuccino_1: 1,Stopped: 1;
+
+TRANSITION no_prepare
+	CONSUME Preparing: 1,Milk_0: 1,Coffee_0: 1,Cappuccino_0: 1;
+	PRODUCE Preparing_out: 1,Milk_0: 1,Coffee_0: 1,Cappuccino_0: 1;
+
+TRANSITION end_running_in_event_reset_1_MUST_BE_DEAD
+	CONSUME event_reset_1: 1,Running: 1,Preparing_out: 1;
+	PRODUCE Stopping: 1;
+
+TRANSITION end_running_in_event_reset_0
+	CONSUME event_reset_0: 1,Running: 1,Preparing_out: 1;
+	PRODUCE event_reset_1: 1,Stopping: 1;
+
+TRANSITION None_None_reset_inout_state_None_1_out_event_reset_1
+	CONSUME state_None_1: 1,event_reset_1: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1;
+
+TRANSITION None_None_milk_inout_state_None_1_out_event_milk_1
+	CONSUME state_None_1: 1,event_milk_1: 1;
+	PRODUCE state_None_1: 1,event_milk_0: 1;
+
+TRANSITION None_Espresso_espresso_out_state_None_1_out_event_espresso_1
+	CONSUME state_None_1: 1,event_espresso_1: 1;
+	PRODUCE state_None_0: 1,state_Espresso: 1,event_espresso_0: 1,Espresso: 1;
+
+TRANSITION None_Coffee_coffee_in_Coffee_1_MUST_BE_DEAD_out_state_None_1_out_event_coffee_1
+	CONSUME state_None_1: 1,event_coffee_1: 1,Coffee_1: 1;
+	PRODUCE state_None_0: 1,state_Coffee: 1,event_coffee_0: 1;
+
+TRANSITION None_Coffee_coffee_in_Coffee_0_out_state_None_1_out_event_coffee_1
+	CONSUME state_None_1: 1,event_coffee_1: 1,Coffee_0: 1;
+	PRODUCE state_None_0: 1,state_Coffee: 1,event_coffee_0: 1,Coffee_1: 1;
+
+TRANSITION None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1
+	CONSUME state_None_1: 1,event_cappuccino_1: 1,Milk_1: 1,Cappuccino_1: 1;
+	PRODUCE state_None_0: 1,state_Cappuccino: 1,event_cappuccino_0: 1,Espresso: 1;
+
+TRANSITION None_Cappuccino_cappuccino_in_Milk_1_MUST_BE_DEAD_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1
+	CONSUME state_None_1: 1,event_cappuccino_1: 1,Milk_1: 1,Cappuccino_0: 1;
+	PRODUCE state_None_0: 1,state_Cappuccino: 1,event_cappuccino_0: 1,Espresso: 1,Cappuccino_1: 1;
+
+TRANSITION None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_1_MUST_BE_DEAD_out_state_None_1_out_event_cappuccino_1
+	CONSUME state_None_1: 1,event_cappuccino_1: 1,Milk_0: 1,Cappuccino_1: 1;
+	PRODUCE state_None_0: 1,state_Cappuccino: 1,event_cappuccino_0: 1,Milk_1: 1,Espresso: 1;
+
+TRANSITION None_Cappuccino_cappuccino_in_Milk_0_in_Cappuccino_0_out_state_None_1_out_event_cappuccino_1
+	CONSUME state_None_1: 1,event_cappuccino_1: 1,Milk_0: 1,Cappuccino_0: 1;
+	PRODUCE state_None_0: 1,state_Cappuccino: 1,event_cappuccino_0: 1,Milk_1: 1,Espresso: 1,Cappuccino_1: 1;
+
+TRANSITION Espresso_None_reset_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+	CONSUME state_None_1: 1,state_Espresso: 1,event_reset_1: 1,Espresso: 1;
+	PRODUCE event_reset_0: 1;
+
+TRANSITION Espresso_None_reset_in_state_None_0_out_event_reset_1
+	CONSUME state_None_0: 1,state_Espresso: 1,event_reset_1: 1,Espresso: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1;
+
+TRANSITION Espresso_Espresso_espresso_out_event_espresso_1
+	CONSUME state_Espresso: 1,event_espresso_1: 1;
+	PRODUCE state_Espresso: 1,event_espresso_0: 1;
+
+TRANSITION Espresso_Espresso_coffee_out_event_coffee_1
+	CONSUME state_Espresso: 1,event_coffee_1: 1;
+	PRODUCE state_Espresso: 1,event_coffee_0: 1;
+
+TRANSITION Espresso_Espresso_cappuccino_out_event_cappuccino_1
+	CONSUME state_Espresso: 1,event_cappuccino_1: 1;
+	PRODUCE state_Espresso: 1,event_cappuccino_0: 1;
+
+TRANSITION Espresso_Espresso-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1
+	CONSUME state_Espresso: 1,event_milk_1: 1,Milk_1: 1;
+	PRODUCE state_Espresso-Milk: 1,event_milk_0: 1;
+
+TRANSITION Espresso_Espresso-Milk_milk_in_Milk_0_out_event_milk_1
+	CONSUME state_Espresso: 1,event_milk_1: 1,Milk_0: 1;
+	PRODUCE state_Espresso-Milk: 1,event_milk_0: 1,Milk_1: 1;
+
+TRANSITION Espresso-Milk_None_reset_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+	CONSUME state_None_1: 1,state_Espresso-Milk: 1,event_reset_1: 1,Milk_1: 1,Espresso: 1;
+	PRODUCE event_reset_0: 1,Milk_0: 1;
+
+TRANSITION Espresso-Milk_None_reset_out_Milk_1_in_state_None_0_out_event_reset_1
+	CONSUME state_None_0: 1,state_Espresso-Milk: 1,event_reset_1: 1,Milk_1: 1,Espresso: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1,Milk_0: 1;
+
+TRANSITION Espresso-Milk_Espresso-Milk_milk_out_event_milk_1
+	CONSUME state_Espresso-Milk: 1,event_milk_1: 1;
+	PRODUCE state_Espresso-Milk: 1,event_milk_0: 1;
+
+TRANSITION Espresso-Milk_Espresso-Milk_espresso_out_event_espresso_1
+	CONSUME state_Espresso-Milk: 1,event_espresso_1: 1;
+	PRODUCE state_Espresso-Milk: 1,event_espresso_0: 1;
+
+TRANSITION Espresso-Milk_Espresso-Milk_coffee_out_event_coffee_1
+	CONSUME state_Espresso-Milk: 1,event_coffee_1: 1;
+	PRODUCE state_Espresso-Milk: 1,event_coffee_0: 1;
+
+TRANSITION Espresso-Milk_Espresso-Milk_cappuccino_out_event_cappuccino_1
+	CONSUME state_Espresso-Milk: 1,event_cappuccino_1: 1;
+	PRODUCE state_Espresso-Milk: 1,event_cappuccino_0: 1;
+
+TRANSITION Coffee_None_reset_out_Coffee_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+	CONSUME state_None_1: 1,state_Coffee: 1,event_reset_1: 1,Coffee_1: 1;
+	PRODUCE event_reset_0: 1,Coffee_0: 1;
+
+TRANSITION Coffee_None_reset_out_Coffee_1_in_state_None_0_out_event_reset_1
+	CONSUME state_None_0: 1,state_Coffee: 1,event_reset_1: 1,Coffee_1: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1,Coffee_0: 1;
+
+TRANSITION Coffee_Coffee_espresso_out_event_espresso_1
+	CONSUME state_Coffee: 1,event_espresso_1: 1;
+	PRODUCE state_Coffee: 1,event_espresso_0: 1;
+
+TRANSITION Coffee_Coffee_coffee_out_event_coffee_1
+	CONSUME state_Coffee: 1,event_coffee_1: 1;
+	PRODUCE state_Coffee: 1,event_coffee_0: 1;
+
+TRANSITION Coffee_Coffee_cappuccino_out_event_cappuccino_1
+	CONSUME state_Coffee: 1,event_cappuccino_1: 1;
+	PRODUCE state_Coffee: 1,event_cappuccino_0: 1;
+
+TRANSITION Coffee_Coffee-Milk_milk_in_Milk_1_MUST_BE_DEAD_out_event_milk_1
+	CONSUME state_Coffee: 1,event_milk_1: 1,Milk_1: 1;
+	PRODUCE state_Coffee-Milk: 1,event_milk_0: 1;
+
+TRANSITION Coffee_Coffee-Milk_milk_in_Milk_0_out_event_milk_1
+	CONSUME state_Coffee: 1,event_milk_1: 1,Milk_0: 1;
+	PRODUCE state_Coffee-Milk: 1,event_milk_0: 1,Milk_1: 1;
+
+TRANSITION Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+	CONSUME state_None_1: 1,state_Coffee-Milk: 1,event_reset_1: 1,Milk_1: 1,Coffee_1: 1;
+	PRODUCE event_reset_0: 1,Milk_0: 1,Coffee_0: 1;
+
+TRANSITION Coffee-Milk_None_reset_out_Coffee_1_out_Milk_1_in_state_None_0_out_event_reset_1
+	CONSUME state_None_0: 1,state_Coffee-Milk: 1,event_reset_1: 1,Milk_1: 1,Coffee_1: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1,Milk_0: 1,Coffee_0: 1;
+
+TRANSITION Coffee-Milk_Coffee-Milk_milk_out_event_milk_1
+	CONSUME state_Coffee-Milk: 1,event_milk_1: 1;
+	PRODUCE state_Coffee-Milk: 1,event_milk_0: 1;
+
+TRANSITION Coffee-Milk_Coffee-Milk_espresso_out_event_espresso_1
+	CONSUME state_Coffee-Milk: 1,event_espresso_1: 1;
+	PRODUCE state_Coffee-Milk: 1,event_espresso_0: 1;
+
+TRANSITION Coffee-Milk_Coffee-Milk_coffee_out_event_coffee_1
+	CONSUME state_Coffee-Milk: 1,event_coffee_1: 1;
+	PRODUCE state_Coffee-Milk: 1,event_coffee_0: 1;
+
+TRANSITION Coffee-Milk_Coffee-Milk_cappuccino_out_event_cappuccino_1
+	CONSUME state_Coffee-Milk: 1,event_cappuccino_1: 1;
+	PRODUCE state_Coffee-Milk: 1,event_cappuccino_0: 1;
+
+TRANSITION Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_1_MUST_BE_DEAD_out_event_reset_1
+	CONSUME state_None_1: 1,state_Cappuccino: 1,event_reset_1: 1,Milk_1: 1,Espresso: 1,Cappuccino_1: 1;
+	PRODUCE event_reset_0: 1,Milk_0: 1,Cappuccino_0: 1;
+
+TRANSITION Cappuccino_None_reset_out_Milk_1_out_Cappuccino_1_in_state_None_0_out_event_reset_1
+	CONSUME state_None_0: 1,state_Cappuccino: 1,event_reset_1: 1,Milk_1: 1,Espresso: 1,Cappuccino_1: 1;
+	PRODUCE state_None_1: 1,event_reset_0: 1,Milk_0: 1,Cappuccino_0: 1;
+
+TRANSITION Cappuccino_Cappuccino_milk_out_event_milk_1
+	CONSUME state_Cappuccino: 1,event_milk_1: 1;
+	PRODUCE state_Cappuccino: 1,event_milk_0: 1;
+
+TRANSITION Cappuccino_Cappuccino_espresso_out_event_espresso_1
+	CONSUME state_Cappuccino: 1,event_espresso_1: 1;
+	PRODUCE state_Cappuccino: 1,event_espresso_0: 1;
+
+TRANSITION Cappuccino_Cappuccino_coffee_out_event_coffee_1
+	CONSUME state_Cappuccino: 1,event_coffee_1: 1;
+	PRODUCE state_Cappuccino: 1,event_coffee_0: 1;
+
+TRANSITION Cappuccino_Cappuccino_cappuccino_out_event_cappuccino_1
+	CONSUME state_Cappuccino: 1,event_cappuccino_1: 1;
+	PRODUCE state_Cappuccino: 1,event_cappuccino_0: 1;

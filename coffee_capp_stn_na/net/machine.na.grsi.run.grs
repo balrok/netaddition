@@ -1,0 +1,111 @@
+# new graph "Rules.grg"
+include layout.grsi
+include Coffee.grs
+include Coffee_Making.grs
+include Espresso.grs
+include Main.grs
+include Milk.grs
+include Milk_Cappuccino.grs
+include Milk_Heating.grs
+
+new sys:net_addition::System()
+new pn_result:net_addition::PN(net_s="result")
+new a_result:net_addition::Addition(target=pn_result)
+new sys-:net_addition::rules(order=1)->a_result
+new pn_Coffee_Making:net_addition::PN(net_s="Coffee_Making")
+new a_result-:net_addition::petrinets->pn_Coffee_Making
+new pn_Milk_Heating:net_addition::PN(net_s="Milk_Heating")
+new a_result-:net_addition::petrinets->pn_Milk_Heating
+new pn_Milk_Cappuccino:net_addition::PN(net_s="Milk_Cappuccino")
+new a_result-:net_addition::petrinets->pn_Milk_Cappuccino
+new pn_Espresso:net_addition::PN(net_s="Espresso")
+new a_result-:net_addition::petrinets->pn_Espresso
+new pn_Coffee:net_addition::PN(net_s="Coffee")
+new a_result-:net_addition::petrinets->pn_Coffee
+new pn_Milk:net_addition::PN(net_s="Milk")
+new a_result-:net_addition::petrinets->pn_Milk
+new pn_Main:net_addition::PN(net_s="Main")
+new a_result-:net_addition::petrinets->pn_Main
+new n_pn_result_Coffee:net_addition::PetriNode(item_s="Coffee")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Coffee
+new n_pn_result_Coffee -:net_addition::configures(activates=True, weight=1)-> pn_Coffee_Making
+new n_pn_result_Milk:net_addition::PetriNode(item_s="Milk")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Milk
+new n_pn_result_Milk -:net_addition::configures(activates=True, weight=1)-> pn_Milk_Heating
+new n_pn_result_Cappuccino:net_addition::PetriNode(item_s="Cappuccino")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Cappuccino
+new n_pn_result_Cappuccino -:net_addition::configures(activates=True, weight=1)-> pn_Milk_Heating
+new n_pn_result_Cappuccino -:net_addition::configures(activates=True, weight=1)-> pn_Milk_Cappuccino
+new n_pn_result_Espresso:net_addition::PetriNode(item_s="Espresso")
+new pn_result-:net_addition::pn_nodes->n_pn_result_Espresso
+new n_pn_result_Espresso -:net_addition::configures(activates=True, weight=1)-> pn_Espresso
+new n_pn_result_Coffee -:net_addition::configures(activates=True, weight=1)-> pn_Coffee
+new n_pn_result_Milk -:net_addition::configures(activates=True, weight=1)-> pn_Milk
+new f_Preparing:net_addition::Fusion(rename="Preparing")
+new a_result-:net_addition::fusions->f_Preparing
+new n_pn_Main_Preparing:net_addition::PetriNode(item_s="Preparing")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Preparing
+new f_Preparing-:net_addition::sources->n_pn_Main_Preparing
+new n_pn_Coffee_Making_coffee_making_in:net_addition::PetriNode(item_s="coffee_making_in")
+new pn_Coffee_Making-:net_addition::pn_nodes->n_pn_Coffee_Making_coffee_making_in
+new f_Preparing-:net_addition::sources->n_pn_Coffee_Making_coffee_making_in
+new n_pn_Milk_Heating_milk_heating_in:net_addition::PetriNode(item_s="milk_heating_in")
+new pn_Milk_Heating-:net_addition::pn_nodes->n_pn_Milk_Heating_milk_heating_in
+new f_Preparing-:net_addition::sources->n_pn_Milk_Heating_milk_heating_in
+new n_pn_Milk_Cappuccino_milk_capp_in:net_addition::PetriNode(item_s="milk_capp_in")
+new pn_Milk_Cappuccino-:net_addition::pn_nodes->n_pn_Milk_Cappuccino_milk_capp_in
+new f_Preparing-:net_addition::sources->n_pn_Milk_Cappuccino_milk_capp_in
+new f_Preparing_out:net_addition::Fusion(rename="Preparing_out")
+new a_result-:net_addition::fusions->f_Preparing_out
+new n_pn_Main_Preparing_out:net_addition::PetriNode(item_s="Preparing_out")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Preparing_out
+new f_Preparing_out-:net_addition::sources->n_pn_Main_Preparing_out
+new n_pn_Coffee_Making_coffee_making_out:net_addition::PetriNode(item_s="coffee_making_out")
+new pn_Coffee_Making-:net_addition::pn_nodes->n_pn_Coffee_Making_coffee_making_out
+new f_Preparing_out-:net_addition::sources->n_pn_Coffee_Making_coffee_making_out
+new n_pn_Milk_Heating_milk_heating_out:net_addition::PetriNode(item_s="milk_heating_out")
+new pn_Milk_Heating-:net_addition::pn_nodes->n_pn_Milk_Heating_milk_heating_out
+new f_Preparing_out-:net_addition::sources->n_pn_Milk_Heating_milk_heating_out
+new n_pn_Milk_Cappuccino_milk_capp_out:net_addition::PetriNode(item_s="milk_capp_out")
+new pn_Milk_Cappuccino-:net_addition::pn_nodes->n_pn_Milk_Cappuccino_milk_capp_out
+new f_Preparing_out-:net_addition::sources->n_pn_Milk_Cappuccino_milk_capp_out
+new f_Ingredients:net_addition::Fusion(rename="Ingredients")
+new a_result-:net_addition::fusions->f_Ingredients
+new n_pn_Main_Ingredients:net_addition::PetriNode(item_s="Ingredients")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Ingredients
+new f_Ingredients-:net_addition::sources->n_pn_Main_Ingredients
+new n_pn_Espresso_espresso_in:net_addition::PetriNode(item_s="espresso_in")
+new pn_Espresso-:net_addition::pn_nodes->n_pn_Espresso_espresso_in
+new f_Ingredients-:net_addition::sources->n_pn_Espresso_espresso_in
+new n_pn_Coffee_coffee_in:net_addition::PetriNode(item_s="coffee_in")
+new pn_Coffee-:net_addition::pn_nodes->n_pn_Coffee_coffee_in
+new f_Ingredients-:net_addition::sources->n_pn_Coffee_coffee_in
+new n_pn_Milk_milk_in:net_addition::PetriNode(item_s="milk_in")
+new pn_Milk-:net_addition::pn_nodes->n_pn_Milk_milk_in
+new f_Ingredients-:net_addition::sources->n_pn_Milk_milk_in
+new f_Ingredients_out:net_addition::Fusion(rename="Ingredients_out")
+new a_result-:net_addition::fusions->f_Ingredients_out
+new n_pn_Main_Ingredients_out:net_addition::PetriNode(item_s="Ingredients_out")
+new pn_Main-:net_addition::pn_nodes->n_pn_Main_Ingredients_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Main_Ingredients_out
+new n_pn_Espresso_espresso_out:net_addition::PetriNode(item_s="espresso_out")
+new pn_Espresso-:net_addition::pn_nodes->n_pn_Espresso_espresso_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Espresso_espresso_out
+new n_pn_Coffee_coffee_out:net_addition::PetriNode(item_s="coffee_out")
+new pn_Coffee-:net_addition::pn_nodes->n_pn_Coffee_coffee_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Coffee_coffee_out
+new n_pn_Milk_milk_out:net_addition::PetriNode(item_s="milk_out")
+new pn_Milk-:net_addition::pn_nodes->n_pn_Milk_milk_out
+new f_Ingredients_out-:net_addition::sources->n_pn_Milk_milk_out
+exec na::Transform()
+exec na::NACleanup()
+validate exitonfailure strict only specified
+export /Users/cmai/Desktop/reconfnet/grgen/chain/coffee_capp_stn_na/net/machine.na.transformed.grs
+
+
+
+
+
+
+debug exec pninfor::Convert()
+export /Users/cmai/Desktop/reconfnet/grgen/chain/coffee_capp_stn_na/net/machine.na.grsi.final.grs

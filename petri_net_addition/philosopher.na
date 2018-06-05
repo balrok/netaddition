@@ -1,0 +1,20 @@
+result=(phil[1]{phil[1].full-o2} + phil[2]{phil[2].full-o2}
+  + phil[3]{phil[3].full -o 2} + talk[1]{phil[1].full -> 2}
+  + talk[2]{phil[2].full -> 2} + talk[3]{phil[3].full -> 2}
+  + service[1]{talk->3} + service[2]{talk->3} + service[3]{talk->3}
+  )
+  (
+    service[1].fork / phil[1].fork2 / phil[2].fork1 -> fork1,
+    service[2].fork / phil[2].fork2 / phil[3].fork1 -> fork2,
+    service[3].fork / phil[3].fork2 / phil[1].fork1 -> fork3,
+    service[1].wash / service[2].wash / service[3].wash -> wash,
+    // TODO if we would merge this, it would become an interface
+    // according to the definition this is correct - but as developer
+    // this feels wrong - maybe interface->interface should make it internal
+    // if no outside arcs
+    // service[1].t1 / service[2].t1 / service[3].t1 -> go,
+    phil[1].think / talk[1].think -> think1,
+    phil[2].think / talk[2].think -> think2,
+    phil[3].think / talk[3].think -> think3,
+    talk[1].talk / talk[2].talk / talk[3].talk -> talk,
+  )

@@ -1,0 +1,5 @@
+# net noname, 37 places, 62 transitions                                #
+# bounded, not live, reversible                                        #
+# abstraction        count      props      psets       dead       live #
+#      states          133         37          ?          0        133 # 
+# transitions          430         62          ?         13         49 #

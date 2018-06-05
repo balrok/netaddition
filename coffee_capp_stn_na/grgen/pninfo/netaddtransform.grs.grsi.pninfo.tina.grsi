@@ -1,0 +1,86 @@
+new s_1:boo::Symbol(id="Stopped")
+new s_2:boo::Symbol(id="Stopping")
+# ~Stopped&~Stopping
+
+# ~Stopped&~Stopping
+new f_2:boo::Formula(typ="AND")
+new f_2_2:boo::Formula(typ="NOT")
+new f_2_2 -:boo::formula_symbols-> s_1
+new f_2 -:boo::formula_symbols-> f_2_2
+new f_2_3:boo::Formula(typ="NOT")
+new f_2_3 -:boo::formula_symbols-> s_2
+new f_2 -:boo::formula_symbols-> f_2_3
+
+new s1_1:pninfo::AlternativeP(id="Running")
+new s1_1 -:pninfo::alternative_formula-> f_2
+new s_5:boo::Symbol(id="Espresso")
+new s_6:boo::Symbol(id="state_None")
+# ~Espresso&~state_None
+
+# ~Espresso&~state_None
+new f_6:boo::Formula(typ="AND")
+new f_6_6:boo::Formula(typ="NOT")
+new f_6_6 -:boo::formula_symbols-> s_5
+new f_6 -:boo::formula_symbols-> f_6_6
+new f_6_7:boo::Formula(typ="NOT")
+new f_6_7 -:boo::formula_symbols-> s_6
+new f_6 -:boo::formula_symbols-> f_6_7
+
+new s1_2:pninfo::AlternativeP(id="Coffee")
+new s1_2 -:pninfo::alternative_formula-> f_6
+new s_9:boo::Symbol(id="state_Coffee")
+new s_10:boo::Symbol(id="state_Espresso")
+# ~state_Coffee&(~state_Espresso&~state_None)
+
+# ~state_Coffee&~state_Espresso&~state_None
+new f_10:boo::Formula(typ="AND")
+new f_10_10:boo::Formula(typ="NOT")
+new f_10_10 -:boo::formula_symbols-> s_9
+new f_10 -:boo::formula_symbols-> f_10_10
+new f_10_11:boo::Formula(typ="NOT")
+new f_10_11 -:boo::formula_symbols-> s_10
+new f_10 -:boo::formula_symbols-> f_10_11
+new f_10_12:boo::Formula(typ="NOT")
+new f_10_12 -:boo::formula_symbols-> s_6
+new f_10 -:boo::formula_symbols-> f_10_12
+
+new s1_3:pninfo::AlternativeP(id="Milk")
+new s1_3 -:pninfo::alternative_formula-> f_10
+new s_14:boo::Symbol(id="state_Coffee-Milk")
+# ~state_Coffee&(~state_Coffee-Milk&~state_None)
+
+# ~state_Coffee&~state_Coffee-Milk&~state_None
+new f_14:boo::Formula(typ="AND")
+new f_14_14:boo::Formula(typ="NOT")
+new f_14_14 -:boo::formula_symbols-> s_9
+new f_14 -:boo::formula_symbols-> f_14_14
+new f_14_15:boo::Formula(typ="NOT")
+new f_14_15 -:boo::formula_symbols-> s_14
+new f_14 -:boo::formula_symbols-> f_14_15
+new f_14_16:boo::Formula(typ="NOT")
+new f_14_16 -:boo::formula_symbols-> s_6
+new f_14 -:boo::formula_symbols-> f_14_16
+
+new s1_4:pninfo::AlternativeP(id="Espresso")
+new s1_4 -:pninfo::alternative_formula-> f_14
+new s_18:boo::Symbol(id="Coffee")
+new s_19:boo::Symbol(id="state_Espresso-Milk")
+# ~Coffee&(~state_Espresso&(~state_Espresso-Milk&~state_None))
+
+# ~Coffee&~state_Espresso&~state_Espresso-Milk&~state_None
+new f_19:boo::Formula(typ="AND")
+new f_19_19:boo::Formula(typ="NOT")
+new f_19_19 -:boo::formula_symbols-> s_18
+new f_19 -:boo::formula_symbols-> f_19_19
+new f_19_20:boo::Formula(typ="NOT")
+new f_19_20 -:boo::formula_symbols-> s_10
+new f_19 -:boo::formula_symbols-> f_19_20
+new f_19_21:boo::Formula(typ="NOT")
+new f_19_21 -:boo::formula_symbols-> s_19
+new f_19 -:boo::formula_symbols-> f_19_21
+new f_19_22:boo::Formula(typ="NOT")
+new f_19_22 -:boo::formula_symbols-> s_6
+new f_19 -:boo::formula_symbols-> f_19_22
+
+new s1_5:pninfo::AlternativeP(id="Cappuccino")
+new s1_5 -:pninfo::alternative_formula-> f_19

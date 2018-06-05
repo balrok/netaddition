@@ -1,0 +1,32 @@
+new pn:PetriNet(id="buko_2")
+new net:Page(id="buko_2")
+new pn -:pages-> net
+
+new p12:Place(id="p12")
+new p82:Place(id="p82")
+new p92:Place(id="p92")
+new net-:places->p82
+new net-:places->p92
+new net-:places->p12
+
+
+
+
+new t10:Transition(id="t10")
+new t92:Transition(id="t92")
+new net-:transitions->t10
+new net-:transitions->t92
+
+
+new p12-:outArc->t10
+new p92-:outArc->t92
+new t92-:inArc->p82
+new t10-:inArc->p92
+
+
+new tin:Transition(id="tin")
+new net-:transitions->tin
+new tout:Transition(id="tout")
+new net-:transitions->tout
+new tin-:inArc->p12
+new p82-:outArc->tout
